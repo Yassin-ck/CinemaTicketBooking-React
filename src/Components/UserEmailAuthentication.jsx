@@ -10,7 +10,6 @@ const UserEmailAuthPost = async (e) => {
     const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}email/`,{
         email: inputRef.current.email.value
 });
-    console.log(response);
     const data = response.data;
     console.log(data);
 }
