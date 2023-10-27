@@ -1,18 +1,17 @@
-import AuthProvider from './AuthContext/authcontext'
-import { Routes,Route } from 'react-router-dom'
-import UserEmailAuthentication from './Components/UserEmailAuthentication'
+import AuthProvider from './context/authcontext';
+import { Routes, Route } from 'react-router-dom';
+import EmailAuthModal from './Components/Modal/Modal';
+
 const App = () => {
-
-
-    return(       
-       <>
-        <AuthProvider>
+  return (
+    <>
+      <AuthProvider>
         <Routes>
-        <Route path="/" element={<UserEmailAuthentication />} />
+          <Route path="/emailauth" element={<EmailAuthModal />} />
         </Routes>
-        </AuthProvider>
-        </>
-        )   
-}
+      </AuthProvider>
+    </>
+  );
+};
 
 export default App;

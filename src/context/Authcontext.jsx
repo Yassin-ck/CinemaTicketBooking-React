@@ -1,10 +1,12 @@
 
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 export const AuthContext = createContext()
 
 const AuthProvider = ({children})=>{
-
+const [emailAuth,setEmailAuth] = useState([])
 const contextState = {
+  emailAuth:emailAuth,
+  setEmailAuth:setEmailAuth
 }
   return(
           <AuthContext.Provider value={contextState} >
