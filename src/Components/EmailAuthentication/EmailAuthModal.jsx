@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import UserEmailAuthentication from '../EmailAuthentication/UserEmailAuthentication';
-import UserEmailOtp from '../EmailAuthentication/UserEmailOtp';
+import UserEmailAuthentication from './UserEmailAuthentication';
+import UserEmailOtp from './UserEmailOtp';
 
 const EmailAuthModal = () => {
   const [showEmailAuth, setShowEmailAuth] = useState(true);
