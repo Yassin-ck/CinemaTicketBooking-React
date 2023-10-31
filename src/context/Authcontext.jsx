@@ -2,11 +2,12 @@ import React, { createContext, useState } from "react";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [emailAuth, setEmailAuth] = useState([]);
+  const [authToken,setAuthToken] = useState(()=>localStorage.getItem('authToken')?JSON.parse(localStorage.getItem('authToken')):null)
+  const [user,setUser] = useState(()=>localStorage.getItem('authToken')?localStorage.getItem('authToken'):null)
   const contextState = {
-    emailAuth: emailAuth,
-    setEmailAuth: setEmailAuth,
+    authToken:authToken
   };
+
   return (
     <AuthContext.Provider value={contextState}>{children}</AuthContext.Provider>
   );

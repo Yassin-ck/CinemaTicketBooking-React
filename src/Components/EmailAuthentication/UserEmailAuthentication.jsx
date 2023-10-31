@@ -4,7 +4,6 @@ import { AuthContext } from "../../context/authcontext";
 
 const UserEmailAuthentication = ({ onEmailSubmit }) => {
   const inputRef = useRef(null);
-  const { setEmailAuth } = useContext(AuthContext);
   const UserEmailAuthPost = async (e) => {
     e?.preventDefault();
     const response = await axios.post(
@@ -14,10 +13,8 @@ const UserEmailAuthentication = ({ onEmailSubmit }) => {
       }
     );
     const data = response.data;
-    console.log(data);
-    alert(data.email,data.otp)
-    setEmailAuth(data);
-    onEmailSubmit();
+    console.log(data)
+    onEmailSubmit(data);
   };
 
   return (
@@ -29,3 +26,4 @@ const UserEmailAuthentication = ({ onEmailSubmit }) => {
 };
 
 export default UserEmailAuthentication;
+
