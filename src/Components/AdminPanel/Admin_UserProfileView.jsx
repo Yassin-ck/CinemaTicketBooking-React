@@ -11,7 +11,7 @@ const Admin_UserProfileView = () => {
     const [userData,setUserData] = useState([])
     const getUserProfile = async(number)=>{
         const response = await axios.get(
-            `${import.meta.env.VITE_URL_SERVER}admin_panel/users/?q=${number}`,
+            `${import.meta.env.VITE_URL_SERVER}/admin_panel/users/?q=${number}`,
             {
                 headers:{
                     'Authorization':`Bearer ${authToken.access}`

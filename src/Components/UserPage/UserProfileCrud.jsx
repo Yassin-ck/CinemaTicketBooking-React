@@ -13,7 +13,7 @@ const UserProfileEdit = () => {
         e?.preventDefault()
         const response = await axios({
             method: !e?'GET':'POST', 
-            url: `${import.meta.env.VITE_URL_SERVER}userprofile/`,
+            url: `${import.meta.env.VITE_URL_SERVER}/userprofile/`,
             headers: {
                 "Authorization": `Bearer ${authToken.access}`
             },

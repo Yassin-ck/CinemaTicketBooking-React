@@ -10,7 +10,7 @@ const MobilePhoneUpdation = ({byClick}) => {
         e.preventDefault()
         console.log(e);
         const response = await axios.post(
-        `${import.meta.env.VITE_URL_SERVER}userprofile/phone/`,
+        `${import.meta.env.VITE_URL_SERVER}/userprofile/phone/`,
         {
             phone: inputRef.current.phone.value,
         },
@@ -28,7 +28,6 @@ const MobilePhoneUpdation = ({byClick}) => {
             console.error(data);
         }
     }
-console.log('00kona');
   return (
     <div>
     <form ref={inputRef} onSubmit={MobilePhone}>

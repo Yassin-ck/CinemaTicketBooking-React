@@ -10,7 +10,7 @@ const Admin_TheatreOwnerRequest = () => {
     const theatreOwnerRequestData = async()=>{
         try{
             const response = await axios.get(
-                `${import.meta.env.VITE_URL_SERVER}admin_panel/theatreowner/`,
+                `${import.meta.env.VITE_URL_SERVER}/admin_panel/theatreowner/`,
                 {
                     headers:{
                         'Authorization':`Bearer ${authToken.access}`
@@ -32,15 +32,13 @@ useEffect(() => {
 }, [])
 
 
-const detailsHandler = (e)=>{
-navigate(`/admin/theatre_owners/${e}`)
-}
+
 
   return (
     <div>
     {owner.map((item)=>(
         <div key={item.id}>
-        <div onClick={e=>detailsHandler(item.id)}>
+        <div onClick={()=>navigate(`${item.id}`)}>
         <p>{item.first_name}</p>
         <p>{item.id}</p>
         <p>{item.email}</p>

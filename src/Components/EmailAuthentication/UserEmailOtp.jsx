@@ -12,7 +12,7 @@ const UserEmailOtp = ({email,otp}) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_URL_SERVER}email/otp/`,
+        `${import.meta.env.VITE_URL_SERVER}/email/otp/`,
         {
           otp: inputRef.current.otp.value,
           email: email,

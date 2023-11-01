@@ -1,13 +1,12 @@
-import React, { useContext,useRef } from 'react'
+import React, { useContext } from 'react'
 import { AuthContext } from '../../context/authcontext'
 import axios from 'axios'
 
 const MobileOtpView = ({sid}) => {
-    const inputRef=useRef(null)
     const {authToken} = useContext(AuthContext)
     const OtpVerification = async (e)=>{
         const response = await axios.post(
-            `${import.meta.env.VITE_URL_SERVER}userprofile/phone/otp/`,
+            `${import.meta.env.VITE_URL_SERVER}/userprofile/phone/otp/`,
             {
                 otp:e,
                 verification_sid:sid

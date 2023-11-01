@@ -7,7 +7,7 @@ const UserEmailAuthentication = ({ onEmailSubmit }) => {
   const UserEmailAuthPost = async (e) => {
     e?.preventDefault();
     const response = await axios.post(
-      `${import.meta.env.VITE_URL_SERVER}email/`,
+      `${import.meta.env.VITE_URL_SERVER}/email/`,
       {
         email: inputRef.current.email.value,
       }
