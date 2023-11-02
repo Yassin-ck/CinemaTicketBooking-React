@@ -10,6 +10,10 @@ import Admin_TheatreOwnerRequest from "./Components/AdminPanel/Admin_TheatreOwne
 import Admin_TheatreVerification from "./Components/AdminPanel/Admin_TheatreVerification";
 import TheatreOwnerRegistration from "./Components/Theatre_dashboard/TheatreOwnerRegistration";
 import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_TheatreOwnerVerification";
+import PrivateRouter from "./PrivateRouter/PrivateRouter";
+import EmailAuthModal from "./Components/EmailAuthentication/EmailAuthModal";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   return (
@@ -17,8 +21,9 @@ const App = () => {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/view" element={<UserProfileEdit />} />
-          <Route path="/view/phone" element={<MobileUpdationModal />} />
+          <Route path="/useremailupdation/:auth" element={<PrivateRouter><EmailAuthModal /></PrivateRouter>} />
+          <Route path="/view" element={ <PrivateRouter><UserProfileEdit /></PrivateRouter>} />
+          <Route path="/view/phone" element={<PrivateRouter><MobileUpdationModal /></PrivateRouter>} />
           <Route path="/admin/user" element={<Admin_UserProfileView />} />
           <Route path="/admin/owners_request" element={<Admin_TheatreOwnerRequest />} />
           <Route path="/admin/owners_request/:id" element={<Admin_TheatreOwnerVerification />} />

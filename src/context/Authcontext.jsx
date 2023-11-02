@@ -5,7 +5,10 @@ const AuthProvider = ({ children }) => {
   const [authToken,setAuthToken] = useState(()=>localStorage.getItem('authToken')?JSON.parse(localStorage.getItem('authToken')):null)
   const [user,setUser] = useState(()=>localStorage.getItem('authToken')?localStorage.getItem('authToken'):null)
   const contextState = {
-    authToken:authToken
+    authToken:authToken,
+    setUser:setUser,
+    setAuthToken:setAuthToken,
+    user:user
   };
 
   return (

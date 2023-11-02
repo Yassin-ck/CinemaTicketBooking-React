@@ -3,9 +3,11 @@ import axios from 'axios'
 import { AuthContext } from '../../context/authcontext'
 import MobileUpdationModal from './MobileUpdationModal'
 import { useNavigate } from 'react-router-dom'
+import EmailAuthModal from '../EmailAuthentication/EmailAuthModal'
 
 const UserProfileEdit = () => {
     const [getView,setGetView] = useState([])
+    const [emailModal,setEmailModal] = useState(false)
     const navigate = useNavigate()
     const { authToken } = useContext(AuthContext)
     const inputRef = useRef()
@@ -20,7 +22,6 @@ const UserProfileEdit = () => {
            data:
             e?{
                 username : inputRef.current.username.value,
-                email : inputRef.current.email.value,
                 first_name : inputRef.current.first_name.value,
                 last_name : inputRef.current.last_name.value,
                 address : inputRef.current.address.value
@@ -35,11 +36,12 @@ const UserProfileEdit = () => {
         }
     }
 
+
 useEffect(() => {
   UserProfileForm()
 }, [])
 
-
+const auth = 'auth'
 
 
   return (
@@ -50,7 +52,7 @@ useEffect(() => {
           <form ref={inputRef} onSubmit={e=>UserProfileForm(e)}>
           <input name='username' placeholder='username' type='text' defaultValue={item&&item.user.username} />
             <p onClick={()=>navigate('/view/phone')}>Click Here To update Your Mobile Phone</p>
-          <input name='email' placeholder='email' type='email' defaultValue={item&&item.user.email} />
+            <p onClick={()=>navigate(`/useremailupdation/${auth}`)}>Click Here To update Your Email </p>
           <input name='first_name' placeholder='first_name' type='text' defaultValue={item&&item.userprofile.first_name} />
           <input name='last_name' placeholder='last_name' type='text' defaultValue={item&&item.userprofile.last_name} />
           <input name='address' placeholder='address' type='text' defaultValue={item&&item.userprofile.address}  />
