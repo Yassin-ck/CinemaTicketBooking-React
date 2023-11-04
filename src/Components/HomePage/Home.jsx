@@ -1,39 +1,27 @@
-import React, { useState } from 'react';
-
-
-import SignInPage from './SignInPage';
+import React,{ useState } from 'react';
+import './SigninPage.css'
 import TheatreLoginModal from '../Theatre_dashboard/TheatreLoginModal';
-import Button from '@mui/material/Button';
-
+import { Button } from '@mui/material';
+import Swal from 'sweetalert2'
 
 
 const Home = () => {
-  const [modalOpen, setModalOpen] = useState(false);
   const [theatreLogin,SetTheatreLogin] = useState(false)
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
   const theatreModal = ()=>{
     SetTheatreLogin(true)
+   
   }
 
   return (
     <>
   
     
+    {theatreLogin ? (
+      <TheatreLoginModal />
+    ):
+    <Button variant='outlined' onClick={theatreModal}>TheatreLogin</Button>
+  }
 
-      {modalOpen ? (
-        <SignInPage />
-      ):
-      <Button variant='contained' onClick={openModal}>Sign in</Button>
-    }
-      {theatreLogin ? (
-        <TheatreLoginModal />
-      ):
-      <Button variant='contained' onClick={theatreModal}>TheatreLogin</Button>
-    }
     </>
   );
 }

@@ -1,22 +1,25 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../context/authcontext";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode }  from 'jwt-decode'
+import { MuiOtpInput } from 'mui-one-time-password-input'
+import Swal from 'sweetalert2'
 
-const UserEmailOtp = ({email,otp,auth}) => {
-  const { setAuthToken,setUser,authToken } = useContext(AuthContext)
-  const inputRef = useRef(null);
+
+const UserEmailOtp = ({email,otp_,auth}) => {
+  const { setAuthToken,setUser,authToken,setBasicModal,setModalOpen } = useContext(AuthContext)
+  const [otp,setOtp] = useState('')
   const navigate = useNavigate()
   const UserEmailOtpVerification = async (e) => {
-    e.preventDefault();
+
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_URL_SERVER}/email/otp/`,
         {
-          otp: inputRef.current.otp.value,
+          otp:e ,
           email: email,
-          otp_entered: otp,
+          otp_entered: otp_,
         },
         auth?{
          headers:{
@@ -26,7 +29,25 @@ const UserEmailOtp = ({email,otp,auth}) => {
       );
       const data = response.data;
       if (response.status == 200){
-        navigate('/view')
+        if(!auth){
+
+          setBasicModal(false);
+          setModalOpen(false)
+          navigate('/')
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Loginned Successfully',
+            showConfirmButton: false,
+            timer: 1500,
+            heightAuto:false,
+            width:400
+          });
+          
+        }else{
+          navigate('/view')
+
+        }
       }
       console.log(data);
       if (!auth){
@@ -37,14 +58,42 @@ const UserEmailOtp = ({email,otp,auth}) => {
       }
     } catch (error) {
       console.error("Error:", error);
+      if (!auth){
+
+        setBasicModal(false);
+        setModalOpen(false)
+        Swal.fire({
+          position: 'top-end',
+          icon: 'warning',
+          title: 'Unauthorized ',
+          showConfirmButton: false,
+          timer: 1500,
+          heightAuto:false,
+          width:400
+        });
+        
+      }
     }
   };
+  console.log(otp);
+  let result = ''
+  const handleChange = (value)=>{
+    setOtp(value)
+    result += value
+    console.log(otp.length);
+    if(otp.length == 5){
+      UserEmailOtpVerification(result)
+  
+    }
+  }
 
 
   return (
-    <form onSubmit={UserEmailOtpVerification} ref={inputRef}>
-      <input type="text" name="otp" placeholder="OTP" />
-      <input type="submit" />
+    <form>
+    <div className="otpInputField">
+    <MuiOtpInput length={6} value={otp} type="number" onChange={handleChange}   />
+    </div>
+      <input className="btn btn-success" type="submit" style={{position:'absolute',bottom:'40px',right:'40px'}} />
     </form>
   );
 };

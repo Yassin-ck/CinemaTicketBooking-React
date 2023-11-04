@@ -21,7 +21,7 @@ const EmailAuthModal = () => {
     ) : showEmailAuth ? (
       <UserEmailAuthentication onEmailSubmit={e => toggleEmailOtpView(e)} />
     ) : (
-      <UserEmailOtp email={email.email} otp={email.otp} />
+      <UserEmailOtp email={email.email}  otp_={email.otp} />
     )}
   </div>
    

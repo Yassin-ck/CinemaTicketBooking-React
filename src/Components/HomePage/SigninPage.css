@@ -1,0 +1,95 @@
+
+  
+  .social-auth-button:hover {
+    background: #e3e5e8; /* Slightly darker shade on hover */
+    /* You can adjust the hover effect to your liking */
+  }
+  
+
+  .EmailAuthButtonInSignInPage{
+    display: flex;
+    justify-content: center;
+  }
+  .social-auth-button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+    height: 2.8rem;
+
+  }
+  
+  
+   
+@media (max-width: 768px) {
+    .social-auth-button {
+      width: 100%; 
+    }
+    
+
+    .social-auth-button span{
+        font-size: 12px;
+       
+    }
+  }
+   
+@media (max-width: 415) {
+    .social-auth-button {
+      width: 80%; 
+    }
+  
+    .social-auth-button .button-content {
+      margin-right: 10px; 
+      
+    }
+  }
+
+.input-label-emailauth{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group-emailauthentication .input-label-emailauth{
+    position: absolute;
+    left:5rem;
+    top:35%;
+}
+.input-label-emailauth input{
+    outline: none;
+    width:20rem ;
+}
+.input-label-emailauth label{
+    color: black;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+
+
+@media (max-width:465px) {
+    .input-label-emailauth input{
+        width:18rem ;
+    }
+}
+
+@media (max-width:425px) {
+    .input-label-emailauth input{
+        width:15rem ;
+    }
+}
+
+@media (max-width:375px) {
+    .input-label-emailauth input{
+        width:12rem ;
+    }
+}
+
+
+.otpInputField{
+    width: 80%;
+    margin-left: 50px ;
+}
+
+
+
+

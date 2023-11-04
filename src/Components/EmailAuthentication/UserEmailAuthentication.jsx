@@ -23,14 +23,19 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
 
       console.log(data)
       onEmailSubmit(data);
-      
+
     }
   };
 
   return (
     <form onSubmit={UserEmailAuthPost} ref={inputRef}>
-      <input name="email" type="email" placeholder="email" />
-      <input type="submit" />
+      <div className="input-group-emailauthentication">
+      <div className="input-label-emailauth">
+      <label >email</label> 
+      <input name="email" type="email" style={{fontSize:'13px',height:'28px'}} />
+      </div>
+      </div>
+    <input className="btn bg-success" type="submit" style={{position:'absolute',bottom:'40px',right:'40px'}} />
     </form>
   );
 };

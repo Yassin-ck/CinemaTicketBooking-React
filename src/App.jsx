@@ -12,13 +12,14 @@ import TheatreOwnerRegistration from "./Components/Theatre_dashboard/TheatreOwne
 import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_TheatreOwnerVerification";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
 import EmailAuthModal from "./Components/EmailAuthentication/EmailAuthModal";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "./Components/NavBar/Navbar";
 
 
 const App = () => {
   return (
     <>
       <AuthProvider>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/useremailupdation/:auth" element={<PrivateRouter><EmailAuthModal /></PrivateRouter>} />
