@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import './SigninPage.css'
 import TheatreLoginModal from '../Theatre_dashboard/TheatreLoginModal';
 import { Button } from '@mui/material';
-import Swal from 'sweetalert2'
+
 
 
 const Home = () => {
@@ -14,8 +14,6 @@ const Home = () => {
 
   return (
     <>
-  
-    
     {theatreLogin ? (
       <TheatreLoginModal />
     ):

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode }  from 'jwt-decode'
 import { MuiOtpInput } from 'mui-one-time-password-input'
 import Swal from 'sweetalert2'
+import { Button } from "@mui/material";
 
 
 const UserEmailOtp = ({email,otp_,auth}) => {
@@ -17,9 +18,9 @@ const UserEmailOtp = ({email,otp_,auth}) => {
       const response = await axios.post(
         `${import.meta.env.VITE_URL_SERVER}/email/otp/`,
         {
-          otp:e ,
+          otp:otp_ ,
           email: email,
-          otp_entered: otp_,
+          otp_entered: e,
         },
         auth?{
          headers:{
@@ -28,35 +29,39 @@ const UserEmailOtp = ({email,otp_,auth}) => {
         }:null
       );
       const data = response.data;
-      if (response.status == 200){
-        if(!auth){
-
-          setBasicModal(false);
-          setModalOpen(false)
-          navigate('/')
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Loginned Successfully',
-            showConfirmButton: false,
-            timer: 1500,
-            heightAuto:false,
-            width:400
-          });
-          
-        }else{
-          navigate('/view')
-
-        }
-      }
       console.log(data);
+      if (response.status == 200){
+       
       if (!auth){
         let decoded = jwtDecode(data.token.access)
         localStorage.setItem('authToken',JSON.stringify(data.token))
         setUser(decoded)
         setAuthToken(data.token)
-      }
-    } catch (error) {
+        setBasicModal(false);
+        setModalOpen(false)
+        navigate('/')
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Loginned Successfully',
+          showConfirmButton: false,
+          timer: 1500,
+          heightAuto:false,
+          width:400
+        })
+       
+    
+        }
+        else {
+          setBasicModal(false);
+          setModalOpen(false)
+          navigate('/view')
+      } 
+      } 
+
+          
+    
+  }catch (error) {
       console.error("Error:", error);
       if (!auth){
 
@@ -75,7 +80,6 @@ const UserEmailOtp = ({email,otp_,auth}) => {
       }
     }
   };
-  console.log(otp);
   let result = ''
   const handleChange = (value)=>{
     setOtp(value)
@@ -90,10 +94,14 @@ const UserEmailOtp = ({email,otp_,auth}) => {
 
   return (
     <form>
-    <div className="otpInputField">
-    <MuiOtpInput length={6} value={otp} type="number" onChange={handleChange}   />
+    <div  className="formforotpverification">
+    <div className="EmailOtpInputField">
+    <center >
+    <MuiOtpInput  length={6} value={otp} type="number" onChange={handleChange}   />
+    </center>
     </div>
-      <input className="btn btn-success" type="submit" style={{position:'absolute',bottom:'40px',right:'40px'}} />
+    </div>
+    <Button type="submit" variant="contained" style={{backgroundColor: 'green',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
     </form>
   );
 };

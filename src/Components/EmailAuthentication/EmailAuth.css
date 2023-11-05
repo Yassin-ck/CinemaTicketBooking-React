@@ -1,6 +1,51 @@
-/* Custom styles for the small Swal container */
 .small-swal-container {
-    font-size: 14px; /* Adjust the font size */
-    padding: 10px 16px; /* Adjust the padding as needed */
+    font-size: 14px; 
+    padding: 10px 16px; 
   }
   
+.email-auth-input-label-div{
+  width: 100%;
+  
+} 
+  
+
+.email-auth-input-label-div label{
+  display: block;
+  font-size: 12px;
+}
+
+.email-auth-input-label-div input{
+  width: 100%;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid grey;
+  padding: 7px;
+}
+.email-auth-text-main-div strong{
+  display: block;
+}
+.email-auth-text-main-div small{
+  font-size: 13px;
+}
+.email-auth-text-main-div-container {
+  height:20vh;
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+}
+.EmailOtpInputField{
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+.formforotpverification{
+  position: relative;
+  top: 25%;
+  left: 0%;
+}
+
+

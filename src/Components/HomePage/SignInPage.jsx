@@ -5,22 +5,25 @@ import {
   MDBModal,
   MDBModalDialog,
   MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-  MDBModalFooter,
 } from 'mdb-react-ui-kit';
 import EmailAuthModal from '../EmailAuthentication/EmailAuthModal'
 import { Button } from '@mui/material';
 import { AuthContext } from '../../context/authcontext';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const SignInPage = ({modal}) => {
+  const {auth} = useParams()
+  const navigate = useNavigate()
+  const [updationModal,setUpdationModal] = useState(false)
 const { basicModal, setBasicModal,setModalOpen } = useContext(AuthContext)
 const [signIn,setSignIn] = useState(false)
 const toggleShow = () => {
-
+console.log('kk');
     setBasicModal(!basicModal);
     setModalOpen(false)
+    if (auth){
+       navigate('/view')
+    }
 }
 useEffect(() => {
   if (!basicModal){
@@ -34,40 +37,39 @@ const signInOpenTrigger = ()=>{
   setSignIn(true)
 }
 
+useEffect(() => {
+ if (auth){
+  setUpdationModal(true)
+  setSignIn(true)
+ }
+}, [])
 
 return (
   <>
+  <MDBModal show={basicModal}  tabIndex='-1'   > 
+  <div  >
   
-        <MDBModal show={basicModal}  tabIndex='-1'  >
-        <div onClick={(e) => e.stopPropagation()}>
-
-          <MDBModalDialog style={{position:'relative'}} >
-            <MDBModalContent >
-              <MDBModalHeader>
-                <MDBModalTitle>Modal title</MDBModalTitle>
-                
-                <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-              </MDBModalHeader>
-              <MDBModalBody >Modal body text goes here.</MDBModalBody>
-              {signIn ?
-
-                <EmailAuthModal />
-        :
-        <div className='EmailAuthButtonInSignInPage'>
-       
-        <Button onClick={signInOpenTrigger} variant='outlined' className="social-auth-button">
-  <div className="button-content">
-    <MDBIcon far icon="envelope" size='lg' style={{marginRight:'80px'}} />
-    <span style={{marginRight:"100px"}} >Continue with Email</span>
-  </div>
-</Button>
-
-        </div>
-
-            }
-              <MDBModalFooter style={{height:'400px'}}>
+  <MDBModalDialog  style={{position:'relative',maxWidth:'425px',color:'black',paddingTop:'100px',height:'100vh'}}  >
+  <MDBModalContent>
+  <MDBBtn onClick={toggleShow} className='btn-close' color='none' style={{position:'absolute',zIndex:'1',right:'10px',top:'10px',cursor:'pointer'}} ></MDBBtn>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center',height:'70vh',position:'relative'}}>
+              { updationModal?
  
-              </MDBModalFooter>
+ <EmailAuthModal auth={'auth'} />
+ 
+        :signIn?<EmailAuthModal />:
+        <div className='EmailAuthButtonInSignInPage'>
+        
+        <Button onClick={signInOpenTrigger} variant='outlined' className="social-auth-button">
+        <MDBIcon far icon="envelope" size='lg' style={{position: 'absolute',left: '15px'}} />
+        <span  >Continue with Email</span>
+        </Button>
+        
+        </div>
+         
+      }
+      </div>
+              
             </MDBModalContent>
           </MDBModalDialog>
           </div>
@@ -80,4 +82,13 @@ return (
 
 export default SignInPage
 
-  
+
+
+
+
+
+
+
+
+
+

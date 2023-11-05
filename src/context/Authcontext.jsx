@@ -7,6 +7,10 @@ const AuthProvider = ({ children }) => {
   const [user,setUser] = useState(()=>localStorage.getItem('authToken')?jwtDecode(localStorage.getItem('authToken')):null)
   const [basicModal, setBasicModal] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
+  const [getView,setGetView] = useState([])
+  
+
+  
 
   const contextState = {
     authToken:authToken,
@@ -16,7 +20,9 @@ const AuthProvider = ({ children }) => {
     basicModal:basicModal,
     setBasicModal:setBasicModal,
     modalOpen:modalOpen,
-    setModalOpen:setModalOpen
+    setModalOpen:setModalOpen,
+    getView:getView,
+    setGetView:setGetView
 
   };
 

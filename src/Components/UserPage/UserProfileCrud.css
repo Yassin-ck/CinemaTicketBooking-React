@@ -1,0 +1,34 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+
+.ProfileCrudFormMainDiv{
+    margin-top: 5vh;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.ProfileCrudFormInputDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.ProfileCrudFormInputDiv input{
+    padding: 10px 0px 10px 10px  ;
+    width: 400px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    outline: none;
+}

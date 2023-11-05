@@ -13,6 +13,7 @@ import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_Theatr
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
 import EmailAuthModal from "./Components/EmailAuthentication/EmailAuthModal";
 import Navbar from "./Components/NavBar/Navbar";
+import SignInPage from "./Components/HomePage/SignInPage";
 
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/useremailupdation/:auth" element={<PrivateRouter><EmailAuthModal /></PrivateRouter>} />
+          <Route path="/useremailupdation/:auth" element={<PrivateRouter><SignInPage /></PrivateRouter>} />
           <Route path="/view" element={ <PrivateRouter><UserProfileEdit /></PrivateRouter>} />
           <Route path="/view/phone" element={<PrivateRouter><MobileUpdationModal /></PrivateRouter>} />
           <Route path="/admin/user" element={<Admin_UserProfileView />} />
