@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext();
 import { jwtDecode } from "jwt-decode";
 
@@ -8,9 +8,9 @@ const AuthProvider = ({ children }) => {
   const [basicModal, setBasicModal] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [getView,setGetView] = useState([])
-  
+  const [myLocation,setMyLocation] = useState(()=>localStorage.getItem('myLocation')?JSON.parse(localStorage.getItem('myLocation')):null)
 
-  
+
 
   const contextState = {
     authToken:authToken,
@@ -22,8 +22,9 @@ const AuthProvider = ({ children }) => {
     modalOpen:modalOpen,
     setModalOpen:setModalOpen,
     getView:getView,
-    setGetView:setGetView
-
+    setGetView:setGetView,
+    myLocation:myLocation,
+    setMyLocation:setMyLocation
   };
 
   

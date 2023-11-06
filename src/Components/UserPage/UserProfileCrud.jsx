@@ -95,7 +95,7 @@ const UserProfileEdit = () => {
                    {
                     item.userprofile.phone?
                     <div style={{ marginBottom: '2rem', paddingLeft: '.6rem', position: 'relative' }}>
-                    Phone<span style={{ paddingLeft: '6.2rem' }}>{item.userprofile.phone} <small style={{width:'100%',background:'#B7EFC5',fontSize:'12px',padding:'0px 3px'}}>Verified</small></span>
+                    Phone<span style={{ paddingLeft: '6.2rem' }}>+91 {item.phone} <small style={{width:'100%',background:'#B7EFC5',fontSize:'12px',padding:'0px 3px'}}>Verified</small></span>
                     <span onClick={() => navigate('/view/phone')} style={{cursor:'pointer', color: 'rgb(199, 75, 75)', position: 'absolute', right: '2rem' }}>
                     <MdOutlineModeEditOutline />
                     <span style={{ paddingLeft: '5px', fontSize: '14px' }}>Edit</span>

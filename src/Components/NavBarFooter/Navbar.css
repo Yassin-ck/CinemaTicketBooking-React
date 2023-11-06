@@ -33,10 +33,21 @@
     display: flex;
     justify-content: space-evenly;
 }
-
+.profileSidebarIconClassMain{
+  display: inline;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.LocationNavbar{
+  margin: 10px 20px 0px 0px;
+ cursor: pointer;
+ display: flex;
+ 
+}
 
 .navbarsearchbar{
     margin-left: 10%;
 }
 
-  

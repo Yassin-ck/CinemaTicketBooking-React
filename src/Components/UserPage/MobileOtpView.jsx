@@ -2,8 +2,12 @@ import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../context/authcontext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import './MobileUpdation.css'
+import { MuiOtpInput } from 'mui-one-time-password-input'
+import { Button } from '@mui/material'
+import { toast } from 'react-toastify'
 
-const MobileOtpView = ({sid}) => {
+const MobileOtpView = ({sid,phone}) => {
     const {authToken} = useContext(AuthContext)
     const navigate = useNavigate()
     const [otp,setOtp] = useState('')
@@ -26,12 +30,14 @@ const MobileOtpView = ({sid}) => {
             if (response.status==200){
                 console.log(data);
             navigate('/view')
+            toast.success('Mobile Number updated !')
         }else{
             console.error(data);
         }
     }catch(error){
         console.error(data);
         navigate('/view')
+        toast.error('Something Went Wrong')
 
     }
     }
@@ -49,13 +55,22 @@ const MobileOtpView = ({sid}) => {
 
   return (
     <div>
-    <form  >
-    <div className="otpInputField">
-    <MuiOtpInput length={6} value={otp} type="number" onChange={handleChange}   />
+   
+    <div className="MainDivForOTPverification">
+    <div  className="formforotpverification">
+    <div>
+    <h4 style={{fontWeight:'bolder',fontFamily:'sans-serif',fontSize:'24px',wordSpacing:'0px',margin:'0px'}}>Verify Your Mobile Number </h4>
+    <small style={{color:'grey',fontSize:'14px'}}>Enter OTP sent to +91 {phone}</small>
     </div>
-      <input className="btn btn-success" type="submit" style={{position:'absolute',bottom:'40px',right:'40px'}} />
+    <div className="EmailOtpInputField">
+    <center >
+    <MuiOtpInput length={6} value={otp} type="number" onChange={handleChange}   />
+    </center>
+    <Button type="submit" disabled variant="outlined" style={{position: 'absolute',left:' 10%',bottom: '7%',width: '80%'}} >submit</Button>
 
-    </form> 
+    </div>
+    </div>
+    </div>
     </div>
   )
 }

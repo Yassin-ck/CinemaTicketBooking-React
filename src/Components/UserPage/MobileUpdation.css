@@ -1,0 +1,64 @@
+.MobilePhoneUpdationOrAddMainDiv{
+    position:absolute;
+    width: 80%;
+    top: 18%;
+    height: 18vh;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-between;
+}
+.MobileUpdationSecondDiv,.MobileUpdationInputLabelDiv{
+    text-align: start;
+}
+
+.MobileUpdationInputLabelDiv input{
+    width: 100%;
+
+}
+.MobilePhoneUpdationIndiaAndInputDiv{
+position: relative;
+}
+.MobilePhoneUpdationIndiaDiv{
+    left: 7px;
+    top: 5px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.MobilePhoneUpdationInputDiv input{
+    padding:.3rem 0px .3rem 4rem ;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid grey;
+
+}
+.MobileUpdationInputLabelDiv label{
+    font-size: small;
+}
+
+.MainDivForOTPverification{
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .formforotpverification{
+    height: 20vh;
+    width: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: start;
+  }
+  .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    height: 8px !important;
+  }
+  .EmailOtpInputField{
+    width: 90%;
+  }
+  .css-tccdxk{
+  gap: 10px !important;
+  }
+  

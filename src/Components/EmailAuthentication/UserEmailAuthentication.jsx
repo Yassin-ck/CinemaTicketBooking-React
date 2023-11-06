@@ -47,17 +47,17 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
     <form onSubmit={e=>UserEmailAuthPost(e)} ref={inputRef}>
     <div className="email-auth-text-main-div-container">
     <div className="email-auth-text-main-div">
-    {auth?<strong>Edit Email Address</strong>:<strong>Email Address</strong>}
-    <small>The Email Address will be verified by an OTP</small>
+    {auth?<h4 style={{fontFamily:'sans-serif',fontWeight:'bold'}}>Edit Email Address</h4>:<h4><strong>Login With Email</strong></h4>}
+    {auth&&<small>The Email Address will be verified by an OTP</small>}
     </div>
     <div className="email-auth-input-label-div" >
-    <label >Enter or Edit a valid Email Address below</label>
+    {auth?<label >Enter or Edit a valid Email Address below</label>:<label>email</label>}
     <div style={{width:'100%'}}>
-    <input autoFocus name="email" type="email" defaultValue={emailView?emailView:null}  />
+    <input className="inputFieldForEmailVerification" autoFocus name="email" type="email" defaultValue={emailView?emailView:null}  />
     </div> 
       </div>
       </div>
-      <Button type="submit" variant="contained" style={{backgroundColor: 'green',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
+      <Button type="submit"  className="buttonforemailverificationandauthentication" variant="contained" style={{backgroundColor: 'green',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
       </form>
       </>
   );

@@ -4,8 +4,9 @@ import { AuthContext } from "../../context/authcontext";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode }  from 'jwt-decode'
 import { MuiOtpInput } from 'mui-one-time-password-input'
-import Swal from 'sweetalert2'
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
+
 
 
 const UserEmailOtp = ({email,otp_,auth}) => {
@@ -40,44 +41,29 @@ const UserEmailOtp = ({email,otp_,auth}) => {
         setBasicModal(false);
         setModalOpen(false)
         navigate('/')
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Loginned Successfully',
-          showConfirmButton: false,
-          timer: 1500,
-          heightAuto:false,
-          width:400
-        })
-       
-    
-        }
-        else {
-          setBasicModal(false);
-          setModalOpen(false)
-          navigate('/view')
-      } 
-      } 
-
-          
-    
-  }catch (error) {
-      console.error("Error:", error);
-      if (!auth){
-
-        setBasicModal(false);
-        setModalOpen(false)
-        Swal.fire({
-          position: 'top-end',
-          icon: 'warning',
-          title: 'Unauthorized ',
-          showConfirmButton: false,
-          timer: 1500,
-          heightAuto:false,
-          width:400
-        });
+        toast.success("Succesfully loginned")
+        
+        
         
       }
+      else {
+        setBasicModal(false);
+        setModalOpen(false)
+        navigate('/view')
+        toast.success("Email Updated Succesfully!")
+      } 
+    } 
+    
+    
+    
+  }catch (error) {
+    console.error("Error:", error);
+      
+      setBasicModal(false);
+      setModalOpen(false)
+    navigate('/view')
+    toast.warning("Invalid Otp!")
+      
     }
   };
   let result = ''
@@ -91,17 +77,26 @@ const UserEmailOtp = ({email,otp_,auth}) => {
     }
   }
 
+ 
+
 
   return (
     <form>
+    <div className="MainDivForOTPverification">
     <div  className="formforotpverification">
+    <div>
+    <h4 style={{fontWeight:'bolder',fontFamily:'sans-serif',fontSize:'24px',wordSpacing:'0px',margin:'0px'}}>Verify Your Email Address </h4>
+    <small style={{color:'grey',fontSize:'14px'}}>Enter OTP sent to {email}</small>
+    </div>
     <div className="EmailOtpInputField">
     <center >
-    <MuiOtpInput  length={6} value={otp} type="number" onChange={handleChange}   />
+    <MuiOtpInput length={6} value={otp} type="number" onChange={handleChange}   />
     </center>
+    <Button type="submit" disabled variant="outlined" style={{position: 'absolute',left:' 10%',bottom: '7%',width: '80%'}} >submit</Button>
+
     </div>
     </div>
-    <Button type="submit" variant="contained" style={{backgroundColor: 'green',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
+    </div>
     </form>
   );
 };

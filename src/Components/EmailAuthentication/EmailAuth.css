@@ -1,7 +1,4 @@
-.small-swal-container {
-    font-size: 14px; 
-    padding: 10px 16px; 
-  }
+
   
 .email-auth-input-label-div{
   width: 100%;
@@ -37,15 +34,26 @@
   justify-content: space-between;
   width: 80%;
 }
-.EmailOtpInputField{
+.MainDivForOTPverification{
+  height: 45vh;
   display: flex;
   justify-content: center;
-  height: 40px;
 }
+
 .formforotpverification{
-  position: relative;
-  top: 25%;
-  left: 0%;
+  height: 20vh;
+  width: 80%;
+display: flex;
+justify-content: space-around;
+flex-direction: column;
+align-items: start;
 }
-
-
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+  height: 8px !important;
+}
+.EmailOtpInputField{
+  width: 90%;
+}
+.css-tccdxk{
+gap: 10px !important;
+}

@@ -7,12 +7,17 @@ import { Muitheme } from './Theme/MuiTheme.jsx'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ThemeProvider theme={Muitheme}>
   <BrowserRouter>
       <App />
+      <ToastContainer />
+
   </BrowserRouter>
   </ThemeProvider>
 ) 

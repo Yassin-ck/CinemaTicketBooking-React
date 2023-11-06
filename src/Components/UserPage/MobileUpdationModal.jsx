@@ -1,16 +1,14 @@
 import React, { useState,useContext, useEffect } from 'react'
 import MobilePhoneUpdation from './MobilePhoneUpdation'
 import MobileOtpView from './MobileOtpView'
+import '../HomePage/SigninPage.css'
 import {
   MDBBtn,
   MDBIcon,
   MDBModal,
   MDBModalDialog,
   MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-  MDBModalFooter,
+
 } from 'mdb-react-ui-kit';
 import { AuthContext } from '../../context/authcontext';
 import { useNavigate } from 'react-router-dom';
@@ -28,41 +26,41 @@ const toggleShow = () => {
   navigate('/view')
 
 }
-const phoneClickHandler = (e)=>{
-    setSid(e.sid)
+const phoneClickHandler = (e,e2)=>{
+    setSid({sid:e.sid,phone:e2})
     setPhoneView(false)
 }
 useEffect(() => {
   setBasicModal(true)
 }, [])
 
-
+console.log(sid);
   return (
       
       <div>
-      <MDBModal show={basicModal}  tabIndex='-1'  >
-      <div onClick={(e) => e.stopPropagation()}>
-
-        <MDBModalDialog style={{position:'relative'}} >
-          <MDBModalContent >
-            <MDBModalHeader>
-              <MDBModalTitle>Modal title</MDBModalTitle>
+      <MDBModal show={basicModal}  tabIndex='-1'   > 
+      <div  >
+      
+      <MDBModalDialog  style={{position:'relative',maxWidth:'425px',color:'black',paddingTop:'100px',height:'100vh'}}  >
+      <MDBModalContent>
+      <MDBBtn onClick={toggleShow} className='btn-close' color='none' style={{position:'absolute',zIndex:'1',right:'10px',top:'10px',cursor:'pointer'}} ></MDBBtn>
+              <div style={{display:'flex',justifyContent:'center',alignItems:'center',height:'70vh',position:'relative'}}>
               
-              <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-            </MDBModalHeader>
-            <MDBModalBody >Modal body text goes here.</MDBModalBody>
-            
               { PhoneView ?
-                < MobilePhoneUpdation   byClick={e=>phoneClickHandler(e)} />
+                <div className='EmailAuthButtonInSignInPage'>
+
+
+                < MobilePhoneUpdation   byClick={(e,e2)=>phoneClickHandler(e,e2)} />
+                </div>
+
                 :
-                < MobileOtpView  sid={sid} />
+                < MobileOtpView  sid={sid.sid} phone={sid.phone}  />
         
             
 
           }
-            <MDBModalFooter style={{height:'400px'}}>
-
-            </MDBModalFooter>
+          </div>
+              
           </MDBModalContent>
         </MDBModalDialog>
         </div>
@@ -74,3 +72,6 @@ useEffect(() => {
 }
 
 export default MobileUpdationModal
+
+
+  
