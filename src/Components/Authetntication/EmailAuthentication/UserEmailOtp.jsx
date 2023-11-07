@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import { AuthContext } from "../../context/authcontext";
+import { AuthContext } from "../../../context/authcontext";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode }  from 'jwt-decode'
 import { MuiOtpInput } from 'mui-one-time-password-input'
@@ -10,8 +10,8 @@ import { toast } from "react-toastify";
 
 
 const UserEmailOtp = ({email,otp_,auth}) => {
-  const { setAuthToken,setUser,authToken,setBasicModal,setModalOpen } = useContext(AuthContext)
-  const [otp,setOtp] = useState('')
+  const { setAuthToken,setUser,authToken,setBasicModal,setModalOpen,myLocation } = useContext(AuthContext)
+const [otp,setOtp] = useState('')
   const navigate = useNavigate()
   const UserEmailOtpVerification = async (e) => {
 
@@ -22,6 +22,7 @@ const UserEmailOtp = ({email,otp_,auth}) => {
           otp:otp_ ,
           email: email,
           otp_entered: e,
+         ...(myLocation && !auth ? { location: myLocation } : {})
         },
         auth?{
          headers:{
@@ -90,7 +91,7 @@ const UserEmailOtp = ({email,otp_,auth}) => {
     </div>
     <div className="EmailOtpInputField">
     <center >
-    <MuiOtpInput length={6} value={otp} type="number" onChange={handleChange}   />
+    <MuiOtpInput autoFocus length={6} value={otp} type="number" onChange={handleChange}   />
     </center>
     <Button type="submit" disabled variant="outlined" style={{position: 'absolute',left:' 10%',bottom: '7%',width: '80%'}} >submit</Button>
 

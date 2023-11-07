@@ -6,9 +6,9 @@ import {
   MDBModalDialog,
   MDBModalContent,
 } from 'mdb-react-ui-kit';
-import EmailAuthModal from '../EmailAuthentication/EmailAuthModal'
+import EmailAuthModal from '../../Authetntication/EmailAuthentication/EmailAuthModal'
 import { Button } from '@mui/material';
-import { AuthContext } from '../../context/authcontext';
+import { AuthContext } from '../../../context/authcontext';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const SignInPage = ({modal}) => {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import SignInPage from '../HomePage/SignInPage'
+import SignInPage from '../../HomePage/SignInPages/SignInPage'
 import {
   MDBContainer,
   MDBNavbar,
@@ -7,11 +7,11 @@ import {
   MDBInputGroup
 } from 'mdb-react-ui-kit';
 import './Navbar.css'
-import { AuthContext } from '../../context/authcontext';
+import { AuthContext } from '../../../context/authcontext';
 import { AiFillCaretDown, AiOutlineSearch} from "react-icons/ai";
-import Sidebar from '../HomePage/Sidebar';
+import Sidebar from '../../HomePage/SideBar/Sidebar';
 import { useNavigate } from 'react-router-dom';
-import LocationModal from '../HomePage/LocationModal';
+import LocationModal from '../../HomePage/Location/LocationModal';
 
 
 export default function Navbar() {
@@ -66,7 +66,7 @@ const navigate = useNavigate()
           <MDBBtn  size='sm' color='dark'  onClick={openModal}>Sign in</MDBBtn>
           :<div className='profileSidebarIconClassMain'>
           <div className='LocationNavbar' onClick={openLocationModal} >
-          <p>{myLocation?myLocation.county:'Select your ...'}</p>
+          <p>{myLocation?myLocation:'Select your ...'}</p>
           <AiFillCaretDown size={10} style={{margin:'7px 0px 0px 6px',}} />
           </div>
           <div className='profileSidebarIconClass' style={{display:'flex',alignItems:'center',width:'7rem',justifyContent:'space-between'}}><h2><Sidebar  /></h2> {user.username? <h5 >{user.username}</h5>:<h5> Guest</h5>}

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useRef, useState } from 'react'
-import { AuthContext } from '../../context/authcontext'
-import OtpModalForVerification from './OtpModalForVerification'
+import { AuthContext } from '../../../context/authcontext'
+import OtpModalForVerification from '../Modals/OtpModalForVerification'
 
 const TheatreOwnerRegistration = () => {
     const { authToken } = useContext(AuthContext)

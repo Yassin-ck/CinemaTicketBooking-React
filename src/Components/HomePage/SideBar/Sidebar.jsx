@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import './SigninPage.css'
-import { AuthContext } from '../../context/authcontext';
+import '../SignInPages/SigninPage.css'
+import { AuthContext } from '../../../context/authcontext';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineArrowLeft } from 'react-icons/md';
@@ -31,7 +31,7 @@ function OffCanvasExample({ name, ...props }) {
   return (
 
     <>
-     <img style={{ cursor: 'pointer',width:'40px'}} onClick={handleShow}  src="//in.bmscdn.com/m6/images/my-profile/bms-user.png" alt="Profile" class="bwc__sc-1nbn7v6-15 jipwZh"></img>
+     <img style={{ cursor: 'pointer',width:'40px'}} onClick={handleShow}  src="//in.bmscdn.com/m6/images/my-profile/bms-user.png" alt="Profile" className="bwc__sc-1nbn7v6-15 jipwZh"></img>
      
      <div style={{position:'relative'}}>
      <Offcanvas  style={{width:'22rem'}} show={show} onHide={handleClose} {...props} >
@@ -45,7 +45,7 @@ function OffCanvasExample({ name, ...props }) {
      <p  style={{fontSize:'14px',position:'absolute',top:'2px',left:'18px',width:'4.2rem'}}>Edit Profile</p> 
      </div>
      </div>
-     <img src="//in.bmscdn.com/webin/movies/superstar/profile_avatar.png" alt="user" class="bwc__sc-1fj6cem-17 exSHsT"></img>
+     <img src="//in.bmscdn.com/webin/movies/superstar/profile_avatar.png" alt="user" className="bwc__sc-1fj6cem-17 exSHsT"></img>
      </Offcanvas.Header >
      <Offcanvas.Body>
      title

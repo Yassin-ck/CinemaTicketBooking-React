@@ -1,0 +1,66 @@
+
+.ModalSearchDivForLocation {
+width: 100%;
+}
+.ModalHeaderForLocation{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.ModalSearchDivForLocation input {
+width: 100%;
+padding: 7px 7px 7px 50px;
+outline: none;
+border: 1px solid rgb(168, 161, 161);
+
+}
+
+.ModalHeaderTextBelowInput{
+    text-align: start;
+}
+.HeaderTitleNameTag {
+    cursor: pointer;
+    width:100%;
+    display: flex;
+    position: absolute;
+    left:20px;
+    bottom: 0px;
+    color: rgb(247, 9, 9);
+    gap:15px;
+    font-size: 14px;
+}
+.AddNewLocationRequestButton{
+    position: absolute;
+    right:27px;
+    top: 23px;
+    cursor: pointer;
+}
+.inputBoxFOrSearchLocation::before {
+    content: 'Search your city here';
+    color: #ccc; 
+    display: block; 
+    padding-left: 40px;
+    cursor: default;
+  }
+
+/* Hide the default input element */
+.react-dropdown-select-input {
+    display: none !important;
+  }
+  
+.SearchShowingBoxForLocation{
+    height: 29px;
+    text-align: start;
+    cursor: pointer;
+    color: dark;
+    font-size:small;
+    border-top:0px solid grey !important;
+    border-bottom: .1px solid grey !important;
+    background-color: white;
+
+}
+.SearchShowingBoxForLocation:hover{
+    background-color: #f2efef;
+}

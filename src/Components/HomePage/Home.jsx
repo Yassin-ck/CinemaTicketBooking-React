@@ -1,9 +1,8 @@
 import React,{ useState, useEffect, useContext } from 'react';
-import './SigninPage.css'
-import TheatreLoginModal from '../Theatre_dashboard/TheatreLoginModal';
+import './SignInPages/SigninPage.css'
+import TheatreLoginModal from '../Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreLoginModal';
 import { Button } from '@mui/material';
-import { AuthContext } from '../../context/authcontext';
-import LocationModal from './LocationModal'
+
 
 
 

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useContext, useState } from 'react'
-import { AuthContext } from '../../context/authcontext'
+import { AuthContext } from '../../../../context/authcontext'
 
 const TheatreRegistration = () => {
     const { authToken } = useContext(AuthContext)

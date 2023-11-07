@@ -1,7 +1,7 @@
 import React, { useState,useContext, useEffect } from 'react'
 import MobilePhoneUpdation from './MobilePhoneUpdation'
 import MobileOtpView from './MobileOtpView'
-import '../HomePage/SigninPage.css'
+import '../../HomePage/SignInPages/SigninPage.css'
 import {
   MDBBtn,
   MDBIcon,
@@ -10,7 +10,7 @@ import {
   MDBModalContent,
 
 } from 'mdb-react-ui-kit';
-import { AuthContext } from '../../context/authcontext';
+import { AuthContext } from '../../../context/authcontext';
 import { useNavigate } from 'react-router-dom';
 
 const MobileUpdationModal = () => {

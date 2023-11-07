@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { AuthContext } from '../../context/authcontext';
+import { AuthContext } from '../../../context/authcontext';
 import { useParams } from 'react-router-dom';
-import Admin_TheatreOwnerVerificationModals from './Admin_Modals/Admin_TheatreOwnerVerificationModals';
+import Admin_TheatreOwnerVerificationModals from '../Admin_Modals/Admin_TheatreOwnerVerificationModals';
 
 const Admin_TheatreVerification = () => {
   const [theatreVerificationModal, setTheatreVerificationModal] = useState(false);

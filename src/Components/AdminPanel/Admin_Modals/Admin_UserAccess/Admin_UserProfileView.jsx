@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
-import { AuthContext } from '../../context/authcontext'
+import { AuthContext } from '../../../../context/authcontext'
 
 
 const Admin_UserProfileView = () => {

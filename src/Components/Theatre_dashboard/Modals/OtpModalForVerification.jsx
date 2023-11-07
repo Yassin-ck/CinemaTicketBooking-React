@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/authcontext";
+import { AuthContext } from "../../../context/authcontext";
 
 const OtpModalForVerification = ({sid}) => {
 console.log(sid);

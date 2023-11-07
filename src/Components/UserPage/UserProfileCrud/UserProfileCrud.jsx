@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import axios from 'axios'
-import { AuthContext } from '../../context/authcontext'
+import { AuthContext } from '../../../context/authcontext'
 import { useNavigate } from 'react-router-dom'
 import { BsCameraFill } from 'react-icons/bs'
 import './UserProfileCrud.css'
@@ -55,7 +55,7 @@ const UserProfileEdit = () => {
     
     const auth = 'auth'
     
-    console.log(getView.user);
+    console.log(getView);
 
   return (
       <div >
