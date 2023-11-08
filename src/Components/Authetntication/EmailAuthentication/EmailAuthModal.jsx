@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import UserEmailAuthentication from './UserEmailAuthentication';
 import UserEmailOtp from './UserEmailOtp';
 
-const EmailAuthModal = ({auth}) => {
+const EmailAuthModal = React.memo(({auth,setModalOpen}) => {
   const [email, setEmail] = useState([]);
   const [showEmailAuth, setShowEmailAuth] = useState(true);
 console.log(auth);
@@ -20,12 +20,12 @@ console.log(auth);
     ) : showEmailAuth ? (
       <UserEmailAuthentication onEmailSubmit={e => toggleEmailOtpView(e)} />
     ) : (
-      <UserEmailOtp email={email.email}  otp_={email.otp} />
+      <UserEmailOtp  email={email.email}  otp_={email.otp} setModalOpen={setModalOpen} />
     )}
   </div>
    
   );
-};
+})
 
 export default EmailAuthModal;
   

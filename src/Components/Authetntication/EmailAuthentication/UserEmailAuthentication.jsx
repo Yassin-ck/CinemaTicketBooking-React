@@ -38,7 +38,10 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
     }
   };
   useEffect(() => {
-   UserEmailAuthPost()
+    if (auth){
+
+      UserEmailAuthPost()
+    }
   }, [])
   console.log(emailView);
 

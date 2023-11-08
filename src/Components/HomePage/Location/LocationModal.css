@@ -27,7 +27,7 @@ border: 1px solid rgb(168, 161, 161);
     position: absolute;
     left:20px;
     bottom: 0px;
-    color: rgb(247, 9, 9);
+    color: red;
     gap:15px;
     font-size: 14px;
 }
@@ -45,11 +45,7 @@ border: 1px solid rgb(168, 161, 161);
     cursor: default;
   }
 
-/* Hide the default input element */
-.react-dropdown-select-input {
-    display: none !important;
-  }
-  
+
 .SearchShowingBoxForLocation{
     height: 29px;
     text-align: start;
@@ -63,4 +59,57 @@ border: 1px solid rgb(168, 161, 161);
 }
 .SearchShowingBoxForLocation:hover{
     background-color: #f2efef;
+}
+
+.newLocationRequestMainDiv{
+    width: 85%;
+    
+}
+.inpurSeparatingDivForNewLocationRequest{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.newLocationRequestInputClassName{
+    position: relative;
+    text-align: center;
+}
+.newLocationRequestInputClassName input{
+    width: 90%;
+    padding:7px  ;
+    margin:3px 3px 15px 3px;
+    outline: none;
+    border:1px solid grey;
+    caret-color: green;
+    font-size: 14px;
+    color: black;
+    border-radius: 0px;
+
+}
+.newLocationRequestInputClassName label{
+    position: absolute;
+    color:grey;
+    left:22px;
+    top:12px;
+    font-size: 13px;
+    transition: 0.4s ease-in-out ;
+    cursor: text;
+    
+}
+.newLocationRequestInputClassName input:focus ~ label,
+.newLocationRequestInputClassName input:valid ~ label{
+    background-color: white;
+    padding: 2px;
+    top:-9px;
+    color:darkgreen;
+    font-size: 12px;
+    left:20px;
+    
+}
+.newLocationRequestInputClassName input:focus {
+    color: black;
+}
+.ModalContentOfTheLocation{
+    display: flex;
+    justify-content: center;
 }

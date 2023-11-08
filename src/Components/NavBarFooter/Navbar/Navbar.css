@@ -51,3 +51,20 @@
     margin-left: 10%;
 }
 
+.LocationNavbarUnauthorized{
+  margin: 10px 20px 0px 0px;
+ cursor: pointer;
+ display: flex;
+ 
+}
+.LocationNavbarUnauthorizedMainDiv{
+  display: flex;
+  align-items: center;
+}
+.SiginButtonStyles{
+ background:white !important;
+ color:green !important;
+ width:100px ;
+ border:none !important;
+ box-shadow:none !important;
+}

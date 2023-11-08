@@ -64,7 +64,7 @@ const MobileOtpView = ({sid,phone}) => {
     </div>
     <div className="EmailOtpInputField">
     <center >
-    <MuiOtpInput length={6} value={otp} type="number" onChange={handleChange}   />
+    <MuiOtpInput autoFocus length={6} value={otp} type="number" onChange={handleChange}   />
     </center>
     <Button type="submit" disabled variant="outlined" style={{position: 'absolute',left:' 10%',bottom: '7%',width: '80%'}} >submit</Button>
 

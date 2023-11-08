@@ -11,27 +11,26 @@ import { Button } from '@mui/material';
 import { AuthContext } from '../../../context/authcontext';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const SignInPage = ({modal}) => {
+const SignInPage = ({modal,setModalOpen}) => {
   const {auth} = useParams()
   const navigate = useNavigate()
+  const {user} = useContext(AuthContext)
   const [updationModal,setUpdationModal] = useState(false)
-const { basicModal, setBasicModal,setModalOpen } = useContext(AuthContext)
+const [basicModal, setBasicModal ] = useState(true)
 const [signIn,setSignIn] = useState(false)
 const toggleShow = () => {
-console.log('kk');
     setBasicModal(!basicModal);
-    setModalOpen(false)
+    if (!auth){
+      setModalOpen(false)
+    }
     if (auth){
-       navigate('/view')
+      console.log('ko');
+      navigate('/view')
     }
 }
-useEffect(() => {
-  if (!basicModal){
 
-    setBasicModal(true)
-  }
-}, [modal])
 
+console.log(basicModal);
 
 const signInOpenTrigger = ()=>{
   setSignIn(true)
@@ -57,7 +56,7 @@ return (
  
  <EmailAuthModal auth={'auth'} />
  
-        :signIn?<EmailAuthModal />:
+        :signIn?<EmailAuthModal setModalOpen={setModalOpen} />:
         <div className='EmailAuthButtonInSignInPage'>
         
         <Button onClick={signInOpenTrigger} variant='outlined' className="social-auth-button">
@@ -80,7 +79,7 @@ return (
   )
 }
 
-export default SignInPage
+export default SignInPage 
 
 
 

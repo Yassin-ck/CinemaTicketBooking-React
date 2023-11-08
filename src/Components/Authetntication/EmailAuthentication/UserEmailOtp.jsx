@@ -9,8 +9,8 @@ import { toast } from "react-toastify";
 
 
 
-const UserEmailOtp = ({email,otp_,auth}) => {
-  const { setAuthToken,setUser,authToken,setBasicModal,setModalOpen,myLocation } = useContext(AuthContext)
+const UserEmailOtp = ({email,otp_,auth,setModalOpen}) => {
+  const { setAuthToken,setUser,authToken,setBasicModal,myLocation } = useContext(AuthContext)
 const [otp,setOtp] = useState('')
   const navigate = useNavigate()
   const UserEmailOtpVerification = async (e) => {
@@ -41,15 +41,12 @@ const [otp,setOtp] = useState('')
         setAuthToken(data.token)
         setBasicModal(false);
         setModalOpen(false)
-        navigate('/')
         toast.success("Succesfully loginned")
         
         
         
       }
       else {
-        setBasicModal(false);
-        setModalOpen(false)
         navigate('/view')
         toast.success("Email Updated Succesfully!")
       } 

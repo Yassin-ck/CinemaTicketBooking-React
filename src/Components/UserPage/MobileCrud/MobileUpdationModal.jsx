@@ -16,13 +16,13 @@ import { useNavigate } from 'react-router-dom';
 const MobileUpdationModal = () => {
 const [sid,setSid] = useState()
 const [PhoneView,setPhoneView] = useState(true)
-const { basicModal,setBasicModal } =  useContext(AuthContext)
+const [phoneModal,setPhoneModal] =  useState(true)
 const navigate = useNavigate()
 
 
 const toggleShow = () => {
 
-  setBasicModal(!basicModal)
+  setPhoneModal(!phoneModal)
   navigate('/view')
 
 }
@@ -30,15 +30,13 @@ const phoneClickHandler = (e,e2)=>{
     setSid({sid:e.sid,phone:e2})
     setPhoneView(false)
 }
-useEffect(() => {
-  setBasicModal(true)
-}, [])
+
 
 console.log(sid);
   return (
       
       <div>
-      <MDBModal show={basicModal}  tabIndex='-1'   > 
+      <MDBModal show={phoneModal}  tabIndex='-1'   > 
       <div  >
       
       <MDBModalDialog  style={{position:'relative',maxWidth:'425px',color:'black',paddingTop:'100px',height:'100vh'}}  >

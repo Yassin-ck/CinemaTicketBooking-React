@@ -65,7 +65,7 @@ function OffCanvasExample({ name, ...props }) {
       <hr />
       </div>
       <div style={{margin:'5px',display:'flex',justifyContent:'center'}}>
-      <Button variant="outlined" fullWidth onClick={logout} style={{width:'90%',borderRadius:'2px',color:'red',boxShadow:'1px 2px 8px white',border:'1px solid red'}}>Sign out</Button>
+      <Button variant="outlined" fullWidth onClick={logout} style={{width:'90%',borderRadius:'2px',color:'red',boxShadow:'1px 2px 8px white',border:'1px solid red'}} >Sign out</Button>
       </div>
       
       </Offcanvas>
