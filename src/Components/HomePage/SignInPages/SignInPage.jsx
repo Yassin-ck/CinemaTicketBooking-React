@@ -45,7 +45,7 @@ useEffect(() => {
 
 return (
   <>
-  <MDBModal show={basicModal}  tabIndex='-1'   > 
+  <MDBModal show={basicModal} className='AuthandEditEmailModal'  tabIndex='-1'   > 
   <div  >
   
   <MDBModalDialog  style={{position:'relative',maxWidth:'425px',color:'black',paddingTop:'100px',height:'100vh'}}  >

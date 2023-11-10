@@ -39,7 +39,6 @@ const UserProfileEdit = () => {
                 first_name : inputRef.current.first_name.value,
                 last_name : inputRef.current.last_name.value,
                 address : inputRef.current.address.value
-                
             }:null
         });
 

@@ -131,7 +131,7 @@ export default function LocationModal({optSmModal,setOptSmModal}) {
 console.log(user);
   return (
     <>
-<MDBModal show={optSmModal} tabIndex='-1' setShow={setOptSmModal}   >
+<MDBModal show={optSmModal} setShow={setOptSmModal}   >
 
 <MDBModalDialog size='lg' onClick={e => e.stopPropagation()}>
 <MDBModalContent className='ModalContentForLocation' style={{borderRadius:'0px'}} >

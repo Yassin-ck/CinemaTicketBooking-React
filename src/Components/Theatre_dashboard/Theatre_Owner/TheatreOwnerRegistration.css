@@ -1,0 +1,10 @@
+.MainDivContainerForTheatreOwnerRegistration{
+    display: grid;
+    width: 60%;
+}
+.InlineInputDivInTheatreOwnerRegistration{
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}

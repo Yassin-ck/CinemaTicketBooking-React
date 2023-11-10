@@ -11,11 +11,9 @@ import Admin_TheatreVerification from "./Components/AdminPanel/Admin_theatres/Ad
 import TheatreOwnerRegistration from "./Components/Theatre_dashboard/Theatre_Owner/TheatreOwnerRegistration";
 import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_theatreOwners/Admin_TheatreOwnerVerification";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
-import EmailAuthModal from "./Components/Authetntication/EmailAuthentication/EmailAuthModal";
 import Navbar from "./Components/NavBarFooter/Navbar/Navbar";
 import SignInPage from "./Components/HomePage/SignInPages/SignInPage";
 import Footer from "./Components/NavBarFooter/Footer/Footer";
-
 
 const App = () => {
   return (
@@ -32,8 +30,9 @@ const App = () => {
           <Route path="/admin/owners_request/:id" element={<Admin_TheatreOwnerVerification />} />
           <Route path="/theatre/owner/register" element={<TheatreOwnerRegistration />} />
           <Route path="/theatre/register" element={<TheatreRegistration />} />
-          <Route path="admin/theatre_request" element={<Admin_TheatreRequestView />} />
-          <Route path="admin/theatre_request/:id" element={<Admin_TheatreVerification />} />
+          <Route path="/admin/theatre_request" element={<Admin_TheatreRequestView />} />
+          <Route path="/admin/theatre_request/:id" element={<Admin_TheatreVerification />} />
+          
         </Routes>
         <Footer />
       </AuthProvider>

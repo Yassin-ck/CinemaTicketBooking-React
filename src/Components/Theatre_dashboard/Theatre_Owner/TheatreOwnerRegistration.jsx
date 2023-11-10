@@ -1,7 +1,8 @@
 import axios from 'axios'
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../../context/authcontext'
 import OtpModalForVerification from '../Modals/OtpModalForVerification'
+import './TheatreOwnerRegistration.css'
 
 const TheatreOwnerRegistration = () => {
     const { authToken } = useContext(AuthContext)
@@ -79,15 +80,54 @@ const TheatreOwnerRegistration = () => {
             return (   
                 <div>
                 <form onSubmit={TheatreOwnerRegistrationForm} >
-                <input  name='first_name' placeholder='firstname' type='text' onChange={dataHandler} required />
-                <input  name='last_name' placeholder='lastname' type='text' onChange={dataHandler} required />
-                <input  name='email' placeholder='email' type='email' onChange={dataHandler} required />
-                <input  name='phone' placeholder='phone' type='text' onChange={dataHandler} required />
-                <input  name='alternative_contact' placeholder='alternative contact' type='text' onChange={dataHandler} required />
-                <input  name='id_proof'  type='file' onChange={dataHandler} required />
-                <input  name='id_number' placeholder='id number' type='text'onChange={dataHandler} required />
-                <input  name='address' placeholder='address' type='textarea' onChange={dataHandler} required />
+                <div className='MainDivContainerForTheatreOwnerRegistration'>
+                    <div className="InlineInputDivInTheatreOwnerRegistration">
+
+                        <div class="inputForTheatreOwnerRegistraionDiv">
+                            <input  name='first_name' type='text' onChange={dataHandler} required />
+                            <label for="first_name" >first name</label>
+                        </div>
+                        <div class="inputForTheatreOwnerRegistraionDiv">
+                            <input  name='last_name' type='text' onChange={dataHandler} required />
+                            <label for="last_name">last name</label>
+                        </div>
+                    </div>
+                    <div className="InputDivInTheatreOwnerRegistration">
+
+                <div class="inputForTheatreOwnerRegistraionDiv">
+                    <input  name='email' type='email' onChange={dataHandler} required />
+                    <label for="email" >email</label>
+                </div>
+                </div>
+                <div className="InlineInputDivInTheatreOwnerRegistration">
+                <div class="inputForTheatreOwnerRegistraionDiv">
+                    <input  name='phone'  type='text' onChange={dataHandler} required />
+                    <label for="phone">Mobile Number</label>
+                </div>
+                <div class="inputForTheatreOwnerRegistraionDiv">
+                    <input  name='alternative_contact'  type='text' onChange={dataHandler} required />
+                    <label for="alternative_contact" >Alternative contact</label>
+                </div>
+            </div>
+            <div className="InlineInputDivInTheatreOwnerRegistration">
+                <div class="inputForTheatreOwnerRegistraionDiv">
+                    <input  name='id_proof'  type='file' onChange={dataHandler} required />
+                    <label for="id_proof" >Id proof</label>
+                </div>
+                <div class="inputForTheatreOwnerRegistraionDiv">
+                    <input  name='id_number' type='text'onChange={dataHandler} required />
+                    <label for="id_number">Id number</label>
+                </div>
+                </div>
+                <div className="InputDivInTheatreOwnerRegistration">
+
+                <div class="inputForTheatreOwnerRegistraionDiv">
+                    <input  name='address' type='text' onChange={dataHandler} required />
+                    <label for="address" >Address</label>
+                </div>
+                </div>
                 <input   type='submit' />
+                </div>
                 </form>
     {modalOpen&&<OtpModalForVerification  sid={sid} />}
     </div>
