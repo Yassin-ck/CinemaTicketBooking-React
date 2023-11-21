@@ -9,13 +9,16 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-
+import { Provider } from 'react-redux'
+import store from './Redux/store.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ThemeProvider theme={Muitheme}>
   <BrowserRouter>
-      <App />
-      <ToastContainer />
+      <Provider store={store}>
+         <App />
+      </Provider>
+    <ToastContainer />
   </BrowserRouter>
   </ThemeProvider>
 ) 

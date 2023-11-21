@@ -6,6 +6,7 @@ import { AuthContext } from '../../../../context/authcontext'
 const Admin_UserProfileView = () => {
     
     const { authToken } = useContext(AuthContext)
+    console.log(authToken);
     const [pages,setPages] = useState([])
     const [isValid,setIsValid] = useState(false)
     const [userData,setUserData] = useState([])
@@ -21,6 +22,7 @@ const Admin_UserProfileView = () => {
         const data = response.data
         if (response.status == 200){
             setUserData(data.user)
+            console.warn(data);            
             setPages(Array.from({ length: data.page_number }, (_,index) => index + 1));
             setIsValid(true)
         }else{
@@ -31,24 +33,25 @@ const Admin_UserProfileView = () => {
 useEffect(() =>{ 
 getUserProfile(1)
 }, [])
-
+console.log(userData);
+console.log(pages);
 
   return (
     <div>
     {setIsValid ? (
   userData.map((item) => (
-    <div key={item.id.id}>
-      <h1>{item.id.id}</h1>
-      <h1>{item.id.email}</h1>
-      <h1>{item.properties.phone}</h1>
-      <h1>{item.properties.first_name}</h1>
-      <h1>{item.properties.last_name}</h1>
-      {pages.map((item)=>(
-              <button onClick={e=>getUserProfile(item)}>{item}</button>
-          ))}         
+    <div key={item.user_id}>
+      <h1>{item.user_id}</h1>
+      <h1>{item.user.email}</h1>
+      <h1>{item.phone}</h1>
+      <h1>{item.first_name}</h1>
+      <h1>{item.last_name}</h1>
       </div>
       ))
       ) : null}     
+      {pages.map((item)=>(
+              <button onClick={e=>getUserProfile(item)} style={{margin:'10px',padding:"20px"}}>{item}</button>
+          ))}         
     </div>
   )
 }

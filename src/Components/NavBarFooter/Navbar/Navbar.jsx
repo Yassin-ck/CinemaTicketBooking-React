@@ -12,13 +12,16 @@ import { AiFillCaretDown, AiOutlineSearch} from "react-icons/ai";
 import Sidebar from '../../HomePage/SideBar/Sidebar';
 import { useNavigate } from 'react-router-dom';
 import LocationModal from '../../HomePage/Location/LocationModal'
-import { Button } from '@mui/material';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { movieListing } from '../../../Redux/movieSlice';
 
 
 const Navbar =()=> {
 const {user,getView,  myLocation} = useContext(AuthContext)
 const [optSmModal, setOptSmModal] = useState(false);
 const [modalOpen,setModalOpen] = useState(false)
+const dispatch = useDispatch()
 const navigate = useNavigate()
   const openModal = () => {
     setModalOpen(true);
@@ -36,10 +39,33 @@ const navigate = useNavigate()
     
   }, [])
 
+  const movieSearchedDataFetching = async (e)=>{
+   
+    try{
 
+      const response = await axios.get(`${import.meta.env.VITE_URL_SERVER}/user/search/?q=${e.trim()}`)
+      const data = response.data
+      if (response.status==200){
+        
+        dispatch(movieListing(data))
+        navigate('/movies/list')
+      }
+    }catch(error){
+      console.error(error);
+    }
+  }
+  const searchMovieInputHandler = (e)=>{
+    let SearchValue = e.target.value
+    if (SearchValue.trim() !== ""){
+      movieSearchedDataFetching(SearchValue)
+  }else{
+    dispatch(movieListing([]))
+  }}
+
+  
   return (
     <>
-    <MDBNavbar className='NavbarMain' >
+    <MDBNavbar className='NavbarMain'>
     <MDBContainer className='NavbarMainContainer'>
     <div className='navbarBookmyshowInputDiv' style={{display:'flex',alignItems:'center',width:'40rem'}}>
     <div className='BookMySHow'>
@@ -48,7 +74,7 @@ const navigate = useNavigate()
     <div style={{width:'100%'}} className='navbarInputMainDiv'>
     <MDBInputGroup style={{marginTop:'7px'}}  className='d-flex w-auto mb-3 navbarsearchbar'>
     <input
-    
+    onChange={e=>searchMovieInputHandler(e)}
     className='form-control '
     placeholder='Search'
     style={{  paddingLeft:'40px',borderStyle:'hidden',borderRadius:'3px'}}

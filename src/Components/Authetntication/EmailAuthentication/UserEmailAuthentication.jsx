@@ -8,16 +8,17 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
   const inputRef = useRef(null);
   const [emailView,setEmailView] = useState([])
    const { authToken,user } = useContext(AuthContext)
-  const UserEmailAuthPost = async (e) => {
+   
+  const UserEmailUpdatePost = async (e) => {
     e?.preventDefault();
     const response = await axios(
-      `${import.meta.env.VITE_URL_SERVER}/email/`,
+      `${import.meta.env.VITE_URL_SERVER}/emailupdate/`,
       {
         method:e?'POST':'GET'
       ,
-      headers:auth?{
+      headers:{
            'Authorization':`Bearer ${authToken.access}`
-         }:null,
+         },
          data:{
           email:inputRef.current.email.value
          }
@@ -25,12 +26,33 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
       
     );
     const data = response.data;
-    console.log(data);
     console.log(e);
-    console.log(response.status);
     if (response.status==200 & e !=undefined){
 
-      console.log(data)
+      onEmailSubmit(data);
+
+    }else if (response.status==200 ){
+          setEmailView(data.email)
+    }
+  };
+  
+  const UserEmailAuthPost = async (e) => {
+    e?.preventDefault();
+    const response = await axios(
+      `${import.meta.env.VITE_URL_SERVER}/emailauth/`,
+      {
+        method:e?'POST':'GET'
+      ,
+         data:{
+          email:inputRef.current.email.value
+         }
+       }
+      
+    );
+    const data = response.data;
+    console.log(e);
+    if (response.status==200 & e !=undefined){
+
       onEmailSubmit(data);
 
     }else if (response.status==200 ){
@@ -40,14 +62,13 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
   useEffect(() => {
     if (auth){
 
-      UserEmailAuthPost()
+      UserEmailUpdatePost()
     }
   }, [])
-  console.log(emailView);
 
   return (<>
   
-    <form onSubmit={e=>UserEmailAuthPost(e)} ref={inputRef}>
+    <form onSubmit={e=>{auth?UserEmailUpdatePost(e):UserEmailAuthPost(e)}} ref={inputRef}>
     <div className="email-auth-text-main-div-container">
     <div className="email-auth-text-main-div">
     {auth?<h4 style={{fontFamily:'sans-serif',fontWeight:'bold'}}>Edit Email Address</h4>:<h4><strong>Login With Email</strong></h4>}

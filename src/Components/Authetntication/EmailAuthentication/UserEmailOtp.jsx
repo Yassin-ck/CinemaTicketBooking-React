@@ -10,14 +10,14 @@ import { toast } from "react-toastify";
 
 
 const UserEmailOtp = ({email,otp_,auth,setModalOpen}) => {
-  const { setAuthToken,setUser,authToken,setBasicModal,myLocation } = useContext(AuthContext)
+  const { setAuthToken,setUser,authToken,setBasicModal,myLocation,user } = useContext(AuthContext)
 const [otp,setOtp] = useState('')
   const navigate = useNavigate()
-  const UserEmailOtpVerification = async (e) => {
+  const UserEmailOtpVerification = async (e,props) => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_URL_SERVER}/email/otp/`,
+        `${import.meta.env.VITE_URL_SERVER}/email${props}/otp/`,
         {
           otp:otp_ ,
           email: email,
@@ -28,7 +28,7 @@ const [otp,setOtp] = useState('')
          headers:{
             'Authorization':`Bearer ${authToken.access}`
           }
-        }:null
+        }:null 
       );
       const data = response.data;
       console.log(data);
@@ -70,7 +70,13 @@ const [otp,setOtp] = useState('')
     result += value
     console.log(otp.length);
     if(otp.length == 5){
-      UserEmailOtpVerification(result)
+      if (user){
+
+        UserEmailOtpVerification(result,"update")
+      }else{
+
+        UserEmailOtpVerification(result,"auth")
+      }
   
     }
   }

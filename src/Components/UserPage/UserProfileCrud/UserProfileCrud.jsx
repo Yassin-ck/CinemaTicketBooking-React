@@ -27,27 +27,32 @@ const UserProfileEdit = () => {
     const UserProfileForm = async (e)=>{
       console.log(e,'jj');
         e?.preventDefault()
-        const response = await axios({
+        try{
+
+          const response = await axios({
             method: !e?'GET':'PUT', 
             url: `${import.meta.env.VITE_URL_SERVER}/userprofile/`,
             headers: {
-                "Authorization": `Bearer ${authToken.access}`
+              "Authorization": `Bearer ${authToken.access}`
             },
-           data:
+            data:
             e?{
-                user:{username : inputRef.current.username.value},
-                first_name : inputRef.current.first_name.value,
-                last_name : inputRef.current.last_name.value,
-                address : inputRef.current.address.value
+              user:{username : inputRef.current.username.value},
+              first_name : inputRef.current.first_name.value,
+              last_name : inputRef.current.last_name.value,
+              address : inputRef.current.address.value
             }:null
-        });
-
-        const data = response.data
-        if (response.status == 200 & !e) {
+          });
+          
+          const data = response.data
+          if (response.status == 200 & !e) {
             setGetView([data])
+          }
+        }catch(error){
+          console.log(error);
         }
-    }
-    
+        }
+        
     useEffect(() => {
       UserProfileForm()
     }, [])
@@ -61,11 +66,10 @@ const UserProfileEdit = () => {
       <form onSubmit={(e) =>UserProfileForm(e)} ref={inputRef} onChange={()=>setSubmitButton(true)}  style={{height:'130vh',background:'linear-gradient(45deg,#fefefe,lightgrey)'}} >
       {getView&&getView.map((item)=>(
           
-          <div key={item.userprofile.user_id}>
+          <div key={item.user_id}>
         <MDBContainer className='pb-5 mb-5'>
           <MDBRow className='d-flex justify-content-center align-items-center' style={{ borderRadius: '20px' }}>
             <MDBCol lg='6'>
-           
               <MDBCard className='mt-5  rounded-1' style={{ maxWidth: '700px',borderStyle:'none' }}>
                 <MDBCardHeader style={{ position: 'relative', height: '15vh', background: 'linear-gradient(45deg, #10451D, #4AD66D)' }}>
                   <div style={{cursor:'pointer', maxWidth: '15rem', color: '#fff', position: 'absolute', top: '35px', left: '55px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -92,7 +96,7 @@ const UserProfileEdit = () => {
                     </div>
                   
                    {
-                    item.userprofile.phone?
+                    item.phone?
                     <div style={{ marginBottom: '2rem', paddingLeft: '.6rem', position: 'relative' }}>
                     Phone<span style={{ paddingLeft: '6.2rem' }}>+91 {item.phone} <small style={{width:'100%',background:'#B7EFC5',fontSize:'12px',padding:'0px 3px'}}>Verified</small></span>
                     <span onClick={() => navigate('/view/phone')} style={{cursor:'pointer', color: 'rgb(199, 75, 75)', position: 'absolute', right: '2rem' }}>
@@ -120,15 +124,15 @@ const UserProfileEdit = () => {
                     </div>
                     <div className='ProfileCrudFormInputDiv'>
                       <label>First Name</label>
-                      <input name='first_name' placeholder='First Name' type='text' defaultValue={item && item.userprofile.first_name} />
+                      <input name='first_name' placeholder='First Name' type='text' defaultValue={item && item.first_name} />
                     </div>
                     <div className='ProfileCrudFormInputDiv'>
                       <label>Last Name</label>
-                      <input name='last_name' placeholder='Last Name' type='text' defaultValue={item && item.userprofile.last_name} />
+                      <input name='last_name' placeholder='Last Name' type='text' defaultValue={item && item.last_name} />
                     </div>
                     <div className='ProfileCrudFormInputDiv'>
                       <label>Address</label>
-                      <input name='address' placeholder='Address' type='text' defaultValue={item && item.userprofile.address} />
+                      <input name='address' placeholder='Address' type='text' defaultValue={item && item.address} />
                     </div>
                   </div>
                 </MDBCardBody>
