@@ -15,11 +15,6 @@ console.log(id);
            ,
             {
                 is_approved:e
-            },
-            {
-                headers:{
-                    'Authorization':`Bearer ${authToken.access}`
-                }
             }
             )
             const data = response.data

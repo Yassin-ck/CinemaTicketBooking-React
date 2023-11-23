@@ -43,17 +43,7 @@ const TheatreOwnerRegistration = () => {
         try{
 
             const response = await axios.post(
-                `${import.meta.env.VITE_URL_SERVER}/theatre/owner/register/`,
-                
-                formData,
-                
-                {
-                    headers:{
-                        'Content-Type':'multipart/formdata',
-                        'Authorization':`Bearer ${authToken.access}`
-                    }
-                }
-                )
+                `${import.meta.env.VITE_URL_SERVER}/theatre/owner/register/`,formData )
                 const data = response.data
                 console.log(data);
                 if (response.status==201){

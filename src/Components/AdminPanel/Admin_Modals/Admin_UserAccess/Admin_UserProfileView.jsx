@@ -13,11 +13,6 @@ const Admin_UserProfileView = () => {
     const getUserProfile = async(number)=>{
         const response = await axios.get(
             `${import.meta.env.VITE_URL_SERVER}/admin_panel/users/?q=${number}`,
-            {
-                headers:{
-                    'Authorization':`Bearer ${authToken.access}`
-                }
-            }
         )
         const data = response.data
         if (response.status == 200){

@@ -24,10 +24,7 @@ const MobilePhoneUpdation = ({byClick}) => {
                 `${import.meta.env.VITE_URL_SERVER}/userprofile/phone/`,
         {
             method:e?'POST':'GET'
-             ,
-            headers: {
-            'Authorization': `Bearer ${authToken.access}`,
-            },
+          ,
             data:{
                 
                 phone: e?`+91${inputRef.current.phone.value}`:null,

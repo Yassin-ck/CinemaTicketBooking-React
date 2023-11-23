@@ -13,15 +13,8 @@ const Admin_TheatreOwnerVerification = () => {
   const TheatreOwnerVerification = async () => {
       try {
           const response = await axios.get(
-              `${import.meta.env.VITE_URL_SERVER}/admin_panel/theatreowner/${id}/`,
-        {
-            headers: {
-                'Authorization': `Bearer ${authToken.access}`,
-                'Content-Type': 'multipart/formdata',
-            },
-        }
-        );
-        const data = response.data;
+              `${import.meta.env.VITE_URL_SERVER}/admin_panel/theatreowner/${id}/`);
+       const data = response.data;
       console.log(data);
       if (response.status === 200) {
           setOwnerDetails([data]);

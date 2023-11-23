@@ -26,7 +26,6 @@ function OffCanvasExample({ name, ...props }) {
       handleClose()
     navigate('/view')
   }
-  console.warn(getView);
   
   return (
 

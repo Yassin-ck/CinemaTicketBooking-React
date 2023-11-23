@@ -14,12 +14,6 @@ const Admin_TheatreVerification = () => {
       try {
           const response = await axios.get(
               `${import.meta.env.VITE_URL_SERVER}/admin_panel/theatre/${id}/`,
-        {
-            headers: {
-                'Authorization': `Bearer ${authToken.access}`,
-                'Content-Type': 'multipart/formdata',
-            },
-        }
         );
         const data = response.data;
       console.log(data);

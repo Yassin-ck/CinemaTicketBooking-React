@@ -35,15 +35,7 @@ const TheatreRegistration = () => {
 
             const response = await axios.post(
                 `${import.meta.env.VITE_URL_SERVER}/theatre/register/`,
-                formData,
-                {
-                    headers:{
-                        'Authorization':`Bearer ${authToken.access}`,
-                        'Content-Type':'multipart/formdata'
-                    }
-                }
-                
-                )
+                formData)
                 const data = response.data
                 if (response.status==200){
                     console.log(data);

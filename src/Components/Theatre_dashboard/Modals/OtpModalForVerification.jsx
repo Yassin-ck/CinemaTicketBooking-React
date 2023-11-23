@@ -16,11 +16,6 @@ console.log(sid);
         {
           otp_entered: inputRef.current.otp.value,
           verification_sid: sid,
-        },
-        {
-            headers:{
-                'Authorization':`Bearer ${authToken.access}`
-            }
         }
       );
       const data = response.data;

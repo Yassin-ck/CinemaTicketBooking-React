@@ -23,12 +23,7 @@ const [otp,setOtp] = useState('')
           email: email,
           otp_entered: e,
          ...(myLocation && !auth ? { location: myLocation } : {})
-        },
-        auth?{
-         headers:{
-            'Authorization':`Bearer ${authToken.access}`
-          }
-        }:null 
+        }
       );
       const data = response.data;
       console.log(data);

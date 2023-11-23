@@ -12,11 +12,6 @@ const Admin_TheatreRequestView = () => {
 
                 const response = await axios.get(
                     `${import.meta.env.VITE_URL_SERVER}/admin_panel/theatre/`,
-                    {
-                        headers:{
-                            'Authorization':`Bearer ${authToken.access}`
-                        }
-                    }
                     )
                     const data = response.data
                     if (response.status==200){

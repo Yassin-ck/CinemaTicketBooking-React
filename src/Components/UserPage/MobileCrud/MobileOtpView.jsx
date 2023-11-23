@@ -19,11 +19,7 @@ const MobileOtpView = ({sid,phone}) => {
                 {
                     otp:e,
                     verification_sid:sid
-                },{
-                headers:{
-                    'Authorization':`Bearer ${authToken.access}`
                 }
-            }
             )
 
             const data = response.data

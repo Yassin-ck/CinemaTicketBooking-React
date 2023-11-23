@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import LocationModal from '../../HomePage/Location/LocationModal'
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { movieListing } from '../../../Redux/movieSlice';
+import { movieListing } from '../../../Redux/Slices/movieSlice';
 
 
 const Navbar =()=> {
@@ -26,7 +26,6 @@ const navigate = useNavigate()
   const openModal = () => {
     setModalOpen(true);
   };
- console.log(getView);
 
   const openLocationModal = ()=>{
     setOptSmModal(!optSmModal)
@@ -60,8 +59,8 @@ const navigate = useNavigate()
       movieSearchedDataFetching(SearchValue)
   }else{
     dispatch(movieListing([]))
+    navigate('/')
   }}
-
   
   return (
     <>
@@ -117,6 +116,7 @@ const navigate = useNavigate()
           
           
         }
+
         {optSmModal&&<LocationModal  optSmModal={optSmModal} setOptSmModal={setOptSmModal} />}
         </div>
         </MDBContainer>

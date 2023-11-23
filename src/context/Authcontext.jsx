@@ -9,10 +9,18 @@ const AuthProvider = ({ children }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [getView,setGetView] = useState([])
   const [myLocation,setMyLocation] = useState(()=>localStorage.getItem('myLocation')?JSON.parse(localStorage.getItem('myLocation')):null)
+  const [currentDate, setCurrentDate] = useState('');
+useEffect(() => {
+  const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0];
+    setCurrentDate(formattedDate);
+}, [])
+
 
 
 
   const contextState = {
+    currentDate:currentDate,
     authToken:authToken,
     setUser:setUser,
     setAuthToken:setAuthToken,

@@ -16,9 +16,6 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
       {
         method:e?'POST':'GET'
       ,
-      headers:{
-           'Authorization':`Bearer ${authToken.access}`
-         },
          data:{
           email:inputRef.current.email.value
          }

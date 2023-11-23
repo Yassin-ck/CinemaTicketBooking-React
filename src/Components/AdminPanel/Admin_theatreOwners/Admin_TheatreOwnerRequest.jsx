@@ -11,11 +11,6 @@ const Admin_TheatreOwnerRequest = () => {
         try{
             const response = await axios.get(
                 `${import.meta.env.VITE_URL_SERVER}/admin_panel/theatreowner/`,
-                {
-                    headers:{
-                        'Authorization':`Bearer ${authToken.access}`
-                    }
-                }
                 )
                 const data = response.data
                 if (response.status==200){

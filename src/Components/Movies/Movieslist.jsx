@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 
 const Movieslist = () => {
-    
+const navigate = useNavigate()  
 const movies = useSelector(state=>state.movie.movieList)
+
+console.log(movies);
+
+
+
   return (
     <>
     {movies.map((item)=>(

@@ -11,6 +11,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux'
 import store from './Redux/store.jsx'
+import axios from 'axios'
+
+
+let authToken = JSON.parse(localStorage.getItem('authToken'))
+axios.interceptors.request.use((request)=>{
+  console.log(request);
+  if (authToken !== null){
+    request.headers.Authorization = `Bearer ${authToken.access}`
+  }
+return request;
+})
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ThemeProvider theme={Muitheme}>

@@ -47,13 +47,7 @@ export default function LocationModal({optSmModal,setOptSmModal}) {
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_URL_SERVER}/theatre/searchlocation/`,
-          e,
-          {
-            headers: {
-              Authorization: `Bearer ${authToken.access}`,
-            },
-          }
-        );
+          e);
         const data = response.data;
         if (response.status==200){
           setOptSmModal(!optSmModal)

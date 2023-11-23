@@ -32,9 +32,6 @@ const UserProfileEdit = () => {
           const response = await axios({
             method: !e?'GET':'PUT', 
             url: `${import.meta.env.VITE_URL_SERVER}/userprofile/`,
-            headers: {
-              "Authorization": `Bearer ${authToken.access}`
-            },
             data:
             e?{
               user:{username : inputRef.current.username.value},
