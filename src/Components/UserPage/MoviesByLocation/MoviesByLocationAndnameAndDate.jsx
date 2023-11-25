@@ -37,7 +37,7 @@ useEffect(() => {
   return (
     <>  
     <div style={{display:"flex",justifyContent:"space-around"}}>{
-        dateDetails.map((item)=>(
+        loading && dateDetails.map((item)=>(
             <div onClick={()=>navigate(`/movies/${language}/${movie}/${item}`)}>
             {item}
             </div>
@@ -48,13 +48,11 @@ useEffect(() => {
         return (
             
             <div key={index} >
-            <div  style={{display:"flex",justifyContent:"space-around"}}>
-            {item.times.map((time,index)=>(
-                <Link key={index} to={`/movies/${language}/${movie}/${dt}/${item.theatre_name}/${item.screen_number}/${time}`}>
-                <h6>{time}</h6>
+           
+             <Link key={index} to={`/movies/${language}/${movie}/${dt}/${item.theatre_name}/${item.screen_number}/${item.show_time}`}>
+                <h6>{item.show_time}</h6>
                 </Link>
-                ))}
-                </div>
+                
             <p>{item.screen_number}</p>
             <p>{item.language}</p>
             <p>{movie}</p>

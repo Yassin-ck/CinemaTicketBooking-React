@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const ScreenDetailsByScreenNumber = () => {
   const dispatch = useDispatch();
-  const { language, movie, cinemas, screen,dt } = useParams();
+  const { language, movie, cinemas, screen,dt,tm } = useParams();
   console.log(cinemas, screen);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -19,12 +19,13 @@ const ScreenDetailsByScreenNumber = () => {
     date,
     cinemas,
     screen,
+    time
   ) => {
     try {
       const response = await axios.get(
         `${
           import.meta.env.VITE_URL_SERVER
-        }/user/movieslist/?search=${location}&q=${language}&movie=${movie}&dt=${date}&cinemas=${cinemas}&screen=${screen}`
+        }/user/movieslist/?search=${location}&q=${language}&movie=${movie}&dt=${date}&cinemas=${cinemas}&screen=${screen}&tm=${time}`
       );
       const data = response.data;
       if (response.status == 200) {
@@ -45,6 +46,7 @@ const ScreenDetailsByScreenNumber = () => {
       dt,
       cinemas,
       screen,
+      tm
     );
   }, []);
 
@@ -54,6 +56,7 @@ const ScreenDetailsByScreenNumber = () => {
         [movieListByLocation].map((item, index) => (
           <div key={index}>
             <h6>{item.movie_name}</h6>
+            <h6>{item.show_time}</h6>
             <h6>{item.theatre_name}</h6>
             <h6>{item.screen_number}</h6>
             <div
@@ -76,7 +79,7 @@ const ScreenDetailsByScreenNumber = () => {
                       <div key={index}>
                         <input
                           readOnly
-                          className="btn "
+                          className="btn btn-light"
                           style={{ width: "40px", padding: "7px 0px" }}
                           value={seat}
                         />

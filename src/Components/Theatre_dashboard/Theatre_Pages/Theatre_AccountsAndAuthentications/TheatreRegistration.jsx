@@ -1,9 +1,11 @@
 import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../../../context/authcontext'
+import ScreensViewForUpdation from '../ScreenDetails/ScreensViewForUpdation'
 
 const TheatreRegistration = () => {
     const { authToken } = useContext(AuthContext)
+    const [screenModal,setScreenModal] = useState(false)
     const [theatreData,setTheatreData] = useState({
         theatre_name:'',
         email:'',
@@ -39,6 +41,8 @@ const TheatreRegistration = () => {
                 const data = response.data
                 if (response.status==200){
                     console.log(data);
+                    localStorage.setItem('authToken', JSON.stringify(error.response.data.token));
+                    setScreenModal(true)
                 }
             }catch(error){
                 console.error(error);
@@ -57,6 +61,7 @@ const TheatreRegistration = () => {
         <input  name='num_of_screens' placeholder='num_of_screens' type='text' onChange={dataHandler} required />
         <input  name='certification' placeholder='certification' type='file' onChange={dataHandler} required />
         <input   type='submit' />
+        {screenModal&&<ScreensViewForUpdation />}
     </form>
     </div>
   )

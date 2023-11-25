@@ -21,6 +21,8 @@ import Admin_UserProfileView from "./Components/AdminPanel/Admin_Modals/Admin_Us
 import MoviesByLocationAndnameAndDate from "./Components/UserPage/MoviesByLocation/MoviesByLocationAndnameAndDate";
 import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_theatreOwners/Admin_TheatreOwnerVerification";
 import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreRegistration";
+import ScreenDetailsUpdating from "./Components/Theatre_dashboard/Theatre_Pages/ScreenDetails/ScreenDetailsUpdating";
+import SeatDetailsForUpdation from "./Components/Theatre_dashboard/Theatre_Pages/ScreenDetails/SeatDetailsForUpdation";
 
 
 const App = () => {
@@ -47,6 +49,8 @@ const App = () => {
           <Route path="/movies/:language/:movie/:dt/:cinemas/:screen/:tm" element={<ScreenDetailsByScreenNumber />} />
           <Route path="/talkies/all" element={<TheatreListByLocation />} />
           <Route path="/talkies/:cinemas/:dt" element={<TheatreWithScreenDetails />} />
+          <Route path="/theatre/screencrud/:id" element={<ScreenDetailsUpdating />} />
+          <Route path="/theatre/seatarrangemnt/:id" element={<SeatDetailsForUpdation />} />
           
         </Routes>
         <Footer />

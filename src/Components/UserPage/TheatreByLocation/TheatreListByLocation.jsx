@@ -3,14 +3,14 @@ import axios from 'axios'
 import { theareListingAction } from '../../../Redux/Slices/theatreSlice'
 import { useDispatch,useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../../context/authcontext'
 
 
 const TheatreListByLocation = () => { 
     const dispatch = useDispatch()
     const {currentDate} = useContext(AuthContext)
-
+    const navigate = useNavigate()
     const theatreDetails = useSelector(state=>state.theatre.theatreList)
     useEffect(() => {
 
@@ -22,12 +22,16 @@ const TheatreListByLocation = () => {
                     dispatch(theareListingAction(data))
                 }
             }catch(error){
+                navigate('/')
+                alert(error.response.data.msg)
                 console.error(error);
             }
         }
         FetchTheatrelistByLocation(JSON.parse(localStorage.getItem('myLocation')))
         
     }, [])
+  
+    
     
   return (
     <>

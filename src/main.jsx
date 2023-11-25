@@ -13,14 +13,16 @@ import { Provider } from 'react-redux'
 import store from './Redux/store.jsx'
 import axios from 'axios'
 
-
 let authToken = JSON.parse(localStorage.getItem('authToken'))
+let theatreToken = JSON.parse(localStorage.getItem('TheatreauthToken'))
+
 axios.interceptors.request.use((request)=>{
   console.log(request);
-  if (authToken !== null){
+ if (authToken){
     request.headers.Authorization = `Bearer ${authToken.access}`
   }
 return request;
+
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -40,10 +40,10 @@ const MoviesByLoctnAndLngage = () => {
                 )
         )}
         {languages&&languages.map((item,index)=>(
-                <Link to={`/movies/${item.name}`}
+                <Link to={`/movies/${item}`}
             
               key={index}>
-                <h5>{item.name}</h5>
+                <h5>{item}</h5>
                 </Link>
                 )
         )}

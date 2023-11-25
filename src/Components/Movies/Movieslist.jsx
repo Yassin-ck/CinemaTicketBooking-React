@@ -4,10 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Movieslist = () => {
-const navigate = useNavigate()  
+const navigate = useNavigate()   
 const movies = useSelector(state=>state.movie.movieList)
-
-console.log(movies);
 
 
 

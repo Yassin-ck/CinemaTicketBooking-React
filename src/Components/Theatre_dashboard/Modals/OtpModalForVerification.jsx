@@ -6,7 +6,6 @@ import { AuthContext } from "../../../context/authcontext";
 const OtpModalForVerification = ({sid}) => {
 console.log(sid);
   const inputRef = useRef(null);
-  const { authToken } = useContext(AuthContext)
   const navigate = useNavigate()
   const OwnerPhoneVerification = async (e) => {
     e.preventDefault();

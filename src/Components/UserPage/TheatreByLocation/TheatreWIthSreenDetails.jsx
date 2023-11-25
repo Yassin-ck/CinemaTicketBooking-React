@@ -37,7 +37,6 @@ const TheatreWithScreenDetails = () => {
     }
 }, [dt]);
 
-
   return (
     <>
       
