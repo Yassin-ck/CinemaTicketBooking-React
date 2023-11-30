@@ -4,10 +4,12 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { movieListingByLocation } from "../../../Redux/Slices/movieSlice";
 import { Link, useNavigate } from "react-router-dom";
+import "./css/ScreenDetailsInByScreenNumber.css";
+
 
 const ScreenDetailsByScreenNumber = () => {
   const dispatch = useDispatch();
-  const { language, movie, cinemas, screen,dt,tm } = useParams();
+  const { language, movie, cinemas, screen, dt, tm } = useParams();
   console.log(cinemas, screen);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -36,7 +38,7 @@ const ScreenDetailsByScreenNumber = () => {
       console.error(error);
     }
   };
-  console.log(movieListByLocation,'kk');
+  console.log(movieListByLocation, "kk");
 
   useEffect(() => {
     FetchingScreenDetailsOfTheatre(
@@ -52,48 +54,54 @@ const ScreenDetailsByScreenNumber = () => {
 
   return (
     <>
-      {loading ? (
-        [movieListByLocation].map((item, index) => (
-          <div key={index}>
-            <h6>{item.movie_name}</h6>
-            <h6>{item.show_time}</h6>
-            <h6>{item.theatre_name}</h6>
-            <h6>{item.screen_number}</h6>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                rowGap: "15px",
-              }}
-            >
-              {item.seating.map((seats, index) => (
-                <div key={index}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-around",
-                      alignItems: "center",
-                    }}
-                  >
-                    {seats.map((seat, index) => (
-                      <div key={index}>
-                        <input
-                          readOnly
-                          className="btn btn-light"
-                          style={{ width: "40px", padding: "7px 0px" }}
-                          value={seat}
-                        />
-                      </div>
-                    ))}
+      <div className="container MainDivInScreenSeatDetails">
+        <div className="InnerDivForTheTheatreNameAndDetailsInscreenDetails ">
+          {loading ? (
+            [movieListByLocation].map((item, index) => (
+              <div
+                key={index}
+                className="container  ContianerDivForTheSeatArrangements"
+              >
+                <div className="container nameTheatreScreenDetailsAndSeatArrangement">
+                  <div>
+                    <h6>{item.movie_name}</h6>
+                    <h6>{item.show_time}</h6>
+                  </div>
+                  <div>
+                    <h6>{item.theatre_name}</h6>
+                    <h6>{item.screen_number}</h6>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        ))
-      ) : (
-        <p>...loading</p>
-      )}
+                <div className="">
+                  {item.seating.map((seats, index) => (
+                    <div key={index}>
+                      <div className="InnerDivForSeatArrangementInScreenDetails">
+                      <p style={{color:'var(--secondary-color)',
+                                fontWeight:'600',
+                                
+                              }}>
+                        {seats[0][0]}
+                      </p>
+                        {seats.map((seat, index) => (
+                          
+                          <div className="SeatDivInScreenDetailsByScreen">
+                            {" "}
+                            <center className="seatAlphaDiv">
+                             <center>{seat.slice(1,3)}</center>
+                            </center>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>...loading</p>
+          )}
+        </div>
+      </div>
     </>
   );
 };

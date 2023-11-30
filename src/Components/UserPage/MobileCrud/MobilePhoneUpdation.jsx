@@ -70,7 +70,7 @@ const MobilePhoneUpdation = ({byClick}) => {
   </div> 
   </div>
 
-      <Button type="submit"  className="buttonforemailverificationandauthentication" variant="contained" style={{backgroundColor: 'green',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
+      <Button type="submit"  className="buttonforemailverificationandauthentication" variant="contained" style={{backgroundColor: '#14110f',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
       </form>
    
     </div>

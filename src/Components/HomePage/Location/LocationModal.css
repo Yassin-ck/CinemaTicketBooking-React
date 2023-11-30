@@ -99,15 +99,17 @@ border: 1px solid rgb(168, 161, 161);
 .newLocationRequestInputClassName input:focus ~ label,
 .newLocationRequestInputClassName input:valid ~ label{
     background-color: white;
-    padding: 2px;
+    padding: 3px;
     top:-9px;
-    color:darkgreen;
+    color:#7e7f83;
     font-size: 12px;
     left:20px;
     
 }
 .newLocationRequestInputClassName input:focus {
     color: black;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
 }
 .ModalContentOfTheLocation{
     display: flex;

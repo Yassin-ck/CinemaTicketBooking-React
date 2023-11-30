@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .SecondNavbarMainDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 0;
+    
+  }
+  .secondMainDivInSecondNavbar{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .innerMainDivForSecondDicInSecondNavbar h6 {
+    text-decoration: none;
+    color: rgb(238, 229, 229);
+    cursor: pointer;
+    padding-right: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .SecondNavbarMainDiv {
+      flex-direction: column;
+    }
+  }
+  .innerMainDivForSecondDicInSecondNavbar h6.selected {
+    color: #d9c5b2;
+    
+    /* Change to your desired selected color */
+  }

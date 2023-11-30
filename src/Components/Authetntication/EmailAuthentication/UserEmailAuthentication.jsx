@@ -68,7 +68,7 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
     <form onSubmit={e=>{auth?UserEmailUpdatePost(e):UserEmailAuthPost(e)}} ref={inputRef}>
     <div className="email-auth-text-main-div-container">
     <div className="email-auth-text-main-div">
-    {auth?<h4 style={{fontFamily:'sans-serif',fontWeight:'bold'}}>Edit Email Address</h4>:<h4><strong>Login With Email</strong></h4>}
+    {auth?<h4 style={{fontFamily:'sans-serif',fontWeight:'bold' }}>Edit Email Address</h4>:<h4><strong>Login With Email</strong></h4>}
     {auth&&<small>The Email Address will be verified by an OTP</small>}
     </div>
     <div className="email-auth-input-label-div" >
@@ -78,7 +78,7 @@ const UserEmailAuthentication = ({ onEmailSubmit,auth }) => {
     </div> 
       </div>
       </div>
-      <Button type="submit"  className="buttonforemailverificationandauthentication" variant="contained" style={{backgroundColor: 'green',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
+      <Button type="submit"  className="buttonforemailverificationandauthentication" variant="contained" style={{backgroundColor: '#14110f',position: 'absolute',left:' 10%',bottom: '7%',width: '80%',borderStyle:'none'}} >submit</Button>
       </form>
       </>
   );

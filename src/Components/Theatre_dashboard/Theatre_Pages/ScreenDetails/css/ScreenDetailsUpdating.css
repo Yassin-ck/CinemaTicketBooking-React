@@ -1,0 +1,96 @@
+.ScreenDetailsFormForUpdating{
+    display: flex;
+    justify-content: center;
+    /* column-gap: 2rem; */
+
+
+}
+.ImageContainerForScreenDetailsUpdating{
+    width: 40%;
+    background-color: red;
+}
+.MainDivForFormInScreenUpdatingForm{
+    width: 50%;
+}
+.MainDivForInputLabelInScreenDetailsUpdatingForm{
+    width: 80%;
+    background-color: white;
+    padding: 3rem;
+
+}
+.InputLabelForScreenDetailsUpdating{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* min-height: 8vh;*/
+    height: 9.3vh;
+  /*  max-height: 20vh; */
+}
+
+.InputLabelForScreenDetailsUpdating input{
+    padding: 12px;
+    border: 1px solid rgb(145, 142, 142);
+    outline: none;
+    font-size: 12px;
+}
+.InputLabelForScreenDetailsUpdating input:focus,
+.InputLabelForScreenDetailsUpdating input:valid{
+    border-radius: 0px;
+}
+
+.InputLabelForScreenDetailsUpdating label {
+    top:25px;
+    position: absolute;
+    left: 14px;
+    font-size: 13px;
+    bottom: 20px;
+    padding: 0;
+    background: transparent;
+    margin: 0;
+    letter-spacing: -0.5px;
+    transition: 0.4s ease-in-out ;
+    color: rgb(112, 123, 112);
+}
+.InputLabelForScreenDetailsUpdating input:focus~label::after {
+    content: " *";
+    color: rgb(236, 20, 0);
+}
+
+.InputLabelForScreenDetailsUpdating input:focus~label,
+.InputLabelForScreenDetailsUpdating input:valid~label {
+    left: 3px;
+    color: rgb(84, 90, 84);
+    letter-spacing: -1px;
+    top: 1px;
+    height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgb(255, 255, 255);
+  }
+.screenMainDivOutsideInScreenDetailsUpdating{
+    text-align: center;
+}
+.ScreenDetailsHeadingInscreenDetails{
+    letter-spacing: -1.6px;
+    width: 100%;
+}
+
+.ScreenDetailsHeadingInscreenDetails h3{
+    min-width: 20%;
+    padding: 1rem;
+}.ButtonDivInTheSceenDetailsUpdation{
+    /* margin: 20px; */
+}
+
+.ButtonDivInTheSceenDetailsUpdation input{
+    margin-top: 30px;
+    width: 30%;
+    height: 6vh;
+    background-color: green;
+    font-size: 12px;
+    color: white;
+    border: none;
+    border-radius: 2px;
+
+}

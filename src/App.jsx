@@ -1,4 +1,4 @@
-import Home from "./Components/HomePage/home";
+import Home from "./Components/HomePage/Home";
 import AuthProvider from "./context/authcontext";
 import { Routes, Route } from "react-router-dom";
 import Movieslist from "./Components/Movies/Movieslist";
@@ -6,6 +6,7 @@ import PrivateRouter from "./PrivateRouter/PrivateRouter";
 import Footer from "./Components/NavBarFooter/Footer/Footer";
 import Navbar from "./Components/NavBarFooter/Navbar/Navbar";
 import SignInPage from "./Components/HomePage/SignInPages/SignInPage";
+import SecondNavbar from "./Components/NavBarFooter/Navbar/SecondNavbar";
 import UserProfileEdit from "./Components/UserPage/UserProfileCrud/UserProfileCrud";
 import MobileUpdationModal from "./Components/UserPage/MobileCrud/MobileUpdationModal";
 import TheatreListByLocation from "./Components/UserPage/TheatreByLocation/TheatreListByLocation";
@@ -19,10 +20,12 @@ import TheatreOwnerRegistration from "./Components/Theatre_dashboard/Theatre_Own
 import Admin_TheatreOwnerRequest from "./Components/AdminPanel/Admin_theatreOwners/Admin_TheatreOwnerRequest";
 import Admin_UserProfileView from "./Components/AdminPanel/Admin_Modals/Admin_UserAccess/Admin_UserProfileView";
 import MoviesByLocationAndnameAndDate from "./Components/UserPage/MoviesByLocation/MoviesByLocationAndnameAndDate";
-import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_theatreOwners/Admin_TheatreOwnerVerification";
-import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreRegistration";
 import ScreenDetailsUpdating from "./Components/Theatre_dashboard/Theatre_Pages/ScreenDetails/ScreenDetailsUpdating";
 import SeatDetailsForUpdation from "./Components/Theatre_dashboard/Theatre_Pages/ScreenDetails/SeatDetailsForUpdation";
+import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_theatreOwners/Admin_TheatreOwnerVerification";
+import TheatreShowDetailsView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsView";
+import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreRegistration";
+import TheatreShowDetailsSingleView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsSingleView";
 
 
 const App = () => {
@@ -30,6 +33,7 @@ const App = () => {
     <>
       <AuthProvider>
         <Navbar />
+        <SecondNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/useremailupdation/:auth" element={<PrivateRouter><SignInPage /></PrivateRouter>} />
@@ -51,6 +55,8 @@ const App = () => {
           <Route path="/talkies/:cinemas/:dt" element={<TheatreWithScreenDetails />} />
           <Route path="/theatre/screencrud/:id" element={<ScreenDetailsUpdating />} />
           <Route path="/theatre/seatarrangemnt/:id" element={<SeatDetailsForUpdation />} />
+          <Route path="/theatre/showview" element={<TheatreShowDetailsView />} />
+          <Route path="/theatre/showview/:id/:dt" element={<TheatreShowDetailsSingleView/>} />
           
         </Routes>
         <Footer />

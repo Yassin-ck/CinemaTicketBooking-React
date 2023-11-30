@@ -60,7 +60,7 @@ const UserProfileEdit = () => {
 
   return (
       <div >
-      <form onSubmit={(e) =>UserProfileForm(e)} ref={inputRef} onChange={()=>setSubmitButton(true)}  style={{height:'130vh',background:'linear-gradient(45deg,#fefefe,lightgrey)'}} >
+      <form onSubmit={(e) =>UserProfileForm(e)} ref={inputRef} onChange={()=>setSubmitButton(true)}  style={{height:'130vh',background:'linear-gradient(45deg,#fefefe)'}} >
       {getView&&getView.map((item)=>(
           
           <div key={item.user_id}>
@@ -68,7 +68,7 @@ const UserProfileEdit = () => {
           <MDBRow className='d-flex justify-content-center align-items-center' style={{ borderRadius: '20px' }}>
             <MDBCol lg='6'>
               <MDBCard className='mt-5  rounded-1' style={{ maxWidth: '700px',borderStyle:'none' }}>
-                <MDBCardHeader style={{ position: 'relative', height: '15vh', background: 'linear-gradient(45deg, #10451D, #4AD66D)' }}>
+                <MDBCardHeader style={{ position: 'relative', height: '15vh', background: 'linear-gradient(120deg,#14110f, #34312d)' }}>
                   <div style={{cursor:'pointer', maxWidth: '15rem', color: '#fff', position: 'absolute', top: '35px', left: '55px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div className="rounded-circle me-3" style={{ width: '100px', height: '100px', backgroundColor: '#fff', border: '2px solid lightgrey' }}>
                       <div style={{ position: 'absolute', left: '33px', top: '22px' }}>
@@ -138,8 +138,8 @@ const UserProfileEdit = () => {
           </MDBRow>
           </MDBContainer>
           {submitButton&&
-            <center style={{ position: 'sticky', bottom: '0px', width: '100%', height: '7vh', background: ' rgb(255, 255, 255)',boxShadow:'box-shadow: rgba(0, 0, 0, 0.16) 0px 1p'}}>
-            <Button type='submit' style={{ background: '#10451D', marginTop: '10px', color: '#fff', width: '300px' }}>Save Changes</Button>
+            <center style={{ position: 'sticky', bottom: '0px', width: '100%', height: '7vh', background: ' #7e7f83',boxShadow:'box-shadow: rgba(0, 0, 0, 0.16) 0px 1p'}}>
+            <Button type='submit' className='buttononprofilecrud' style={{ background: '#34312d', marginTop: '10px', color: '#fff', width: '300px' }}>Save Changes</Button>
             </center>
           }    
 

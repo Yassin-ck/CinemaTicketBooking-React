@@ -1,0 +1,63 @@
+.MainDivForMovieSingleView{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+
+
+
+.InnerDivForNameandDirectorInFullMovieView {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+    position: absolute;
+    bottom: 5rem;
+    left: 30rem;
+    padding: 1rem; 
+
+}
+.namedivinsinglefullmovie{
+    position: absolute;
+    top:-50px;
+}
+
+.contanierdivformovefullview {
+    margin: 4rem;
+    position: absolute;
+    left: 10rem;
+    z-index: 1;
+    pointer-events: none;
+
+}
+
+
+.buttonforbookinginfullmoviedetails {
+    border: 1px solid rgb(248, 68, 100);
+    color: rgb(255, 255, 255);
+    background-color: rgb(248, 68, 100);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 8px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 15px 40px 15px 40px;
+    bottom: -100px;
+}
+
+.namedivinsinglefullmovie h3{
+    color: #d9c5b2;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: Roboto;
+}
+.namedivinsinglefullmovie h4{
+    font-size:  large;
+    color: #d9c5b2;
+} 
+.namedivinsinglefullmovie p{
+    color:#d9c5b2;
+}

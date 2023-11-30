@@ -5,10 +5,13 @@ import { AuthContext } from '../../../context/authcontext';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { MdOutlineArrowLeft } from 'react-icons/md';
+import TheatreLoginModal from '../../Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreLoginModal';
+
 
 function OffCanvasExample({ name, ...props }) {
   const navigate = useNavigate()
   const [show, setShow] = useState(false);
+  const [theatreLogin,SetTheatreLogin] = useState(false)
   const { user,setAuthToken,setUser,getView } = useContext(AuthContext)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -26,6 +29,11 @@ function OffCanvasExample({ name, ...props }) {
       handleClose()
     navigate('/view')
   }
+ 
+  const theatreModal = ()=>{
+    SetTheatreLogin(true)
+  }
+  console.log(user);
   
   return (
 
@@ -34,20 +42,24 @@ function OffCanvasExample({ name, ...props }) {
      
      <div style={{position:'relative'}}>
      <Offcanvas  style={{width:'22rem'}} show={show} onHide={handleClose} {...props} >
-     <Offcanvas.Header style={{color:'white',background:'#155D27',height:'4.64rem'}}>
+     <Offcanvas.Header style={{color:'white',background:'#7e7f83',height:'4.64rem'}}>
      <div style={{height:'40px'}}>
      <Offcanvas.Title >
      {user.username?<h5 >Hii {user.username}</h5>:<h5 >Hii Guest</h5>}
      </Offcanvas.Title>
-     <div  style={{position:'relative',color:'rgb(136,136,136)' ,cursor:'pointer'}} onClick={EditProfileHandler}>
+     <div  style={{position:'relative',color:'#14110f' ,cursor:'pointer'}} onClick={EditProfileHandler}>
      <MdOutlineArrowLeft  />
      <p  style={{fontSize:'14px',position:'absolute',top:'2px',left:'18px',width:'4.2rem'}}>Edit Profile</p> 
      </div>
      </div>
-     <img src="//in.bmscdn.com/webin/movies/superstar/profile_avatar.png" alt="user" className="bwc__sc-1fj6cem-17 exSHsT"></img>
+     <img  src="//in.bmscdn.com/webin/movies/superstar/profile_avatar.png" alt="user" className="bwc__sc-1fj6cem-17 exSHsT"></img>
      </Offcanvas.Header >
      <Offcanvas.Body>
-     title
+     {theatreLogin? (
+      <TheatreLoginModal />
+      ):user.theatre_email?
+      <Button variant='outlined' onClick={theatreModal}>TheatreLogin</Button>
+    :null}
      <hr/>
      Body
      <hr />

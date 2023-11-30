@@ -173,11 +173,11 @@ console.log(user);
               <div className="newLocationRequestMainDiv">
               <div className="inpurSeparatingDivForNewLocationRequest col-md-12">
               <div className="newLocationRequestInputClassName col-md-6">
-              <input type='text' name="country" required autoComplete='off' onChange={e=>locationValueCollecter(e)} />
+              <input type='text' autoFocus  name="country" required autoComplete='off' onChange={e=>locationValueCollecter(e)} />
               <label for="country">country</label>
               </div>
               <div className="newLocationRequestInputClassName col-md-6">
-              <input type='text' name="state" required autoComplete='off' onChange={e=>locationValueCollecter(e)}  />
+              <input type='text' autoFocus  name="state" required autoComplete='off' onChange={e=>locationValueCollecter(e)}  />
               <label for="state">state</label>
               </div>
               </div>
