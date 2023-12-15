@@ -45,7 +45,7 @@ const navigate = useNavigate()
       const response = await axios.get(`${import.meta.env.VITE_URL_SERVER}/user/search/?q=${e.trim()}`)
       const data = response.data
       if (response.status==200){
-        
+        console.log(data);
         dispatch(movieListing(data))
         navigate('/movies/list')
       }

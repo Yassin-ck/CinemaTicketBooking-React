@@ -5,14 +5,13 @@ import { BrowserRouter } from 'react-router-dom'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux'
 import store from './Redux/store.jsx'
 import axios from 'axios'
+import { Toaster } from 'react-hot-toast';
+
 
 let authToken = JSON.parse(localStorage.getItem('authToken'))
-let theatreToken = JSON.parse(localStorage.getItem('TheatreauthToken'))
 
 axios.interceptors.request.use((request)=>{
   console.log(request);
@@ -26,9 +25,9 @@ return request;
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
       <Provider store={store}>
+      <Toaster  position="top-center"/>  
          <App />
       </Provider>
-    <ToastContainer />
   </BrowserRouter>
 ) 
   

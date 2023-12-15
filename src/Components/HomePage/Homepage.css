@@ -34,6 +34,6 @@
   .mainHomeDiv {
     padding: 20px; /* Add padding to your main content */
     color: var(--white-color); /* Set text color to contrast with the background */
-    animation: fade 5s ease 0s ;
+    animation: fade 1s ease 0s ;
   }
   

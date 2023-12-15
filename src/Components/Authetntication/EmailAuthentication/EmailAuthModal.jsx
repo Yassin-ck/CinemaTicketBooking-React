@@ -10,17 +10,16 @@ console.log(auth);
     setEmail(e)
     setShowEmailAuth(!showEmailAuth);
   };
-  console.log(email);
   return (
     <div>
     {auth && showEmailAuth ? (
       <UserEmailAuthentication auth={auth} onEmailSubmit={e => toggleEmailOtpView(e)} />
     ) : auth ? (
-      <UserEmailOtp email={email.email} otp_={email.otp} auth={auth} />
+      <UserEmailOtp email={email} auth={auth} />
     ) : showEmailAuth ? (
       <UserEmailAuthentication onEmailSubmit={e => toggleEmailOtpView(e)} />
     ) : (
-      <UserEmailOtp  email={email.email}  otp_={email.otp} setModalOpen={setModalOpen} />
+      <UserEmailOtp  email={email}  setModalOpen={setModalOpen} />
     )}
   </div>
    

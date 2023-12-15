@@ -5,12 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { movieListingByLocation } from "../../../Redux/Slices/movieSlice";
 import { AuthContext } from "../../../context/authcontext";
 import "./css/MovieDetailsFullShowing.css";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const MovieDetailsFullShowing = () => {
   const { language, movie } = useParams();
   const navigate = useNavigate();
   const [loading,setLoading] = useState(false)
+  const [locationAuth,setLocationAuth] = useState(false)
   const dispatch = useDispatch();
   const movieDetails = useSelector((state) => state.movie.movieListByLocation);
   const { currentDate } = useContext(AuthContext);
@@ -33,12 +34,18 @@ const MovieDetailsFullShowing = () => {
   };
 
   useEffect(() => {
+    if (location.pathname.includes('movieview')){
+      setLocationAuth(true)
+    }else{
+      setLocationAuth(false)
+    }
     let datas = movie.split(":");
     FetchMovieSingleDetails(datas[0], datas[1]);
   }, []);
 
   console.log(movieDetails);
-  const baseUrl = `${import.meta.env.VITE_URL_SERVER}/media/`;
+  const baseUrl = `${import.meta.env.VITE_URL_SERVER}`;
+
 
   return (
     <>
@@ -63,20 +70,20 @@ const MovieDetailsFullShowing = () => {
       
         >
             <div key={item.id} className="contanierdivformovefullview">
-              <Card
-                style={{ width: "15rem", height: "400px", overflow: "hidden" }}
+              <div
+                style={{ width: "15rem", height: "400px", overflow: "hidden",border:'1px solid lightgrey' }}
                 onClick={() =>
                   navigate(`/movies/${language}/${item.movie_name}:${item.id}/`)
                 }
               >
-                <Card.Img
+                <img
                   loading="lazy"
                   variant="top"
                   src={`${baseUrl + item.poster}`}
                   alt="movie"
                   style={{ objectFit: "cover", height: "100%", width: "100%" }}
                   />
-              </Card>
+              </div>
               </div>
               <div className="InnerDivForNameandDirectorInFullMovieView">
               <div className="namedivinsinglefullmovie">
@@ -84,7 +91,7 @@ const MovieDetailsFullShowing = () => {
               {language != 'all'&&<h4 >{language}</h4>}
               <p >Director : <strong>{item.director[0].toUpperCase().concat(item.director.slice(1,(item.length)).toLowerCase())}</strong></p>
               </div>
-                <button
+               {!locationAuth && <button
                   className=" buttonforbookinginfullmoviedetails"
                   onClick={() =>
                     navigate(
@@ -93,7 +100,7 @@ const MovieDetailsFullShowing = () => {
                   }
                 >
                   Book Tickets
-                </button>
+                </button>}
             </div>
             </div>
         </div>

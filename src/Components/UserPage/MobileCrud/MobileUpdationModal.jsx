@@ -14,7 +14,7 @@ import { AuthContext } from '../../../context/authcontext';
 import { useNavigate } from 'react-router-dom';
 
 const MobileUpdationModal = () => {
-const [sid,setSid] = useState()
+const [phone,setPhone] = useState()
 const [PhoneView,setPhoneView] = useState(true)
 const [phoneModal,setPhoneModal] =  useState(true)
 const navigate = useNavigate()
@@ -26,13 +26,12 @@ const toggleShow = () => {
   navigate('/view')
 
 }
-const phoneClickHandler = (e,e2)=>{
-    setSid({sid:e.sid,phone:e2})
+const phoneClickHandler = (e)=>{
+  setPhone({phone:e})
     setPhoneView(false)
 }
 
 
-console.log(sid);
   return (
       
       <div>
@@ -48,11 +47,11 @@ console.log(sid);
                 <div className='EmailAuthButtonInSignInPage'>
 
 
-                < MobilePhoneUpdation   byClick={(e,e2)=>phoneClickHandler(e,e2)} />
+                < MobilePhoneUpdation   byClick={(e)=>phoneClickHandler(e)} />
                 </div>
 
                 :
-                < MobileOtpView  sid={sid.sid} phone={sid.phone}  />
+                < MobileOtpView   phone={phone.phone}  />
         
             
 

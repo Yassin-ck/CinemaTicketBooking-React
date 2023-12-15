@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
 import "./UpcomingMovies.css";
+import { useNavigate } from "react-router-dom";
+
 
 const UpcomingMovies = () => {
   const [movieData, setMovieData] = useState([]);
-
+  const navigate = useNavigate()
   const fetchUpcomingAndRunningMovies = async () => {
     try {
       const response = await axios.get(
@@ -22,7 +24,11 @@ const UpcomingMovies = () => {
   useEffect(() => {
     fetchUpcomingAndRunningMovies();
   }, []);
-
+  const all = "all"
+  const movieSelectionHandler = (movie)=>{
+    navigate(`/movieview/${movie.movie_name}:${movie.id}`)
+  }
+  console.log(movieData);
   const baseUrl = `${import.meta.env.VITE_URL_SERVER}/media/`;
 
   return (
@@ -36,23 +42,26 @@ const UpcomingMovies = () => {
           {movieData.map((movie, index) => (
             <div
               key={movie.id}
-              className={`col-md-3 ${index > 3 ? "mt-4" : ""}`}
+              className="col-md-3 mt-4"
             >
-              <Card
+              <div
+                onClick={()=>movieSelectionHandler(movie)}
                 className="MainCardInUpcomigMovies"
-                style={{ width: "15rem", height: "400px", overflow: "hidden" }}
-              >
-                <Card.Img
-                  loading="lazy"
-                  className="ImageInUpcomigMovies"
-                  variant="top"
-                  src={`${baseUrl + movie.poster}`}
-                  style={{ objectFit: "cover", height: "100%", width: "100%" }}
-                />
-                <center className="movienamedivinupcomingmovies">
-                  {movie.movie_name}
-                </center>
-              </Card>
+                style={{ width: "15rem", height: "400px"}}
+                >
+                
+            
+              <img
+              loading="lazy"
+              className="ImageInUpcomigMovies"
+              variant="top"
+              src={`${baseUrl + movie.poster}`}     
+              style={{ objectFit: "cover", height: "90%", width: "100%" }}
+              />
+                <div className="movienamedivinupcomingmovies">
+                  {movie.movie_name[0].toUpperCase().concat(movie.movie_name.slice(1,movie.movie_name.length))}
+                </div>
+              </div>
             </div>
           ))}
         </div>

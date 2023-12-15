@@ -56,14 +56,15 @@ const TheatreRegistration = () => {
   return (
     <div className="container MainContainerDivForTheatreRegistrationForm">
       <div className="container MainFormDivForTheatreRegistrationForm">
-        <form onSubmit={TheatreRegitrationPosting}>
-          <div className="TheatreRegistrationHeading">
-            <h2>Theatre Registration</h2>
+      <div className="formdivintheatreregistrationMain">
+      <form onSubmit={TheatreRegitrationPosting}>
+      <div className="TheatreRegistrationHeading">
+      <h2>Theatre Registration</h2>
           </div>
           <div className="MainContainerInputDivOfTheatreRegistrationForm">
             <div className="InputDivofTheatreRegistrationForm">
-              <label>Theatre Name</label>
-              <input
+            <label>Theatre Name</label>
+            <input
                 name="theatre_name"
                 type="text"
                 onChange={dataHandler}
@@ -73,15 +74,15 @@ const TheatreRegistration = () => {
             <div className="InputDivofTheatreRegistrationForm">
               <label>Theatre Email</label>
               <input name="email" type="email" onChange={dataHandler} />
-            </div>
-            <div className="InputDivofTheatreRegistrationForm">
+              </div>
+              <div className="InputDivofTheatreRegistrationForm">
               <label>Phone Number</label>
               <input
                 name="phone"
                 type="text"
                 onChange={dataHandler}
                 pattern="[0-9+]*"
-              />
+                />
             </div>
             <div className="InputDivofTheatreRegistrationForm">
               <label>Alternative Contact</label>
@@ -90,34 +91,35 @@ const TheatreRegistration = () => {
                 type="text"
                 onChange={dataHandler}
                 pattern="[0-9+]*"
-              />
+                />
             </div>
             <div className="InputDivofTheatreRegistrationForm">
-              <label>Number Of screens</label>
-              <input
+            <label>Number Of screens</label>
+            <input
                 name="num_of_screens"
                 type="text"
                 onChange={dataHandler}
                 pattern="[0-9]*"
-              />
+                />
             </div>
-            <div className="InputDivofTheatreRegistrationForm">
-              <label>Certifications</label>
-              <input name="certification" type="file" onChange={dataHandler} />
+            <div className="InputDivofTheatreRegistrationForm ">
+            <label>Certifications</label>
+            <input name="certification" className="Certifications" type="file" onChange={dataHandler} />
             </div>
             {screenModal && <ScreensViewForUpdation />}
-          </div>
-          <div className="buttonDivForTheatreRegistraion mt-5">
+            </div>
+            <div className="buttonDivForTheatreRegistraion mt-5">
             <button data-tooltip="submit">
-              <RiArrowRightCircleFill
-                color="white"
-                className="buttonbIcon"
-                size={50}
-              />{" "}
+            <RiArrowRightCircleFill
+            color="rgb(102, 101, 101)"
+            className="buttonbIcon"
+            size={50}
+            />{" "}
             </button>
-          </div>
-        </form>
-      </div>
+            </div>
+            </form>
+            </div>
+            </div>
     </div>
   );
 };

@@ -10,7 +10,6 @@ const MobilePhoneUpdation = ({byClick}) => {
     const {  authToken } = useContext(AuthContext)
     const inputRef = useRef(null)
     const [value, setValue] = useState('')
-    const options = useMemo(() => countryList().getData(), [])
     
     const changeHandler = value => {
       setValue(value)
@@ -34,7 +33,7 @@ const MobilePhoneUpdation = ({byClick}) => {
         const data = response.data
         if (response.status==200 & e != undefined){
             console.log(data);
-            byClick(data,inputRef.current.phone.value)
+            byClick(inputRef.current.phone.value)
         }else{
             setPhoneValue(data.phone)
         }

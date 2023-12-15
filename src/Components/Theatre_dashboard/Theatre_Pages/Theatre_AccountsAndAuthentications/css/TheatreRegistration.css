@@ -39,11 +39,17 @@
 }
 
 .InputDivofTheatreRegistrationForm input{
+    background-color: rgb(102, 101, 101);
+    background-color: rgb(152, 152, 152);
     outline: none;
     border: none;
     padding-left: 7px;
     caret-color: rgb(3, 3, 3);
     border-radius: 2px;
+}
+.InputDivofTheatreRegistrationForm .Certifications{
+    background-color: white;
+
 }
 
 @keyframes shake {
@@ -73,10 +79,8 @@
     position:absolute;
     transition: all 1s ease;
     width: 100px;
-    padding: 3px;
-    border-radius: 4px;
+    padding: 2px;
     color: white;
-    /* background-color: rgb(232, 231, 231); */
     top: -20px;
     background: transparent;
     background-color: rgb(44, 41, 41);
@@ -86,7 +90,7 @@
 
 }
 .buttonDivForTheatreRegistraion button{
-    background-color: rgb(88, 81, 81);
+    background-color: white;
     margin-top: -20px;
     border: none;
 }
@@ -103,4 +107,10 @@
     text-decoration:underline;
     pointer-events: none;
 
+}
+.formdivintheatreregistrationMain{
+    background-color: white;
+    padding: 70px;
+    margin-left: 70px;
+    margin-right: 70px;
 }

@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode }  from 'jwt-decode'
 import { MuiOtpInput } from 'mui-one-time-password-input'
 import { Button } from "@mui/material";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 
-
-const UserEmailOtp = ({email,otp_,auth,setModalOpen}) => {
+const UserEmailOtp = ({email,auth,setModalOpen}) => {
+  console.log(email,'eeeeeeeeeeeeeeeeeeeeeeeeeeee');
   const { setAuthToken,setUser,authToken,setBasicModal,myLocation,user } = useContext(AuthContext)
 const [otp,setOtp] = useState('')
   const navigate = useNavigate()
@@ -19,9 +19,8 @@ const [otp,setOtp] = useState('')
       const response = await axios.post(
         `${import.meta.env.VITE_URL_SERVER}/email${props}/otp/`,
         {
-          otp:otp_ ,
-          email: email,
           otp_entered: e,
+          email:email,
          ...(myLocation && !auth ? { location: myLocation } : {})
         }
       );
@@ -39,7 +38,6 @@ const [otp,setOtp] = useState('')
         toast.success("Succesfully loginned")
         
         
-        
       }
       else {
         navigate('/view')
@@ -54,8 +52,8 @@ const [otp,setOtp] = useState('')
       
       setBasicModal(false);
       setModalOpen(false)
+      toast.error("Invalid Otp!")
     navigate('/view')
-    toast.warning("Invalid Otp!")
       
     }
   };

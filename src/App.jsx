@@ -26,6 +26,8 @@ import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_theatr
 import TheatreShowDetailsView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsView";
 import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreRegistration";
 import TheatreShowDetailsSingleView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsSingleView";
+import PaymentRedirect from "./Components/UserPage/Payments/PaymentRedirect";
+import TicketbookedViewByUser from "./Components/UserPage/TicketBookedView/TicketbookedViewByUser";
 
 
 const App = () => {
@@ -45,10 +47,12 @@ const App = () => {
           <Route path="/theatre/owner/register" element={<TheatreOwnerRegistration />} />
           <Route path="/theatre/register" element={<TheatreRegistration />} />
           <Route path="/movies/list" element={<Movieslist />} />
+          <Route path="/movies/list/movieview/:movie/" element={<MovieDetailsFullShowing />} />
           <Route path="/admin/theatre_request" element={<Admin_TheatreRequestView />} />
           <Route path="/admin/theatre_request/:id" element={<Admin_TheatreVerification />} />
           <Route path="/movies/:language" element={<MoviesByLoctnAndLngage />} />
           <Route path="/movies/:language/:movie/" element={<MovieDetailsFullShowing />} />
+          <Route path="/movieview/:movie/" element={<MovieDetailsFullShowing />} />
           <Route path="/movies/:language/:movie/:dt" element={<MoviesByLocationAndnameAndDate />} />
           <Route path="/movies/:language/:movie/:dt/:cinemas/:screen/:tm" element={<ScreenDetailsByScreenNumber />} />
           <Route path="/talkies/all" element={<TheatreListByLocation />} />
@@ -57,6 +61,8 @@ const App = () => {
           <Route path="/theatre/seatarrangemnt/:id" element={<SeatDetailsForUpdation />} />
           <Route path="/theatre/showview" element={<TheatreShowDetailsView />} />
           <Route path="/theatre/showview/:id/:dt" element={<TheatreShowDetailsSingleView/>} />
+          <Route path="/payment" element={<PaymentRedirect />} />
+          <Route path="/ticketview" element={<TicketbookedViewByUser />} />
           
         </Routes>
         <Footer />

@@ -61,7 +61,7 @@ function OffCanvasExample({ name, ...props }) {
       <Button variant='outlined' onClick={theatreModal}>TheatreLogin</Button>
     :null}
      <hr/>
-     Body
+    <p onClick={()=>navigate('/ticketview')}>Ticket</p>  
      <hr />
      title
      <hr/>

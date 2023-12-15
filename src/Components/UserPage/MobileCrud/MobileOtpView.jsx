@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import './MobileUpdation.css'
 import { MuiOtpInput } from 'mui-one-time-password-input'
 import { Button } from '@mui/material'
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 
-const MobileOtpView = ({sid,phone}) => {
-    const {authToken} = useContext(AuthContext)
+const MobileOtpView = ({phone}) => {
+    console.log(phone,'.................');
     const navigate = useNavigate()
     const [otp,setOtp] = useState('')
     const OtpVerification = async (e)=>{
@@ -17,8 +17,9 @@ const MobileOtpView = ({sid,phone}) => {
             const response = await axios.post(
                 `${import.meta.env.VITE_URL_SERVER}/userprofile/phone/otp/`,
                 {
-                    otp:e,
-                    verification_sid:sid
+                    otp_enterd:e,
+                    phone:"+91"+phone
+
                 }
             )
 
@@ -31,7 +32,7 @@ const MobileOtpView = ({sid,phone}) => {
             console.error(data);
         }
     }catch(error){
-        console.error(data);
+        console.error(error);
         navigate('/view')
         toast.error('Something Went Wrong')
 

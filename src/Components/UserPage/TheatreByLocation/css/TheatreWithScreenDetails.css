@@ -1,0 +1,113 @@
+.MainContainerDivForTheatreWithScreenDetails{
+    margin-top: 2rem;
+}
+.DateDifferencingInTheatreWithScreenDetails{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(80px,1fr));
+    
+    grid-column-gap: 1.5rem; 
+}
+
+
+.OnclickDateDivInTheatreWithScreenDetails{
+    background-color: rgb(190, 186, 186);
+    box-shadow: inset 0px 0px 10px rgba(0,0,0,1);
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    min-width: 3rem;
+    aspect-ratio: 3/3;
+    transition: all 3s ease-in;
+    
+}
+
+.OnclickDateDivInTheatreWithScreenDetails p{
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+    color: rgb(107, 102, 102);
+    
+}
+
+.OnclickDateDivInTheatreWithScreenDetails:hover{
+    transition: box-shadow 3s ease-in;
+    border-radius: 0px;
+    box-shadow:  10px 10px 10px rgba(0,0,0,1);
+    background-color: rgb(201, 198, 198);
+    
+}
+.OnclickDateDivInTheatreWithScreenDetails:hover p {
+    color: rgb(0, 0, 0);
+}
+
+.TheatreDetailsDifferencingDivInTheatreWithScreenDetails{
+    margin-top: 3rem;
+    /* background-color: white; */
+    
+    
+}
+.DifferncingInTheatreWithScreenDetails{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 5rem;
+    
+}
+
+.SingleDetailingOfScreensinTheatreWithScreenDetails{
+    background-color: rgb(212, 241, 212);
+    min-width: 2rem;
+    max-width: 9rem;
+    width: 9rem;
+    padding: 0.5rem;
+    border: 2px solid rgb(0, 175, 0) ;
+    cursor: pointer;
+    
+}
+.divinsidesingledetailingbyTheatreViebylocation{
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    
+    
+}
+.divinsidesingledetailingbyTheatreViebylocation p {
+    margin-bottom: 5px;
+    padding: 0;
+}
+.divinsidesingledetailingbyTheatreViebylocation p strong{
+    font-size: 12px;
+}
+.divinsidesingledetailingbyTheatreViebylocation .movielang{
+    font-size: 12px;
+    
+}
+.divinsidesingledetailingbyTheatreViebylocation [data-tooltip]{
+    position: relative;
+    
+}
+.divinsidesingledetailingbyTheatreViebylocation [data-tooltip]:hover::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    max-width: 100%;
+    padding: 3px;
+    color: white;
+    top: 0px;
+    right: -40px;
+    z-index: 1;
+    background-color: rgb(44, 41, 41);
+    border: 1px solid rgb(225, 208, 208);
+    font-size: 12px;
+}
+.SecondMainContainerdivForTheareWithScreenDetails h6{
+    color: white;
+    margin-bottom: 3rem;
+    font-size:2.5rem;
+    letter-spacing: -1.6px;
+    display: inline-block;
+    cursor:copy;
+}
+

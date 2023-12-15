@@ -7,7 +7,14 @@
 }
 .ImageContainerForScreenDetailsUpdating{
     width: 40%;
-    background-color: red;
+    /* background-color: red; */
+    overflow: hidden;
+    
+}
+.ImageContainerForScreenDetailsUpdating img{
+    overflow: hidden;   
+    height: 71vh;
+    object-fit: cover; 
 }
 .MainDivForFormInScreenUpdatingForm{
     width: 50%;
@@ -70,6 +77,9 @@
   }
 .screenMainDivOutsideInScreenDetailsUpdating{
     text-align: center;
+    max-height: 100%;
+    /* overflow: hidden; */
+   
 }
 .ScreenDetailsHeadingInscreenDetails{
     letter-spacing: -1.6px;
@@ -79,18 +89,20 @@
 .ScreenDetailsHeadingInscreenDetails h3{
     min-width: 20%;
     padding: 1rem;
-}.ButtonDivInTheSceenDetailsUpdation{
-    /* margin: 20px; */
+    text-decoration: underline;
 }
-
-.ButtonDivInTheSceenDetailsUpdation input{
+.ButtonDivInTheSceenDetailsUpdation button{
     margin-top: 30px;
     width: 30%;
     height: 6vh;
-    background-color: green;
+    background-color: rgb(32, 33, 32);
     font-size: 12px;
-    color: white;
+    color: rgb(228, 223, 223);
     border: none;
     border-radius: 2px;
 
+}
+.ButtonDivInTheSceenDetailsUpdation button:hover{
+background-color: black;
+color: white;
 }

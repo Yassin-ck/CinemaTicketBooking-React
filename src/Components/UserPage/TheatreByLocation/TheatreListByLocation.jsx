@@ -5,6 +5,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../../context/authcontext'
+import './css/TheatreListByLocation.css'
 
 
 const TheatreListByLocation = () => { 
@@ -35,18 +36,27 @@ const TheatreListByLocation = () => {
     
   return (
     <>
+    <div className='container MainDivInTheatreListByLocation'>
+    <div className='SecondMainDivInTheareListByLocation'>
     {theatreDetails.map((theatre)=>(
-        <Link key={theatre.id}
-        to={`/talkies/${theatre.theatre_name}/${currentDate}`}
-        >
-        {theatre.theatre_name}
-        <br/>
-        {theatre.address}
-        </Link>
-    ))
+        <div 
+        className='InnerMainDivInTheatrelistByLocation'
+        onClick={()=>navigate(`/talkies/${theatre.theatre_name}/${currentDate}`)}
+        key={theatre.id}
+         >
 
+        <div 
+        className='OnClickDivinTheatreListByLocation'
+        >
+       <h6 className='theatrePtagInTheatreListBbyLocation'>{theatre.theatre_name}</h6>
+          <p>{theatre.address}</p>  
+        </div>
+        </div>
+        ))     
     }
     
+    </div>
+    </div>
     </>
   )
 }

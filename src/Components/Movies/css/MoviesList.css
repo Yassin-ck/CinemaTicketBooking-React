@@ -1,0 +1,53 @@
+.MainDivForMovieSearch{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-gap: 2rem;
+    margin-top: 4rem;
+    animation: fade 1s ease 0s ;
+
+}
+.MainCardDivInMoveSearchListdetails{
+    background-color: white;
+}
+.MainCardDivInMoveSearchListdetails:hover{
+    cursor: pointer;
+}
+.InnerDivInMovieSearchListdetails img{
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    aspect-ratio: 11/16;
+    object-fit: cover;
+    perspective: 100 px;
+    /* transition: transform 0.3s ease-in-out; */
+}
+.InnerDivInMovieSearchListdetails{
+    width: 100%;
+    /* overflow: hidden; */
+}
+.InnerDivInMovieSearchListdetails p{
+    font-size: 15px;
+    font-weight: bolder;
+    margin: 2px;
+    text-align: center;
+}
+
+.InnerDivInMovieSearchListdetails img:hover{
+    transform: rotateY(10deg);
+
+}
+.DifferncingInTheatreWithScreenDetails h5{
+    color: white;
+    font-size: 14px;
+}
+@keyframes fade {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+      
+      pointer-events: visible;
+  
+    }
+  }
+  
