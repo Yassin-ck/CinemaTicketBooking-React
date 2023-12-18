@@ -31,7 +31,7 @@ const ScreenDetailsByScreenNumber = () => {
       console.error(error);
     }
   };
-
+  
   const seatBookingHandler = async (date, time, tickets, theatre_name, screen_number) => {
     try {
       const response = await axios.put(
@@ -80,6 +80,9 @@ const ScreenDetailsByScreenNumber = () => {
       }
 
     } catch (error) {
+       if (error.response.status == 500){
+      toast.error('Network Error!')
+    }
       console.error(error);
     }
   };
@@ -90,6 +93,7 @@ const ScreenDetailsByScreenNumber = () => {
     );
     console.log(response);
   } catch (error) {
+   
     console.error(error);
   }
 };
@@ -141,7 +145,7 @@ console.log(seating,typeof(seating));
                       <h6>{item.screen_number}</h6>
                     </div>
                   </div>
-                  <div className="">
+                  <div>
                     {item.seating.map((seats, index) => (
                       <div key={index}>
                         <div className="InnerDivForSeatArrangementInScreenDetails">

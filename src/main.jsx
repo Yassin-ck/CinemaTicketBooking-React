@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
 import store from './Redux/store.jsx'
 import axios from 'axios'
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 let authToken = JSON.parse(localStorage.getItem('authToken'))

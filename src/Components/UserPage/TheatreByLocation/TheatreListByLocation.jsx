@@ -4,8 +4,8 @@ import { theareListingAction } from '../../../Redux/Slices/theatreSlice'
 import { useDispatch,useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../../context/authcontext'
 import './css/TheatreListByLocation.css'
+import { AuthContext } from '../../../context/Authcontext'
 
 
 const TheatreListByLocation = () => { 

@@ -18,7 +18,7 @@ const SecondNavbar = () => {
         <div className="innerMainDivForSecondDicInSecondNavbar">
           <h6
             onClick={() => handleNavigation("/movies/all")}
-            className={selectedPage === "/movies/all" ? "selected" : ""}
+            className={selectedPage === "/movies/all" ? "selected" : null}
           >
             Movies
           </h6>
@@ -26,7 +26,7 @@ const SecondNavbar = () => {
         <div className="innerMainDivForSecondDicInSecondNavbar">
           <h6
             onClick={() => handleNavigation("/talkies/all")}
-            className={selectedPage === "/talkies/all" ? "selected" : ""}
+            className={selectedPage === "/talkies/all" ? "selected" :null}
           >
             Theatres
           </h6>

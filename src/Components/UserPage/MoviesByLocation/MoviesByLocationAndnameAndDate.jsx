@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,9 +8,11 @@ import {
 } from "../../../Redux/Slices/movieSlice";
 import { useNavigate } from "react-router-dom";
 import "./css/MoviesByLocationAndNameAndDate.css";
+import { AuthContext } from "../../../context/Authcontext";
 
 const MoviesByLocationAndnameAndDate = () => {
   const dispatch = useDispatch();
+  const { currentDate } = useContext(AuthContext)
   const { language, movie, dt } = useParams();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -41,7 +43,7 @@ const MoviesByLocationAndnameAndDate = () => {
       console.error(error);
     }
   };
-
+console.log(currentDate);
   useEffect(() => {
     FetchingMovieDetailsByMovieNameandDate(
       JSON.parse(localStorage.getItem("myLocation")),
@@ -51,7 +53,7 @@ const MoviesByLocationAndnameAndDate = () => {
     );
   }, [dt]);
 
-  console.log(movieListByLocation);
+  console.log(dt);
   return (
     <>
       <div>
@@ -74,7 +76,7 @@ const MoviesByLocationAndnameAndDate = () => {
                       navigate(`/movies/${language}/${movie}/${item}`)
                     }
                   >
-                    <div className="DivForTheDateInTheShowTimePDiv">
+                    <div className={item==dt?"DivForTheDateInTheShowTimePDivSelected":dt==currentDate&&item.slice(4,6)==currentDate.slice(8,10)?"DivForTheDateInTheShowTimePDivSelected": "DivForTheDateInTheShowTimePDiv"}>
                       <p>{item.slice(0, 3)}</p>
                       <p>{item.slice(4, 6)}</p>
                       <p>{item.slice(7, 10)}</p>

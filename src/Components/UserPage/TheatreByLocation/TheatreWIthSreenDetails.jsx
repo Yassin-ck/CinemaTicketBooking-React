@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { theareListingAction } from "../../../Redux/Slices/theatreSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { dateListing } from "../../../Redux/Slices/movieSlice";
 import "./css/TheatreWithScreenDetails.css";
+import { AuthContext } from "../../../context/Authcontext";
 
 const TheatreWithScreenDetails = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const TheatreWithScreenDetails = () => {
   const { movie, theatre } = useSelector((state) => state);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate()
+  const { currentDate } = useContext(AuthContext)
 
   useEffect(() => {
     const FetchTheatrelistByLocation = async (location, cinemas, date) => {
@@ -50,7 +52,7 @@ const TheatreWithScreenDetails = () => {
             {loading &&
               movie.dateDetails &&
               movie.dateDetails.map((date, index) => (
-                  <div className="OnclickDateDivInTheatreWithScreenDetails" key={index.id}
+                  <div className={date==dt?'OnclickDateDivInTheatreWithScreenDetailsHidden':dt==currentDate&&date.slice(4,6)==currentDate.slice(8,10)?'OnclickDateDivInTheatreWithScreenDetailsHidden':'OnclickDateDivInTheatreWithScreenDetails'} key={index.id}
                    onClick={()=>navigate(`/talkies/${cinemas}/${date}`)}>
                   <p>{date.slice(0, 3)}</p>
                   <p>{date.slice(4, 6)}</p>

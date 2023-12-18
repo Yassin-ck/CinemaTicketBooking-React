@@ -59,10 +59,12 @@ const MoviesByLoctnAndLngage = () => {
             languages.map((item, index) => (
               <div
                 key={index}
-                className="LanguageSingleClassNameInMoVieListing"
+                className='LanguageSingleClassNameInMoVieListing'
               >
                 <div onClick={() => navigate(`/movies/${item}`)} key={index}>
-                  <p>{item}</p>
+                <p style={item == language ? { background: 'rgb(210, 168, 94)',color:'black' } : {}}>
+                {item}
+                </p>
                 </div>
               </div>
             ))}
