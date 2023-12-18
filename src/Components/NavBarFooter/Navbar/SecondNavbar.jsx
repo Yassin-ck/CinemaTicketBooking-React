@@ -8,9 +8,18 @@ const SecondNavbar = () => {
   const [selectedPage, setSelectedPage] = useState("");
   const handleNavigation = (page) => {
     navigate(page);
-    setSelectedPage(page);
   };
- 
+ useEffect(()=>{
+  console.log(location.pathname);
+if (location.pathname.includes('movies')){
+setSelectedPage("movies")
+}else if (location.pathname.includes('talkies')){
+setSelectedPage("talkies")
+}else{
+  setSelectedPage("")
+}
+ },[handleNavigation])
+ console.log(selectedPage);
 
   return (
     <div className="container SecondNavbarMainDiv">
@@ -18,7 +27,7 @@ const SecondNavbar = () => {
         <div className="innerMainDivForSecondDicInSecondNavbar">
           <h6
             onClick={() => handleNavigation("/movies/all")}
-            className={selectedPage === "/movies/all" ? "selected" : null}
+            className={selectedPage === "movies" ? "selected" : null}
           >
             Movies
           </h6>
@@ -26,7 +35,7 @@ const SecondNavbar = () => {
         <div className="innerMainDivForSecondDicInSecondNavbar">
           <h6
             onClick={() => handleNavigation("/talkies/all")}
-            className={selectedPage === "/talkies/all" ? "selected" :null}
+            className={selectedPage === "talkies" ? "selected" :null}
           >
             Theatres
           </h6>

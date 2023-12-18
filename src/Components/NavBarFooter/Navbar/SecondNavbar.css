@@ -28,6 +28,8 @@
   }
   .innerMainDivForSecondDicInSecondNavbar h6.selected {
     color: #d9c5b2;
-    
-    /* Change to your desired selected color */
-  }
+    border-bottom: 2px solid #d9c5b2;
+    padding-bottom: 2px;
+    width: 72%;
+}
+
