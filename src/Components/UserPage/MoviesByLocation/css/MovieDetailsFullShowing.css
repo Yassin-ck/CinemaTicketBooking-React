@@ -73,3 +73,63 @@
 .namedivinsinglefullmovie p{
     color:#d9c5b2;
 }
+
+
+
+/* rating and review section */
+
+.RatingAndReviewMainContainerDiv{
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.RatingAndReviewHeadingAndSummaryDiv{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+
+}
+.RatingAndReviewHeaidngIinerDivSection1{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.RatingAndReviewSingleContentContainer{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 3rem;
+    flex-wrap: wrap;
+ 
+
+
+}
+.RatingAndReviewSingleDataContainer {
+   width: 30%;
+    border: 1px solid rgb(194, 194, 194);
+    aspect-ratio: 4/3;
+    padding: 2rem;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 2rem;
+    text-wrap:wrap ;
+    overflow: hidden;
+
+}
+
+.RatingAndReviewUsernameAndStarContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.RatingAndReviewTextReviewContainer {
+   display: -webkit-box;
+   -webkit-line-clamp: 7;
+   -webkit-box-orient: vertical;
+   overflow: hidden;     
+    word-wrap: break-word; 
+}

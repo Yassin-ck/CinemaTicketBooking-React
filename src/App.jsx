@@ -1,5 +1,5 @@
 import Home from "./Components/HomePage/Home";
-import AuthProvider from "./context/authcontext";
+import AuthProvider from "./context/Authcontext"
 import { Routes, Route } from "react-router-dom";
 import Movieslist from "./Components/Movies/Movieslist";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
@@ -28,6 +28,7 @@ import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Th
 import TheatreShowDetailsSingleView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsSingleView";
 import PaymentRedirect from "./Components/UserPage/Payments/PaymentRedirect";
 import TicketbookedViewByUser from "./Components/UserPage/TicketBookedView/TicketbookedViewByUser";
+import TheatresShowsAdding from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ShowsCrud/TheatresShowsAdding";
 
 
 const App = () => {
@@ -63,6 +64,7 @@ const App = () => {
           <Route path="/theatre/showview/:id/:dt" element={<TheatreShowDetailsSingleView/>} />
           <Route path="/payment" element={<PaymentRedirect />} />
           <Route path="/ticketview" element={<TicketbookedViewByUser />} />
+          <Route path="/theatre/addshow" element={<TheatresShowsAdding />} />
           
         </Routes>
         <Footer />

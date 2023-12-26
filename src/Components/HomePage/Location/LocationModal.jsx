@@ -3,7 +3,6 @@ import "./LocationModal.css";
 import { TfiSearch } from "react-icons/tfi";
 import { MdLocationSearching } from "react-icons/md";
 import axios from "axios";
-
 import {
   MDBModal,
   MDBModalDialog,
@@ -13,36 +12,32 @@ import {
 } from "mdb-react-ui-kit";
 import { IoAddSharp } from "react-icons/io5";
 import { MdOutlineDone } from "react-icons/md";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/Authcontext";
 import toast from "react-hot-toast";
-import { ErrorOutline } from "@mui/icons-material";
 
 export default function LocationModal({ optSmModal, setOptSmModal }) {
-  const { authToken, user, setModalOpen } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [newLocationRequestData, SetNewLocationRequestData] = useState({
     country: "",
     district: "",
     state: "",
     place: "",
   });
-  console.log(user);
   const [newLocationRequest, setNewLocationRequest] = useState(false);
   const [locationFetched, setLocationFetched] = useState([]);
   const GetCurrentLocation = async () => {
-    try{
-
+    try {
       const response = await axios.get(
         `${import.meta.env.VITE_URL_SERVER}/currentlocation/`
-        );
-        const data = response.data;
-        if (response.status == 200) {
-          console.log(data);
-          localStorage.setItem("myLocation", JSON.stringify(data.city));
-          window.location.reload();
-        }
-      }catch(error){
-        toast.error('Network Error')
+      );
+      const data = response.data;
+      if (response.status == 200) {
+        localStorage.setItem("myLocation", JSON.stringify(data.city));
+        window.location.reload();
       }
+    } catch (error) {
+      toast.error("Network Error");
+    }
   };
 
   const NewlocationVerificationPost = async (e) => {

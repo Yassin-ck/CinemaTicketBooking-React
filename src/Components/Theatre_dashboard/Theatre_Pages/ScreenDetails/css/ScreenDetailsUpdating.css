@@ -44,6 +44,8 @@
 .InputLabelForScreenDetailsUpdating input:focus,
 .InputLabelForScreenDetailsUpdating input:valid{
     border-radius: 0px;
+    border: 2px solid rgb(93, 93, 93);
+    
 }
 
 .InputLabelForScreenDetailsUpdating label {
@@ -56,7 +58,7 @@
     background: transparent;
     margin: 0;
     letter-spacing: -0.5px;
-    transition: 0.4s ease-in-out ;
+    transition: 0.15s ease-in-out ;
     color: rgb(112, 123, 112);
 }
 .InputLabelForScreenDetailsUpdating input:focus~label::after {
@@ -74,6 +76,7 @@
     padding-left: 5px;
     padding-right: 5px;
     background-color: rgb(255, 255, 255);
+    font-weight: bold;
   }
 .screenMainDivOutsideInScreenDetailsUpdating{
     text-align: center;
