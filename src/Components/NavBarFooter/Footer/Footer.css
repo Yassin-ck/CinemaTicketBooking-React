@@ -1,0 +1,30 @@
+
+.FooterTheatreSecondDiv{
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+    align-items: center;
+    height: 10vh;
+}
+.FooterTheatreMainDiv{
+    background-color: white;
+    color: black;
+}
+.footerTheatreP{
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    font-size: large;
+
+}
+.footerTheatreP p{
+    margin: 0 ;
+    padding: 0 ;
+}
+.footerTheatreButton button{
+    padding: 8px 30px;
+    border: none;
+    background-color: rgb(228, 66, 93);
+    color: white;
+    border-radius: 3px;
+    font-size: large;
+}

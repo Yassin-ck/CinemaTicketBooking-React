@@ -22,7 +22,6 @@ const TheatreShowDetailsView = () => {
     <div>{loading&&showData.map((show,index)=>(
         <div key={index}>
        {show.screen_number}
-       
        {show.dates.map((date,index)=>(
         <div>
         <Link to={`${show.screen_number}/${date}`}> {date}</Link> 

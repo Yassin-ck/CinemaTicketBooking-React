@@ -1,16 +1,18 @@
 import Home from "./Components/HomePage/Home";
 import AuthProvider from "./context/Authcontext"
-import { Routes, Route } from "react-router-dom";
 import Movieslist from "./Components/Movies/Movieslist";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
 import Footer from "./Components/NavBarFooter/Footer/Footer";
 import Navbar from "./Components/NavBarFooter/Navbar/Navbar";
+import { Routes, Route, useLocation } from "react-router-dom";
 import SignInPage from "./Components/HomePage/SignInPages/SignInPage";
 import SecondNavbar from "./Components/NavBarFooter/Navbar/SecondNavbar";
+import PaymentRedirect from "./Components/UserPage/Payments/PaymentRedirect";
 import UserProfileEdit from "./Components/UserPage/UserProfileCrud/UserProfileCrud";
 import MobileUpdationModal from "./Components/UserPage/MobileCrud/MobileUpdationModal";
 import TheatreListByLocation from "./Components/UserPage/TheatreByLocation/TheatreListByLocation";
 import MoviesByLoctnAndLngage from "./Components/UserPage/MoviesByLocation/MoviesByLoctnAndLngage";
+import TicketbookedViewByUser from "./Components/UserPage/TicketBookedView/TicketbookedViewByUser";
 import MovieDetailsFullShowing from "./Components/UserPage/MoviesByLocation/MovieDetailsFullShowing";
 import Admin_TheatreRequestView from "./Components/AdminPanel/Admin_theatres/Admin_TheatreRequestView";
 import TheatreWithScreenDetails from "./Components/UserPage/TheatreByLocation/TheatreWIthSreenDetails";
@@ -24,14 +26,26 @@ import ScreenDetailsUpdating from "./Components/Theatre_dashboard/Theatre_Pages/
 import SeatDetailsForUpdation from "./Components/Theatre_dashboard/Theatre_Pages/ScreenDetails/SeatDetailsForUpdation";
 import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_theatreOwners/Admin_TheatreOwnerVerification";
 import TheatreShowDetailsView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsView";
+import TheatresShowsAdding from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ShowsCrud/TheatresShowsAdding";
 import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreRegistration";
 import TheatreShowDetailsSingleView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsSingleView";
-import PaymentRedirect from "./Components/UserPage/Payments/PaymentRedirect";
-import TicketbookedViewByUser from "./Components/UserPage/TicketBookedView/TicketbookedViewByUser";
-import TheatresShowsAdding from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ShowsCrud/TheatresShowsAdding";
+import ScreenShowingWithNumbers from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ScreenShowingWithNumbers";
+import ScreenSIngleShowoingDetails from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ScreenSIngleShowoingDetails";
+import { useEffect, useState } from "react";
 
 
 const App = () => {
+  const [theatreFooter,setTheatreFooter] = useState(false)
+  const location = useLocation()
+
+  useEffect(()=>{
+    if(location.pathname.includes('theatre')){
+      setTheatreFooter(true)
+    }else{
+      setTheatreFooter(false)
+    }
+  },[location])
+  
   return (
     <>
       <AuthProvider>
@@ -62,12 +76,14 @@ const App = () => {
           <Route path="/theatre/seatarrangemnt/:id" element={<SeatDetailsForUpdation />} />
           <Route path="/theatre/showview" element={<TheatreShowDetailsView />} />
           <Route path="/theatre/showview/:id/:dt" element={<TheatreShowDetailsSingleView/>} />
+          <Route path="/theatre/screens/:id/addshow" element={<TheatresShowsAdding />} />
+          <Route path="/theatre/screens" element={<ScreenShowingWithNumbers />} />
+          <Route path="/theatre/screens/:id" element={<ScreenSIngleShowoingDetails />} />
           <Route path="/payment" element={<PaymentRedirect />} />
           <Route path="/ticketview" element={<TicketbookedViewByUser />} />
-          <Route path="/theatre/addshow" element={<TheatresShowsAdding />} />
           
         </Routes>
-        <Footer />
+        {!theatreFooter&&<Footer />}
       </AuthProvider>
     </>
   );

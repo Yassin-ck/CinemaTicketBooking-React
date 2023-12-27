@@ -23,7 +23,6 @@ const TheatreLoginModal = () => {
       console.error(error);
     }
   }
-  
  
   return (
     <>

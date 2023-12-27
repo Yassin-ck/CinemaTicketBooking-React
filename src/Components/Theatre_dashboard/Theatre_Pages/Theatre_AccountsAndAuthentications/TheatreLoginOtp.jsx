@@ -12,9 +12,8 @@ const TheatreLoginOtp = ({emailData}) => {
       
         try {
           const response = await axios.post(`${import.meta.env.VITE_URL_SERVER}/theatre/loginverify/`, {
-            otp: inputRef.current.otp.value,
+            otp_entered: inputRef.current.otp.value,
             email: emailData.email,
-            otp_entered: emailData.otp,
           });
       
           console.log('Response:', response);
@@ -22,9 +21,10 @@ const TheatreLoginOtp = ({emailData}) => {
           if (response.status === 200) {
             alert(response.data.msg);
             localStorage.setItem('authToken', JSON.stringify(response.data.token));
-            console.log(response.data);
+          navigate('/theatre/screens')
         } 
     } catch (error) {
+      console.log(error);
         if (error.response.status==403){
               localStorage.setItem('authToken', JSON.stringify(error.response.data.token));
              navigate(`/theatre/screencrud/${error.response.data.id}`)

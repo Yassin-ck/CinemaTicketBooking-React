@@ -22,8 +22,8 @@ setSelectedPage("talkies")
  console.log(selectedPage);
 
   return (
-    <div className="container SecondNavbarMainDiv">
-      <div className="secondMainDivInSecondNavbar">
+    <div className=" SecondNavbarMainDiv">
+      <div className="container secondMainDivInSecondNavbar">
         <div className="innerMainDivForSecondDicInSecondNavbar">
           <h6
             onClick={() => handleNavigation("/movies/all")}

@@ -1,0 +1,52 @@
+.MainContainerDivInScreenShowingWithNumbers{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-top: 6rem;
+
+}
+.SecondDivInScreenShowingWithNumbers{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+    align-items: center ;
+    
+}
+.ScreenShowingWIthNumbersItemMainDiv{
+    width: 40%;
+    text-align: center;
+    cursor: pointer;;
+}
+.ScreenShowingWIthNumbersItemDiv{
+    aspect-ratio: 3/3;
+    border: 1px solid white;
+    background: linear-gradient(45deg, red, green);
+    background-image: url('https://img.freepik.com/premium-vector/collection-hand-drawn-retro-theater-elements_23-2147593966.jpg?w=740');
+    background-size: cover; 
+    transition: 0.3s ease-in-out;
+}
+
+.ScreenShowingWIthNumbersItemDiv:hover{
+    box-shadow: 3px 3px 10px rgba(0, 0,0,0.3);
+}
+.ScreenShowingWIthNumbersItemDiv p{
+    padding: 10px;
+    background-color: white;
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%;
+    font-weight: bolder;
+    text-align: center;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+
+    
+}
+.ScreenShowingWIthNumbersItemDiv:hover p{
+    box-shadow: inset 3px 3px 10px rgba(0, 0,0,0.3) ;
+    
+}
