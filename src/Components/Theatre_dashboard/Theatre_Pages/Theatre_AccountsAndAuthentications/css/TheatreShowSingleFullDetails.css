@@ -1,0 +1,56 @@
+.ImageContainerInTheatreShowFullDetails{
+    min-width: 30%;
+    width: 30%;
+
+    aspect-ratio: 2/3;
+}
+.ImageContainerInTheatreShowFullDetails img{
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+
+}
+
+.MainContainerForImageAndDataInTheatreShowFullDetails{
+    display: flex;
+    padding: 2rem;
+    justify-content: flex-start;
+    column-gap: 3rem;
+    width: 100%;
+
+}
+.DataContainerInTheatreShowFullDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 80%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+.DataContainerInTheatreShowFullDetails p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    margin-top: 7px;
+}
+
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+    
+}
+.ContainerBoxInTheatreShowingSingleFullDetails{
+    animation: fade 1s ease normal
+}
+.CloseButtonIcon:hover{
+    color: rgb(16, 15, 15) !important;
+}

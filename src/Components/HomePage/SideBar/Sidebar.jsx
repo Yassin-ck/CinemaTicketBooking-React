@@ -5,7 +5,6 @@ import { AuthContext } from "../../../context/Authcontext";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineArrowLeft } from "react-icons/md";
-import TheatreLoginModal from "../../Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreLoginModal";
 
 function OffCanvasExample({ name, ...props }) {
   const navigate = useNavigate();

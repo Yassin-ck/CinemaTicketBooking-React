@@ -1,0 +1,48 @@
+.MainContainerDivInTheatreShowDetailsView{
+    width: 100%;
+    display: flex;
+}
+.SecondContainerDivInTheatreShowDetailsView{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+    width: 40%;
+    row-gap: 2rem;
+}
+.DateDivInTheatreShowDetailsView{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    padding: 2rem;
+    border-radius: 2px;
+    
+}
+.DateDivInTheatreShowDetailsViewClicked{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    padding: 2rem;
+    border-radius: 2px;
+    color: white;
+    background-color: grey;
+
+}
+.DateDivInTheatreShowDetailsViewClicked h6{
+    padding: 0;
+    margin: 0;
+}
+.DateDivInTheatreShowDetailsView h6{
+    padding: 0;
+    margin: 0;
+}
+.DateDivInTheatreShowDetailsView:hover{
+    background-color: grey;
+    cursor: pointer;
+    color:white;
+}
+.ThirdContainerDivInTheatreShowDetailsView{
+    width: 50%;
+    height: 0;
+}

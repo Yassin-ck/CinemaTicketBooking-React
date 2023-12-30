@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Home from "./Components/HomePage/Home";
 import AuthProvider from "./context/Authcontext"
 import Movieslist from "./Components/Movies/Movieslist";
@@ -27,30 +28,36 @@ import SeatDetailsForUpdation from "./Components/Theatre_dashboard/Theatre_Pages
 import Admin_TheatreOwnerVerification from "./Components/AdminPanel/Admin_theatreOwners/Admin_TheatreOwnerVerification";
 import TheatreShowDetailsView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsView";
 import TheatresShowsAdding from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ShowsCrud/TheatresShowsAdding";
-import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreRegistration";
-import TheatreShowDetailsSingleView from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/TheatreShowDetailsSingleView";
 import ScreenShowingWithNumbers from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ScreenShowingWithNumbers";
 import ScreenSIngleShowoingDetails from "./Components/Theatre_dashboard/Theatre_Pages/TheatreDashbaord/ScreenSIngleShowoingDetails";
-import { useEffect, useState } from "react";
+import TheatreRegistration from "./Components/Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreRegistration";
 
 
 const App = () => {
   const [theatreFooter,setTheatreFooter] = useState(false)
+  const [theatreNavbar,setTheatreNavbar] = useState(false)
   const location = useLocation()
 
   useEffect(()=>{
-    if(location.pathname.includes('theatre')){
+    if(location.pathname.includes('theatre/screens/')){
+      setTheatreFooter(true)
+      setTheatreNavbar(true)
+    }else if(location.pathname.includes('theatre')){
+      setTheatreNavbar(false)
       setTheatreFooter(true)
     }else{
+      setTheatreNavbar(false)
       setTheatreFooter(false)
+
     }
   },[location])
   
   return (
     <>
       <AuthProvider>
-        <Navbar />
-        <SecondNavbar />
+        {!theatreNavbar&&<Navbar />}
+        {!theatreNavbar&&<SecondNavbar />}
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/useremailupdation/:auth" element={<PrivateRouter><SignInPage /></PrivateRouter>} />
@@ -74,10 +81,11 @@ const App = () => {
           <Route path="/talkies/:cinemas/:dt" element={<TheatreWithScreenDetails />} />
           <Route path="/theatre/screencrud/:id" element={<ScreenDetailsUpdating />} />
           <Route path="/theatre/seatarrangemnt/:id" element={<SeatDetailsForUpdation />} />
-          <Route path="/theatre/showview" element={<TheatreShowDetailsView />} />
-          <Route path="/theatre/showview/:id/:dt" element={<TheatreShowDetailsSingleView/>} />
-          <Route path="/theatre/screens/:id/addshow" element={<TheatresShowsAdding />} />
           <Route path="/theatre/screens" element={<ScreenShowingWithNumbers />} />
+          <Route element={<ScreenSIngleShowoingDetails />}>
+          <Route path="/theatre/screens/:id/addshow" element={<TheatresShowsAdding />} />
+          <Route path="/theatre/screens/:id/showview" element={<TheatreShowDetailsView />} />
+          </Route>
           <Route path="/theatre/screens/:id" element={<ScreenSIngleShowoingDetails />} />
           <Route path="/payment" element={<PaymentRedirect />} />
           <Route path="/ticketview" element={<TicketbookedViewByUser />} />

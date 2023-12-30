@@ -1,0 +1,95 @@
+.TheatreShowsAddingInputDiv{
+    aspect-ratio: 53/3;
+}
+
+.TheatreShowsAddingInputDiv input{
+    width: 50%;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    margin:1rem 0 ;
+    color: white;
+    font-weight: bolder;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+.TheatreShowsAddingInputDiv input:hover{
+    background-color: grey;
+}
+.TheatreShowsAddingInputDivDisabled input{
+    width: 50%;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    margin:1rem 0 ;
+    color: rgb(165, 160, 160);
+    font-weight: bolder;
+    border: 1px solid grey;
+    border-radius: 2px;
+    
+}
+.TheatreShowsAddingButtonDiv,.TheatreShowsAddingButtonDivDisabled{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.TheatreShowsAddingButtonDiv input{ 
+    width:100%;
+    padding: 0.5rem 1rem;
+    background-color: rgb(204, 46, 72);
+    margin:1rem 0 ;
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.4s ease-in-out;
+}
+
+
+.TheatreShowsAddingButtonDiv input:hover{
+    background-color: rgb(200, 28, 57);
+    
+}
+.TheatreShowsAddingButtonDivDisabled input{
+    
+    width: 90%;
+    padding: 0.5rem 1rem;
+    background-color: rgba(75, 72, 73, 0.7);
+    margin:1rem 0 ;
+    color: rgb(135, 133, 133);
+    font-weight: bolder;
+    border-radius: 5px;
+    border:none;
+    
+    
+}
+.TheatreShowsAddingInputDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    
+}
+.InputDivInTheatreShowsAdding{
+width: 50%;
+}
+.DataDivInTheatreShowsAdding{
+    width: 50%;
+}
+
+.refreshIconInTheatreShowsAdding {
+    cursor: pointer;
+    margin-bottom:1rem;
+    position: relative;
+    width: fit-content;
+}
+
+.refreshIconInTheatreShowsAdding:hover::after {
+    content: "Refresh";
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 3px 7px;
+    position: absolute;
+    top: -10px;
+
+}
