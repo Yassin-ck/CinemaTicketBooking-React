@@ -1,8 +1,12 @@
 import axios from 'axios'
 import React,{ useEffect, useState } from 'react'
+import './TicketbookedViewByUser.css'
+import SingleTicketbookedViewByUser from './SingleTicketbookedViewByUser'
 
 const TicketbookedViewByUser = () => {
     const [ticket,setTicket] = useState([])
+    const [open, setOpen] = useState(false);
+
     const [loading,setLoading] = useState(false)
     const bookedtTicketFetching = async()=>{
             try{
@@ -20,26 +24,23 @@ const TicketbookedViewByUser = () => {
     useEffect(() => {
      bookedtTicketFetching()
     }, [])
+
+
     
 
   return (
-    <div>
+    <div className='container MainDivContainerTicketBookingView'>
     {loading&&ticket.map((item,index)=>(
-        <div key={index} style={{color:'white'}}>
-        <h1>{item.screen}</h1>
-        <h1>{item.movie}</h1>
-        <h1>{item.theatre}</h1>
-        <div>{item.tickets.map((ticket,index)=>(
-            <div key={index}>
-            <h1>{ticket}</h1>
-            </div>
-        ))}</div>
-        <h1>{item.show_time}</h1>
-        <h1>{item.show_date}</h1>
-        <h1>{item.language}</h1>
-        </div>
-    ))}
-    </div>
+        <div className= 'InnerMainDivContanierTicketBookingView'  onClick={()=>setOpen(true)} key={index} >
+       <div data-tootip="Movie"> <p>{item.movie[0].toUpperCase()+item.movie.slice(1)}</p></div>
+       <div data-tootip="Theatre"> <p >{item.theatre[0].toUpperCase()+item.theatre.slice(1)}</p></div>
+       <div data-tootip="Time"> <p>{item.show_time}</p></div>
+       <div data-tootip="Date"> <p>{item.show_date}</p></div>
+    
+       </div>
+       ))}
+       {open&&<SingleTicketbookedViewByUser data={{open,setOpen}} />}
+       </div>
   )
 }
 

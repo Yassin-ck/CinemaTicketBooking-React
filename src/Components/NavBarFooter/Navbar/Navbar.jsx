@@ -18,7 +18,7 @@ import { movieListing } from '../../../Redux/Slices/movieSlice';
 
 
 const Navbar =()=> {
-const {user,getView,  myLocation} = useContext(AuthContext)
+const {user, myLocation} = useContext(AuthContext)
 const [optSmModal, setOptSmModal] = useState(false);
 const [modalOpen,setModalOpen] = useState(false)
 const dispatch = useDispatch()
@@ -26,22 +26,16 @@ const navigate = useNavigate()
   const openModal = () => {
     setModalOpen(true);
   };
-
   const openLocationModal = ()=>{
     setOptSmModal(!optSmModal)
   }
-
   useEffect(() => {
     if (!localStorage.getItem('myLocation')){
       setOptSmModal(true)
     }
-    
   }, [])
-
-  const movieSearchedDataFetching = async (e)=>{
-   
+  const movieSearchedDataFetching = async (e)=>{  
     try{
-
       const response = await axios.get(`${import.meta.env.VITE_URL_SERVER}/user/search/?q=${e.trim()}`)
       const data = response.data
       if (response.status==200){

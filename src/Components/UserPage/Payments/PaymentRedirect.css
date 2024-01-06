@@ -1,0 +1,38 @@
+.SectionDivForPaymentRedirect{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+.MainDivForPaymentRedirect {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.MainInnerDivForPaymetnRedirect{
+    width: 60%;
+}
+.MainInnerDivForPaymetnRedirect div{
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.MainInnerSection1DivForPaymetnRedirect .MainInnerSection2DivForPaymetnRedirect{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    flex-wrap: wrap;
+}
+
+
+.MainInnerSection1DivForPaymetnRedirect div h5{
+
+    padding: 0;
+    margin: 0;
+}

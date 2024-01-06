@@ -1,0 +1,8 @@
+.SingleTickebookedViewByUserBox{
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+.SingleTickebookedViewByUserBox h2{
+    text-align: center;
+}

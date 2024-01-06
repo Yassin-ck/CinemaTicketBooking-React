@@ -80,6 +80,7 @@ const TheatresShowsAdding = () => {
       setMovieSelection(false);
     }
   };
+  
   useEffect(() => {
     if (
       showData[0].movies == null &&
