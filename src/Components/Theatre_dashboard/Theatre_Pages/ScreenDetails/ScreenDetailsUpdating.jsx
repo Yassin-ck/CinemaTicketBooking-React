@@ -8,7 +8,6 @@ const ScreenDetailsUpdating = () => {
   const inputRef = useRef(null);
   const [screenState, setScreenState] = useState([]);
   const { id } = useParams();
-
   const screenDetailsAddingSubmission = async (e) => {
     e.preventDefault();
     try {
