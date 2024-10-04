@@ -7,7 +7,8 @@
     justify-content: flex-start;
     align-items: center;
     padding: 5px 0;
-    background-color: rgb(13, 17, 20);
+    background-color:rgb(245, 245, 245);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     
   }
   .secondMainDivInSecondNavbar{
@@ -17,9 +18,11 @@
   
   .innerMainDivForSecondDicInSecondNavbar h6 {
     text-decoration: none;
-    color: rgb(238, 229, 229);
+    color: var(--black-color);
     cursor: pointer;
     padding-right: 1.5rem;
+    font-weight:400;
+    letter-spacing: -0.5px;
   }
   
   @media (max-width: 768px) {
@@ -28,9 +31,7 @@
     }
   }
   .innerMainDivForSecondDicInSecondNavbar h6.selected {
-    color: #d9c5b2;
-    border-bottom: 2px solid #d9c5b2;
-    padding-bottom: 2px;
-    width: 72%;
+    font-weight:600;
+    
 }
 

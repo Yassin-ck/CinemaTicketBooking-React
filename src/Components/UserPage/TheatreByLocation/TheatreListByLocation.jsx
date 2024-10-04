@@ -5,7 +5,9 @@ import { useDispatch,useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './css/TheatreListByLocation.css'
-import { AuthContext } from '../../../context/Authcontext'
+import { AuthContext } from '../../../context/authcontext'
+import { PiHeartThin } from "react-icons/pi";
+
 
 
 const TheatreListByLocation = () => { 
@@ -21,6 +23,7 @@ const TheatreListByLocation = () => {
                 const data = response.data
                 if (response.status == 200){
                     dispatch(theareListingAction(data))
+                    console.warn(data);
                 }
             }catch(error){
                 navigate('/')
@@ -44,12 +47,13 @@ const TheatreListByLocation = () => {
         onClick={()=>navigate(`/talkies/${theatre.theatre_name}/${currentDate}`)}
         key={theatre.id}
          >
+         <PiHeartThin className='iconwishlistintheatremovieslistbylocation'  style={{marginTop:'3px'}} />
 
         <div 
         className='OnClickDivinTheatreListByLocation'
         >
-       <h6 className='theatrePtagInTheatreListBbyLocation'>{theatre.theatre_name}</h6>
-          <p>{theatre.address}</p>  
+       <h6 >{theatre.theatre_name} : {theatre.theatre_location}</h6>
+          <p style={{color:'grey'}}>{theatre.address}</p>  
         </div>
         </div>
         ))     

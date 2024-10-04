@@ -1,37 +1,26 @@
 #root {
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to bottom, rgba(13, 22, 20, 0.9), rgba(27, 34, 34, 0.9), rgba(40, 46, 47, 0.9), rgba(55, 58, 60, 0.9), rgba(70, 71, 73, 0.9), rgba(70, 70, 71, 0.9), rgba(69, 69, 70, 0.9), rgba(68, 68, 68, 0.9), rgba(52, 52, 52, 0.9), rgba(36, 36, 36, 0.9), rgba(22, 22, 22, 0.9), rgba(0, 0, 0, 0.9));    
+    background:rgb(245, 245, 245); 
     flex-direction: column;
     min-height: 100vh; 
     --primary-color:#14110f;
-    --secondary-color:#34312d;
+    --secondary-color:rgb(235, 78, 98);
     --third-color:#7e7f83;
-    --fourth-color:#d9c5b2;
+    --fourth-color:#4abd5d;
     --fifth-color:#f3f3f4;
     --white-color:white;
     --black-color:black;
-
-}
-
-
-@keyframes fade {
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
     
-    pointer-events: visible;
 
-  }
 }
+
+
 
 
   
   .mainHomeDiv {
     padding: 20px; /* Add padding to your main content */
     color: var(--white-color); /* Set text color to contrast with the background */
-    animation: fade 1s ease 0s ;
   }
   

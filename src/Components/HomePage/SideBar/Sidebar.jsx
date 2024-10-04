@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../SignInPages/SigninPage.css";
-import { AuthContext } from "../../../context/Authcontext";
+import { AuthContext } from "../../../context/authcontext";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { MdOutlineArrowLeft } from "react-icons/md";
+import { IoIosArrowBack } from "react-icons/io";
 
 function OffCanvasExample({ name, ...props }) {
   const navigate = useNavigate();
@@ -31,15 +31,10 @@ function OffCanvasExample({ name, ...props }) {
 
   return (
     <>
-      <img
-        style={{ cursor: "pointer", width: "40px" }}
-        onClick={handleShow}
-        src="//in.bmscdn.com/m6/images/my-profile/bms-user.png"
-        alt="Profile"
-        className="bwc__sc-1nbn7v6-15 jipwZh"
-      ></img>
+    <img  onClick={handleShow}   style={{ cursor: "pointer", width: "30px"}} src="//assets-in.bmscdn.com/static/2023/10/default-pic.png" alt="Profile" class="bwc__sc-1nbn7v6-15 jipwZh" />
+      
 
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative",color:'black' }}>
         <Offcanvas
           style={{ width: "22rem" }}
           show={show}
@@ -47,7 +42,7 @@ function OffCanvasExample({ name, ...props }) {
           {...props}
         >
           <Offcanvas.Header
-            style={{ color: "white", background: "#7e7f83", height: "4.64rem" }}
+            style={{  background: "#1111", height: "4.64rem",boxShadow:"1px 1px 3px rgba(0,0,0,0.3)" }}
           >
             <div style={{ height: "40px" }}>
               <Offcanvas.Title>
@@ -65,12 +60,12 @@ function OffCanvasExample({ name, ...props }) {
                 }}
                 onClick={EditProfileHandler}
               >
-                <MdOutlineArrowLeft />
+                <IoIosArrowBack size={12}  />
                 <p
                   style={{
                     fontSize: "14px",
                     position: "absolute",
-                    top: "2px",
+                    top: "3px",
                     left: "18px",
                     width: "4.2rem",
                   }}
@@ -83,7 +78,7 @@ function OffCanvasExample({ name, ...props }) {
               src="//in.bmscdn.com/webin/movies/superstar/profile_avatar.png"
               alt="user"
               className="bwc__sc-1fj6cem-17 exSHsT"
-            ></img>
+            />
           </Offcanvas.Header>
           <Offcanvas.Body>
             

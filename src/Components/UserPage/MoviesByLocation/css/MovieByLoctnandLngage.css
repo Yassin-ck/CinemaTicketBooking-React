@@ -11,36 +11,45 @@
 
 .LanguageMappingInMoveList{
     display: flex;
+    column-gap: 0.5rem;
     
      
 }
 .LanguageSingleClassNameInMoVieListing{
     cursor: pointer;
 }
-.LanguageSingleClassNameInMoVieListing p:hover{
-    color: black;
+.LanguageSingleClassNameInMoVieListing p {
+    border: 1px solid var(--secondary-color);
+    color:  var(--secondary-color);
+    padding: 3px 15px;
+    background-color: var(--white-color);
+    border-radius: 20px;
 }
-.LanguageSingleClassNameInMoVieListing p{
-    margin-right: 20px;
-    border: 0px solid rgb(234, 9, 9);
-    padding: 6px 20px 6px 20px;
-    background-color: wheat;
-    border-radius:20px 20px 20px 20px;
-    color:rgb(96, 93, 93);
+
+.LanguageSingleClassNameInMoVieListing p:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
 }
+
 
 
 .MovieDetailsMainDivInMovieListingByLocationAndLanguage{
     display: flex;
     flex-wrap: wrap; 
     width:100%;
+    margin: -30px;
 }
 
 .LocationofMovieListingHeading {
-    background: linear-gradient(45deg, rgb(182, 181, 169), rgb(255, 157, 0));
     -webkit-background-clip: text; /* For older WebKit browsers */
     background-clip: text; /* Standard property */
-    color: transparent;
+    color: var(--black-color);
+    margin-top: -20px;
+    
+}
+.LocationofMovieListingHeading h5{
+    margin: 0;
+    padding: 0;
 }
 .movieDetailsDivinMovieListingBylocatn{
     cursor: pointer;

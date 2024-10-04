@@ -1,5 +1,5 @@
 .DateDivInTimeOfTheatreBooking {
-    height: 30vh;
+    height: 27vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -14,27 +14,26 @@
   }
   
   .NameAndLanguageContanerIntime p {
-    font-size: 45px;
-    color: var(--secondary-color);
-    
+    font-size: 40px;
+    color: var(--black-color);
+    letter-spacing: -3px;
   }
   
   .DifferencingContainerInNamenadLangugae {
-    background-color: var(--third-color);
+    background-color: var(--white-color);
     opacity: 0.9;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   }
   
   .DifferencingContainerInDates {
-    background-color: var(--third-color);
-    height: 20vh;
+    background-color: var(--white-color);
+    height: 12vh;
     display: flex;
     align-items: center;
     font-size: large;
   }
   
   .DivForTheDateInTheShowTime {
-    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,33 +41,41 @@
   }
   
   .DivForTheDateInTheShowTime p {
-    line-height: 20px;
+    line-height: 15px;
     padding: 0;
+    font-size: small;
     margin: 0;
   }
   
   .DivForTheDateInTheShowTimePDiv {
     cursor: pointer;
-    border: 1px solid black;
+    border: none;
     text-align: center;
     padding: 10px 15px 10px 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-radius: 5px;
-    background-color: var(--secondary-color);
-    color: var(--white-color);
+    background-color: var(--white-color);
+    color: var(--black-color);
     border: none;
   }
-  .DivForTheDateInTheShowTimePDivSelected{
+  .DivForTheDateInTheShowTimePDiv .secondP {
+    font-weight: bolder;
+  }
+  .DivForTheDateInTheShowTimePDivSelected .secondP{
+    font-weight: bolder;
+
+  }
+  .DivForTheDateInTheShowTimePDiv:hover{
+    color: var(--secondary-color);
+  }
+  .DivForTheDateInTheShowTimePDivSelected {
     cursor: pointer;
     border: 1px solid black;
     text-align: center;
     padding: 10px 15px 10px 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-radius: 5px;
-    color: var(--fourth-color);
+    color: var(--white-color);
     background-color: var(--secondary-color);
     border: none;
-    box-shadow: 3px 3px 5px rgba(0,0,0,1);
 
   }
   .divforscreentheatrenameintimemovielist {
@@ -88,14 +95,17 @@
   
   .DivForTheTimeStylingInTimeListingOfMovieList {
     padding: 10px 25px 10px 25px;
-    background-color: var(--white-color);
-    border-radius: 2px;
+    background-color: rgb(245,245,245);
+    border-radius: 4px;
     cursor: pointer;
     margin-right: 10px;
+    border: 1px solid rgb(188, 187, 187);
+    
   }
   
   .TimeContainerInTheTimeListingDivInShowTIme {
-    color: var(--primary-color);
+    color:var(--fourth-color);
+    font-size: small;
   }
   
   .TimeContainerInTheTimeListingDivInShowTIme:first-child {
@@ -104,7 +114,8 @@
   
   .DivForTheTheatreAndScreenShowingInShowTime {
     margin: 15px;
-    color: var(--fourth-color);
+    color: var(--black-color);
+    font-size: small;
   }
   
   .DivForTheTheatreAndScreenShowingInShowTime p {

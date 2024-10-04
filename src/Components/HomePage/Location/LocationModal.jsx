@@ -12,7 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import { IoAddSharp } from "react-icons/io5";
 import { MdOutlineDone } from "react-icons/md";
-import { AuthContext } from "../../../context/Authcontext";
+import { AuthContext } from "../../../context/authcontext";
 import toast from "react-hot-toast";
 
 export default function LocationModal({ optSmModal, setOptSmModal }) {
@@ -200,7 +200,7 @@ export default function LocationModal({ optSmModal, setOptSmModal }) {
                       <div className="newLocationRequestInputClassName col-md-6">
                         <input
                           type="text"
-                          autoFocus
+                          
                           name="state"
                           required
                           autoComplete="off"

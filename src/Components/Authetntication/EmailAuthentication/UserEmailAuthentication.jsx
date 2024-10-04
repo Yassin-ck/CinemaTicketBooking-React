@@ -103,7 +103,7 @@ const UserEmailAuthentication = ({ onEmailSubmit, auth }) => {
           className="buttonforemailverificationandauthentication"
           variant="contained"
           style={{
-            backgroundColor: '#14110f',
+            backgroundColor: 'var(--secondary-color)',
             position: 'absolute',
             left: ' 10%',
             bottom: '7%',

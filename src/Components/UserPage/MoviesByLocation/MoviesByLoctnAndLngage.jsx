@@ -62,7 +62,7 @@ const MoviesByLoctnAndLngage = () => {
                 className='LanguageSingleClassNameInMoVieListing'
               >
                 <div onClick={() => navigate(`/movies/${item}`)} key={index}>
-                <p style={item == language ? { background: 'rgb(210, 168, 94)',color:'black' } : {}}>
+                <p style={item == language ? { background: 'var(--secondary-color)',color:'var(--white-color)' } : {}}>
                 {item}
                 </p>
                 </div>
@@ -76,15 +76,14 @@ const MoviesByLoctnAndLngage = () => {
             movies.map((item, index) => (
               <div
                 key={item.id}
-                className={`movieItemInListing col-md-3 ${
-                  index > 4 ? "mt-4" : ""
-                }`}
+                className="movieItemInListing col-md-2"
+               
               >
                 <Card
                   className="movieDetailsDivinMovieListingBylocatn"
                   style={{
-                    width: "15rem",
-                    height: "400px",
+                    width: "12rem",
+                    height: "300px",
                     overflow: "hidden",
                   }}
                   onClick={() =>
@@ -105,10 +104,10 @@ const MoviesByLoctnAndLngage = () => {
                   />
                 </Card>
                 <br />
-                <center style={{ color: "white", width: "15rem" }}>
-                  <strong>{item.movie_name}</strong>
-                  <p>{item.shows__language__name}</p>
-                </center>
+                <div style={{ width: "15rem",letterSpacing:'-1px' }}>
+                  <strong>{item.movie_name.slice(0,1).toUpperCase().concat(item.movie_name.slice(1))}</strong>
+                  <p style={{marginTop:'4px',color:'grey',marginLeft:'2px'}}>{item.shows__language__name}</p>
+                </div>
               </div>
             ))}
         </div>

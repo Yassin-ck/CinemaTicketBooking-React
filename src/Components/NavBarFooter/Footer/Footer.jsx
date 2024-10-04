@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import './Footer.css'
 import React, { useContext, useState } from 'react'
-import { AuthContext } from '../../../context/Authcontext'
+import { AuthContext } from '../../../context/authcontext'
 import TheatreLoginModal from '../../Theatre_dashboard/Theatre_Pages/Theatre_AccountsAndAuthentications/TheatreLoginModal'
 import {
   MDBFooter,

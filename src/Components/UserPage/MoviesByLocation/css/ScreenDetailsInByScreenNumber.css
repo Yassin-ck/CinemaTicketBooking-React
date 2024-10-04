@@ -4,21 +4,22 @@
 .InnerDivForSeatArrangementInScreenDetails{
     display:flex;
     justify-content: center;
-    column-gap: 3rem;
+    column-gap: 0.6rem;
     align-items: center;
-
+    margin-top:0.4rem
     
 }
+
 .SeatDivInScreenDetailsByScreen {
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
 }
+
 .seatAlphaDivbackgroundgreen{
    
-    background-color:rgb(18, 197, 18);
+    background-color:var(--fourth-color);
     color: rgb(255, 255, 255);
     font-size: 11px;
     margin-top: 3px;
@@ -42,13 +43,15 @@
     width: 24px;    
     height: 25px;
     background-color:rgb(255, 255, 255) ;
-    color: green;
+    color: var(--fourth-color);
     text-align: center;
-    border: 1px solid green;
+    border: 1px solid var(--fourth-color);
     pointer-events: none;
     border-radius: 2px;
     letter-spacing: -0.5px;
 }
+
+
 .seatAlphaDivbackgroundLight{
     font-size: 11px;
     margin-top: 3px;
@@ -57,10 +60,10 @@
     align-items: center;
     width: 24px;    
     height: 25px;
-    background-color:rgb(194, 192, 192) ;
-    color: rgb(143, 143, 143);
+    background-color:#eee ;
+    color: #fff;
     text-align: center;
-    border: 1px solid rgb(176, 176, 176);
+    border:none;
     pointer-events: none;
     border-radius: 2px;
     letter-spacing: -0.5px;
@@ -79,11 +82,7 @@
     display: flex;
     flex-direction: column;
     padding: 3rem;  
-    background: transparent;
     row-gap: 2rem;
-    border: 1px solid rgb(36, 32, 32);
-    background-color:lightgray;
-    box-shadow: inset 10px 10px 102px rgba(0,0,0,0.1);
     
 }
 
@@ -104,4 +103,61 @@
     display: flex;
     /* column-gap: 20px; */
     
+}
+.AllTheEyesThisWayOne {
+    width: 30%;
+    perspective: 100px;
+    margin: 0 auto; 
+    margin-top: 2rem;
+}
+
+.AllTheEyesThisWayTwo {
+    background-color: rgb(241, 240, 240);
+    width: 80%;
+    height: 2vh;
+    transform: rotateX(45deg) ;
+    border: 1px solid rgb(215, 213, 213); 
+}
+.AllTheEyesThisWayThree{
+    background-color: rgb(217, 217, 220);
+    width: 95%;
+    height: 1.6vh;
+    transform: rotateX(45deg) ; 
+}
+.MovieNameAndDetailShowDivInScreenDetailsByScreenNumber{
+    width: 100%;
+    height: 10vh;
+    background-color:var(--white-color);
+    display: flex;
+    align-items: center;
+
+    
+}
+.InnerMovieNameAndDetailShowDivInScreenDetailsByScreenNumber{
+    
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+.InnerMovieNameAndDetailShowDivInScreenDetailsByScreenNumber p{
+    margin: 0;
+    padding: 0;
+}
+.SecondInnerDivMovieNameAndDetailShowDivInScreenDetailsByScreenNumber {
+    font-size: 15px;
+    font-weight: 600;
+    pointer-events: none;
+}
+.ThirdInnerDivMovieNameAndDetailShowDivInScreenDetailsByScreenNumber{
+    display: flex;
+    font-size: 14px;
+    color: grey;
+    margin-top: 5px;
+}
+.ThirdInnerDivMovieNameAndDetailShowDivInScreenDetailsByScreenNumber p{
+    margin-left: 4px;
+    font-weight: 500;
+}
+.ThirdInnerDivMovieNameAndDetailShowDivInScreenDetailsByScreenNumber span{
+    font-weight: bold;
 }

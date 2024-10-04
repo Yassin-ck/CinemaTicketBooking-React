@@ -2,13 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import { FcFilmReel } from "react-icons/fc";
+
 import {
   movieListingByLocation,
   dateListing,
 } from "../../../Redux/Slices/movieSlice";
 import { useNavigate } from "react-router-dom";
 import "./css/MoviesByLocationAndNameAndDate.css";
-import { AuthContext } from "../../../context/Authcontext";
+import { AuthContext } from "../../../context/authcontext";
+
+
 
 const MoviesByLocationAndnameAndDate = () => {
   const dispatch = useDispatch();
@@ -43,7 +47,6 @@ const MoviesByLocationAndnameAndDate = () => {
       console.error(error);
     }
   };
-console.log(currentDate);
   useEffect(() => {
     FetchingMovieDetailsByMovieNameandDate(
       JSON.parse(localStorage.getItem("myLocation")),
@@ -60,7 +63,7 @@ console.log(currentDate);
         <div className=" DateDivInTimeOfTheatreBooking">
           <div className="DifferencingContainerInNamenadLangugae">
             <div className="container NameAndLanguageContanerIntime">
-              <p style={{ letterSpacing: "-1.6px" }}>
+              <p>
                 {movie[0].toUpperCase().concat(movie.slice(1, movie.length))}{" "}
                 {language !== "all" && "-" + language}
               </p>
@@ -78,7 +81,7 @@ console.log(currentDate);
                   >
                     <div className={item==dt?"DivForTheDateInTheShowTimePDivSelected":dt==currentDate&&item.slice(4,6)==currentDate.slice(8,10)?"DivForTheDateInTheShowTimePDivSelected": "DivForTheDateInTheShowTimePDiv"}>
                       <p>{item.slice(0, 3)}</p>
-                      <p>{item.slice(4, 6)}</p>
+                      <p className="secondP">{item.slice(4, 6)}</p>
                       <p>{item.slice(7, 10)}</p>
                     </div>
                   </div>
@@ -98,9 +101,10 @@ console.log(currentDate);
                       key={index}
                       className="divforscreentheatrenameintimemovielist"
                     >
-                      <div className="DivForTheTheatreAndScreenShowingInShowTime">
-                        <p>
-                          <strong style={{ margin: "0", padding: "0" }}>
+                      <div className="DivForTheTheatreAndScreenShowingInShowTime d-flex align-items-center ">
+                      <FcFilmReel style={{marginRight:'12px'}} />
+                      <p>
+                          <span style={{ margin: "0", padding: "0",fontWeight:'600' }}>
                             {item.theatre_name[0]
                               .toUpperCase()
                               .concat(
@@ -108,20 +112,13 @@ console.log(currentDate);
                                   1,
                                   item.theatre_name.length
                                 )
-                              )}
-                          </strong>
+                              )} 
+                          </span>  :
+                           <span style={{paddingLeft:'3px',fontWeight:'bolder'}}>
+                          Screen  {item.screen_number}
+                          </span>
                         </p>
-                        <p>
-                          <small
-                            style={{
-                              margin: "0px",
-                              padding: "0px",
-                              fontSize: "13px",
-                            }}
-                          >
-                            {item.screen_number}
-                          </small>
-                        </p>
+                       
                         {language !== "all" && (
                           <p
                             style={{

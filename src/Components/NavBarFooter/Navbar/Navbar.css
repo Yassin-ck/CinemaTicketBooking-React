@@ -8,8 +8,8 @@
   
   .NavbarMain {
     width: 100%;
-    background:#14110f;
-    color: var(--white-color);
+    background: rgb(255, 255, 255);
+    color: var(--black-color);
   }
   
   .NavBarSections {
@@ -44,6 +44,11 @@
     margin-left: 10%;
 }
 
+.navbarsearchbar input:focus{
+  border:none;
+
+}
+
 .LocationNavbarUnauthorized{
   margin: 10px 20px 0px 0px;
  cursor: pointer;
@@ -57,9 +62,13 @@
   align-items: center;
 }
 .SiginButtonStyles{
- background:white !important;
- color:green !important;
- width:100px ;
+ background:var(--secondary-color) !important;
+ color:var(--white-color) !important;
+ width:100px !important ;
  border:none !important;
- box-shadow:none !important;
+ box-shadow: 1px 1px 4px rgba(0,0,0,0.2) !important;
+}
+.SiginButtonStyles:hover{
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.4) !important;
+
 }

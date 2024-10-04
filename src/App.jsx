@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Home from "./Components/HomePage/Home";
-import AuthProvider from "./context/authcontext";
+import Home from "./Components/HomePage/home";
+import AuthProvider from "./context/Authcontext";
 import Movieslist from "./Components/Movies/Movieslist";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
 import Footer from "./Components/NavBarFooter/Footer/Footer";
@@ -57,11 +57,11 @@ const App = () => {
       <AuthProvider>
         {!theatreNavbar&&<Navbar />}
         {!theatreNavbar&&<SecondNavbar />}
-        
+        <div style={{minHeight:'100vh'}}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/useremailupdation/:auth" element={<PrivateRouter><SignInPage /></PrivateRouter>} />
-          <Route path="/view" element={ <PrivateRouter><UserProfileEdit /></PrivateRouter>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/useremailupdation/:auth" element={<PrivateRouter><SignInPage /></PrivateRouter>} />
+        <Route path="/view" element={ <PrivateRouter><UserProfileEdit /></PrivateRouter>} />
           <Route path="/view/phone" element={<PrivateRouter><MobileUpdationModal /></PrivateRouter>} />
           <Route path="/admin/user" element={<Admin_UserProfileView />} />
           <Route path="/admin/owners_request" element={<Admin_TheatreOwnerRequest />} />
@@ -90,7 +90,8 @@ const App = () => {
           <Route path="/payment" element={<PaymentRedirect />} />
           <Route path="/ticketview" element={<TicketbookedViewByUser />} />
           
-        </Routes>
+          </Routes>
+          </div>
         {!theatreFooter&&<Footer />}
       </AuthProvider>
     </>
