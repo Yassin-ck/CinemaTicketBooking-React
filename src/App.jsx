@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Home from "./Components/HomePage/Home";
-import AuthProvider from "./context/AuthContext";
+import AuthProvider from "../context/AuthContext";
 import Movieslist from "./Components/Movies/Movieslist";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
 import Footer from "./Components/NavBarFooter/Footer/Footer";
