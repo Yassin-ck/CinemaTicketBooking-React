@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { movieListingByLocation } from "../../../Redux/Slices/movieSlice";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 import "./css/MovieDetailsFullShowing.css";
 import { Card } from "react-bootstrap";
 

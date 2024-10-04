@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react'
-import { AuthContext } from '../../../context/authcontext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import './MobileUpdation.css'

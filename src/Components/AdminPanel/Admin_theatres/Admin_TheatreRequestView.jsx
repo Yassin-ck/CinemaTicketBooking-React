@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-import { AuthContext } from '../../../context/authcontext'
+import { AuthContext } from '../../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 
 const Admin_TheatreRequestView = () => {

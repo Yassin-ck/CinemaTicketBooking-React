@@ -7,7 +7,7 @@ import {
   MDBInputGroup
 } from 'mdb-react-ui-kit';
 import './Navbar.css'
-import { AuthContext } from '../../../context/authcontext';
+import { AuthContext } from '../../../context/AuthContext';
 import {  AiOutlineSearch} from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import Sidebar from '../../HomePage/SideBar/Sidebar';

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { dateListing } from "../../../Redux/Slices/movieSlice";
 import "./css/TheatreWithScreenDetails.css";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 import { PiHeartThin } from "react-icons/pi";
 
 const TheatreWithScreenDetails = () => {

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 import { Button } from "@mui/material";
 import './EmailAuth.css'
 

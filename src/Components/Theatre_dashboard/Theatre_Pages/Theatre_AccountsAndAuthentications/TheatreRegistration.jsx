@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../../../context/authcontext";
+import { AuthContext } from "../../../../context/AuthContext";
 import ScreensViewForUpdation from "../ScreenDetails/ScreensViewForUpdation";
 import "./css/TheatreRegistration.css";
 import { RiArrowRightCircleFill } from "react-icons/ri";

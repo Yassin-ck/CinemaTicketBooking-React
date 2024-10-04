@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 import OtpModalForVerification from "../Modals/OtpModalForVerification";
 import "./TheatreOwnerRegistration.css";
 

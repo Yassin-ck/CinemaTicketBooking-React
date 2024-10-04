@@ -10,7 +10,6 @@ import {
   MDBModalContent,
 
 } from 'mdb-react-ui-kit';
-import { AuthContext } from '../../../context/authcontext';
 import { useNavigate } from 'react-router-dom';
 
 const MobileUpdationModal = () => {

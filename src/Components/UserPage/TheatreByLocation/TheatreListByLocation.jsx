@@ -5,7 +5,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './css/TheatreListByLocation.css'
-import { AuthContext } from '../../../context/authcontext'
+import { AuthContext } from '../../../context/AuthContext'
 import { PiHeartThin } from "react-icons/pi";
 
 

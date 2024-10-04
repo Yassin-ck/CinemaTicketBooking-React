@@ -10,7 +10,7 @@ import {
 } from "../../../Redux/Slices/movieSlice";
 import { useNavigate } from "react-router-dom";
 import "./css/MoviesByLocationAndNameAndDate.css";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 
 
 

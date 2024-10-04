@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
-import { AuthContext } from "../../../../context/authcontext";
+import { AuthContext } from "../../../../context/AuthContext";
 import "./Admin_UserProfileView.css";
 import { IoEyeOff } from "react-icons/io5";
 import { IoIosCloseCircle } from "react-icons/io";

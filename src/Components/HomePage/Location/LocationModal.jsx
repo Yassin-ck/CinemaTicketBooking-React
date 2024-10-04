@@ -12,7 +12,7 @@ import {
 } from "mdb-react-ui-kit";
 import { IoAddSharp } from "react-icons/io5";
 import { MdOutlineDone } from "react-icons/md";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 import toast from "react-hot-toast";
 
 export default function LocationModal({ optSmModal, setOptSmModal }) {

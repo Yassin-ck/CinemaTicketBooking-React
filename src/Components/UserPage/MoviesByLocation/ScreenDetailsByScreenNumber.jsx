@@ -5,7 +5,7 @@ import { movieListingByLocation } from "../../../Redux/Slices/movieSlice";
 import { Button } from "react-bootstrap";
 import "./css/ScreenDetailsInByScreenNumber.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 import toast from "react-hot-toast";
 import { SlArrowLeft } from "react-icons/sl";
 import { LinearIndeterminate } from "../../../Loadings/HomeLoading";

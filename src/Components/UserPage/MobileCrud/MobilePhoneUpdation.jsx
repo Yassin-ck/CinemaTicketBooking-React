@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect, useState, useMemo } from 'react'
 import countryList from 'react-select-country-list'
 import axios from 'axios'
-import { AuthContext } from '../../../context/authcontext';
+import { AuthContext } from '../../../context/AuthContext';
 import './MobileUpdation.css'
 import { Button } from '@mui/material';
 

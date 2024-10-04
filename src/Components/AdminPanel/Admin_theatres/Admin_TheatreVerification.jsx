@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { AuthContext } from '../../../context/authcontext';
+import { AuthContext } from '../../../context/AuthContext';
 import { useParams } from 'react-router-dom';
 import Admin_TheatreOwnerVerificationModals from '../Admin_Modals/Admin_TheatreOwnerVerificationModals';
 

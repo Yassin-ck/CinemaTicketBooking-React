@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../SignInPages/SigninPage.css";
-import { AuthContext } from "../../../context/authcontext";
+import { AuthContext } from "../../../context/AuthContext";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
