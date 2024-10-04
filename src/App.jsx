@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Home from "./Components/HomePage/home";
+import Home from "./Components/HomePage/Home";
 import AuthProvider from "./context/Authcontext";
 import Movieslist from "./Components/Movies/Movieslist";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
